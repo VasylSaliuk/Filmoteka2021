@@ -1,84 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Filmoteka</title>
+    <!-- Сюда будет всталена ссылка на файл стилей -->
+    <!-- inject:css -->
+    <!-- endinject -->
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Filmoteka</title>
-  <!-- Сюда будет всталена ссылка на файл стилей -->
-  <!-- inject:css -->
-  <!-- endinject -->
-</head>
-
-<body>
-  <!-- inject:header -->
-  <header>
-    <div class="container">
-      <nav class="navigation">
-        <div class="navigation-box">
-          <a href="#" class="logo"
-            ><svg class="logo-icon" width="24" height="24">
-              <use href="./images/film-1.svg#film"></use></svg
-            ><span class="logo-name">Filmoteka</span></a
-          >
-          <ul class="navigation-main">
-            <li class="home-link item">
-              <a class="navItem-text" href="#">HOME</a>
-            </li>
-            <li class="library-link item">
-              <a class="navItem-text" href="#">MY LIBRARY</a>
-            </li>
-          </ul>
+  <body>
+    <!-- inject:header -->
+    <header>
+      <div class="container">
+        <nav class="navigation">
+          <div class="navigation-box">
+            <a href="#" class="logo"
+              ><svg class="logo-icon" width="24" height="24">
+                <use href="./images/film-1.svg#film"></use></svg
+              ><span class="logo-name">Filmoteka</span></a
+            >
+            <ul class="navigation-main">
+              <li class="home-link item">
+                <a class="navItem-text" href="#">HOME</a>
+              </li>
+              <li class="library-link item">
+                <a class="navItem-text" href="#">MY LIBRARY</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <form class="search-form">
+          <button type="submit" class="search-form-btn">
+            <svg class="search-icon" width="12" height="12">
+              <use href="./images/loupe.svg#loupe"></use>
+            </svg>
+          </button>
+          <input
+            type="text"
+            class="input"
+            name="query"
+            placeholder="Write movie name and click Enter"
+          />
+        </form>
+        <div>
+          <button type="button" class="library-button">Watched</button>
+          <button type="button" class="library-button">Queue</button>
         </div>
-      </nav>
-      <form class="search-form">
-        <button type="submit" class="search-form-btn">
-          <svg class="search-icon" width="12" height="12">
-            <use href="./images/loupe.svg#loupe"></use>
-          </svg>
-        </button>
-        <input
-          type="text"
-          class="input"
-          name="query"
-          placeholder="Write movie name and click Enter"
-        />
-      </form>
-      <div>
-        <button type="button" class="library-button">Watched</button>
-        <button type="button" class="library-button">Queue</button>
       </div>
-    </div>
-  </header>
-  <!-- endinject -->
+    </header>
+    <!-- endinject -->
 
-  <!-- inject:main -->
-  <main>
-  <section class="main_section">
-    <div class="container">
-      <ul class="main_filmlist" >
-       
-      </ul>
-    </div>
-  </section>
-</main>
-  <!-- endinject -->
+    <!-- inject:main -->
+    <main>
+      <section class="main_section">
+        <div class="container">
+          <ul class="main_filmlist"></ul>
+        </div>
+      </section>
+    </main>
+    <!-- endinject -->
 
-  <!-- inject:footer -->
-  <footer class="footer" id="footer">
-    <div class="container footer-copyright">
-
+    <!-- inject:footer -->
+    <footer class="footer" id="footer">
+      <div class="container footer-copyright">
         <a class="footer-text" href="#">Made by ©DreamTeam</a>
+      </div>
+    </footer>
+    <!-- endinject -->
 
-
-    </div>
-</footer>
-  <!-- endinject -->
-
-  <!-- Сюда будет всталена ссылка на файл скриптов -->
-  <!-- inject:js -->
-  <!-- endinject -->
-</body>
-
+    <!-- Сюда будет всталена ссылка на файл скриптов -->
+    <!-- inject:js -->
+    <!-- endinject -->
+  </body>
 </html>
