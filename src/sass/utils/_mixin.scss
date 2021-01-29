@@ -13,3 +13,30 @@
     }
   }
 }
+
+// text colors
+$white: #ffffff;
+$dark: #0c0b0b;
+$textColor: #535151;
+$accentColor: #ff5900a9;
+$svgColor: #8f8e8e;
+$warningColor: #ff0019ea;
+
+// mixins for transitions
+@mixin transition(
+  $property,
+  $time: 250ms,
+  $timingFunction: cubic-bezier(0.4, 0, 0.2, 1)
+) {
+  transition: $property $time $timingFunction;
+}
+
+@mixin twoTransitions(
+  $propertyI,
+  $propertyII,
+  $time: 250ms,
+  $timingFunction: cubic-bezier(0.4, 0, 0.2, 1)
+) {
+  transition: $propertyI $time $timingFunction,
+    $propertyII $time $timingFunction;
+}
