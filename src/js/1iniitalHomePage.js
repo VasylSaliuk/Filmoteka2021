@@ -1,5 +1,5 @@
 'use strict';
-
+import trendFilmTemplate from '../templates/homePage.hbs'
 const filmList = document.querySelector('.main_filmlist');
 const api = {
   key: '0758483bbf141f2377e75ad4723d5ab5',
@@ -25,20 +25,9 @@ const api = {
 console.log(api.fetchTrendFilms());
 
 function renderFilm(arr) {
-  const markup = arr.map(
-    ({ title, poster_path, vote_average, id, release_date }) => {
-      return `<li class="filmlist__item">
-   
-   <img id="${id}" width='280' src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
-   <h2>${title}</h2>||<span class="release_date">${release_date}</span>
-   <span class="rate">${vote_average}</span>
-   
-   
-</li>`;
-    },
-  );
+  const markup =  trendFilmTemplate(arr)
 
-  filmList.insertAdjacentHTML('beforeEnd', markup.join(''));
+  filmList.insertAdjacentHTML('beforeEnd', markup);
 }
 
 document.addEventListener('DOMContentLoaded', homePageRender);
