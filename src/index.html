@@ -12,16 +12,52 @@
 </head>
 
 <body>
-  <!-- inject:header -->
-  //= ./html/header.html
-  <!-- endinject -->
+  <header>
+    <div class="container">
+      <nav class="navigation">
+        <div class="navigation-box">
+          <a href="#" class="logo">
+            <svg class="logo-icon" width="24" height="24">
+              <use href="./images/film-1.svg#film"></use></svg>
+            <span class="logo-name">Filmoteka</span></a>
+          <ul class="navigation-main">
+            <li class="home-link item">
+              <a class="navItem-text" href="#">HOME</a>
+            </li>
+            <li class="library-link item">
+              <a class="navItem-text" href="#">MY LIBRARY</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <form class="search-form">
+        <button type="submit" class="search-form-btn">
+          <svg class="search-icon" width="12" height="12">
+            <use href="./images/loupe.svg#loupe"></use>
+          </svg>
+        </button>
+        <input
+          type="text"
+          class="input"
+          name="query"
+          placeholder="Write movie name and click Enter"
+        />
+      </form>
+      <div>
+        <button type="button" class="library-button">Watched</button>
+        <button type="button" class="library-button">Queue</button>
+      </div>
+    </div>
+  </header>
+  <!-- <script type="text/html" src="./html/header.html"></script> -->
+  <!-- <include src="./html/header.html"></include> -->
 
   <!-- inject:main -->
-  //= ./html/main.html
+  <!-- //= ./html/main.html -->
   <!-- endinject -->
 
   <!-- inject:footer -->
-  //= ./html/footer.html
+  <!-- //= ./html/footer.html -->
   <!-- endinject -->
 
   <!-- Сюда будет всталена ссылка на файл скриптов -->
