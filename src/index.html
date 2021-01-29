@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  <!-- inject:header -->
   <header>
     <div class="container">
       <nav class="navigation">
@@ -49,16 +50,21 @@
       </div>
     </div>
   </header>
-  <!-- <script type="text/html" src="./html/header.html"></script> -->
-  <!-- <include src="./html/header.html"></include> -->
 
   <!-- inject:main -->
-  <!-- //= ./html/main.html -->
-  <!-- endinject -->
+  <main>
+    <section class="main_section">
+      <div class="container">
+        <ul class="main_filmlist" ></ul>
+      </div>
+    </section>
+  </main>
 
-  <!-- inject:footer -->
-  <!-- //= ./html/footer.html -->
-  <!-- endinject -->
+  <footer class="footer" id="footer">
+    <div class="container footer-copyright">
+      <a class="footer-text" href="#">Made by ©DreamTeam</a>
+    </div>
+  </footer>
 
   <!-- Сюда будет всталена ссылка на файл скриптов -->
   <!-- inject:js -->
