@@ -1,0 +1,22 @@
+@include for-size(tablet) {
+  .main_filmlist {
+    display: flex;
+
+    flex-wrap: wrap;
+    margin: -10px;
+    justify-content: center;
+    
+  }
+ 
+}
+
+@include for-size(tablet){
+.filmlist__item {
+    margin: 20px;
+    width: 250px
+  }}
+
+  @include for-size(desktop){
+
+
+  }

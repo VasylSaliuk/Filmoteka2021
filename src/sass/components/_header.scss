@@ -1,0 +1,97 @@
+header {
+  padding-top: 45px;
+  padding-bottom: 70px;
+  box-shadow: 0px 13px 23px -13px rgba(0, 0, 0, 0.41);
+  background-image: linear-gradient(to bottom, #77c1bb 45%, #ffffff 45%);
+}
+
+.navigation-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.navigation-main {
+  display: flex;
+}
+
+.search-form {
+  position: relative;
+  text-align: center;
+}
+.search-form-btn {
+  background-color: initial;
+  border: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+}
+.input {
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.14;
+  border: transparent;
+  border-bottom: 1px solid #141414;
+}
+
+@include for-size(mobile) {
+  .logo-name {
+    display: none;
+  }
+}
+
+.home-link {
+  margin-right: 35px;
+  // font-size: 14px;
+  // font-weight: 700;
+  // color: rgba(55, 44, 72, 0.702);
+}
+// .library-link {
+//   font-size: 14px;
+//   font-weight: 700;
+//   color: rgba(55, 44, 72, 0.702);
+// }
+.navItem-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(55, 44, 72, 0.702);
+}
+.search-form {
+  margin-top: 35px;
+}
+.library-button {
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid #9895a2;
+  font-size: 16px;
+  font-weight: 400;
+}
+// tablet--------
+@include for-size(tablet) {
+  .logo-icon {
+    margin-right: 10px;
+  }
+  .logo {
+    display: flex;
+  }
+  .search-form {
+    width: 340px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .logo-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(55, 44, 72, 0.702);
+  }
+}
+
+// desktop-------
+@include for-size(desktop) {
+  header {
+    padding-bottom: 90px;
+  }
+}
