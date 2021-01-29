@@ -12,6 +12,6 @@
 
 ## Tools & Resources
 
-- Gulp (https://github.com/luxplanjay/gulp-starter-kit)
+- WebPack (https://github.com/luxplanjay/webpack-starter-kit)
 - Materialize-CSS (https://materializecss.com/)
 - The MovieDB API (https://developers.themoviedb.org/3/getting-started)
