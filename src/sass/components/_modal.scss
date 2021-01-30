@@ -3,7 +3,7 @@
       top: 50%;
        left: 50%;
        transform: translate(-50%, -50%);
-     width: 900px;
+     width: 1000px;
       display: flex;
       background-color: honeydew;
 justify-content: space-between;
@@ -11,4 +11,17 @@ justify-content: space-between;
 
 .btn_list{
     display:flex
+}
+.modal-close-btn{
+    cursor: pointer;
+}
+
+.cardItem__image{
+    display: block;
+    
+    height: 100%;
+   
+}
+.cardItem__wrapper{
+    margin-left: auto;
 }
