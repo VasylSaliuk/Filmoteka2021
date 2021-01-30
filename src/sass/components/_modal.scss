@@ -1,0 +1,14 @@
+.modal-card{
+    position: absolute;
+      top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+     width: 900px;
+      display: flex;
+      background-color: honeydew;
+justify-content: space-between;
+}
+
+.btn_list{
+    display:flex
+}
