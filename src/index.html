@@ -23,40 +23,44 @@
             >
             <ul class="navigation-main">
               <li class="home-link item">
-                <a class="navItem-text" href="#">HOME</a>
+                <a class="navItem-text js-link-homepage" href="#">HOME</a>
               </li>
               <li class="library-link item">
-                <a class="navItem-text" href="#">MY LIBRARY</a>
+                <a class="navItem-text js-link-library" href="#">MY LIBRARY</a>
               </li>
             </ul>
           </div>
         </nav>
-        <form class="search-form">
-          <button type="submit" class="search-form-btn">
-            <svg class="search-icon" width="12" height="12">
-              <use href="./images/loupe.svg#loupe"></use>
-            </svg>
-          </button>
-          <input
-            type="text"
-            class="input"
-            name="query"
-            placeholder="Write movie name and click Enter"
-          />
-        </form>
-        <div>
-          <button type="button" class="library-button">Watched</button>
-          <button type="button" class="library-button">Queue</button>
-        </div>
       </div>
     </header>
     <!-- endinject -->
 
     <!-- inject:main -->
     <main>
-      <section class="main_section">
+      <section class="main_section js-home-section">
+        <div class="home_page_search">
+          <form class="search-form">
+            <button type="submit" class="search-form-btn">
+              <svg class="search-icon" width="12" height="12">
+                <use href="./images/loupe.svg#loupe"></use>
+              </svg>
+            </button>
+            <input
+              type="text"
+              class="input"
+              name="query"
+              placeholder="Write movie name and click Enter"
+            />
+          </form>
+        </div>
         <div class="container">
           <ul class="main_filmlist"></ul>
+        </div>
+      </section>
+      <section class="library_section js-library-section">
+        <div>
+          <button type="button" class="library-button">Watched</button>
+          <button type="button" class="library-button">Queue</button>
         </div>
       </section>
     </main>
