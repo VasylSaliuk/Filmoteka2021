@@ -30,3 +30,5 @@ scrollUpFooter.addEventListener('click', scrollToHome);
 // const scrollUpId = document
 //   .querySelector('.scroll-up')
 //   .addEventListener('click', scrollToHome);
+
+// =============================================================================
