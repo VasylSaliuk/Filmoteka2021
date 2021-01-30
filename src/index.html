@@ -7,21 +7,20 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Filmoteka</title>
   <!-- Сюда будет всталена ссылка на файл стилей -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <!-- inject:css -->
   <!-- endinject -->
 </head>
 
 <body>
   <!-- inject:header -->
-  <header>
+  <header id="home">
     <div class="container">
       <nav class="navigation">
         <div class="navigation-box">
-          <a href="#" class="logo"
-            ><svg class="logo-icon" width="24" height="24">
-              <use href="./images/film-1.svg#film"></use></svg
-            ><span class="logo-name">Filmoteka</span></a
-          >
+          <a href="#" class="logo"><svg class="logo-icon" width="24" height="24">
+              <use href="./images/film-1.svg#film"></use>
+            </svg><span class="logo-name">Filmoteka</span></a>
           <ul class="navigation-main">
             <li class="home-link item">
               <a class="navItem-text" href="#">HOME</a>
@@ -51,12 +50,7 @@
             <use href="./images/loupe.svg#loupe"></use>
           </svg>
         </button>
-        <input
-          type="text"
-          class="input"
-          name="query"
-          placeholder="Write movie name and click Enter"
-        />
+        <input type="text" class="input" name="query" placeholder="Write movie name and click Enter" />
       </form>
       <ul class="main_filmlist" >
        
@@ -64,17 +58,30 @@
     </div>
   </section>
 </main>
+      <div>
+        <button type="button" class="library-button">Watched</button>
+        <button type="button" class="library-button">Queue</button>
+      </div>
+    </div>
+  
+  <!-- endinject -->
+
+  <!-- inject:main -->
+  
   <!-- endinject -->
 
   <!-- inject:footer -->
   <footer class="footer" id="footer">
-    <div class="container footer-copyright">
-
-        <a class="footer-text" href="#">Made by ©DreamTeam</a>
-
+    <div class="container">
+      <div class="footer-copyright">
+        <a class="footer-text" href="#">MADE by ©DreamTeam</a>
+        <!-- <a href="#" class="scroll-up"> -->
+        <i class="material-icons material-icons-white scroll-up">keyboard_arrow_up</i>
+        <!-- </a> -->
+      </div>
 
     </div>
-</footer>
+  </footer>
   <!-- endinject -->
 
   <!-- Сюда будет всталена ссылка на файл скриптов -->
