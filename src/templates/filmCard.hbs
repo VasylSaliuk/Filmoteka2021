@@ -1,9 +1,9 @@
 <div class="modal-card" data-action="{{id}}">
-    <div class="cardItem__image">
-        <img class="image" width="200" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" />
+    <div class="cardItem__container">
+        <img class="cardItem__image" width="100%" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" />
     </div>
 
-    <div class=" cardItem__wrapper">
+    <div class="cardItem__wrapper">
         <h2 class="cardItem__name">{{title}}</h2>
         <p class="cadrItem__vote cardItem_text">
             Vote / Votes<span class="cardItem__vote_average">{{vote_average}}</span>/<span
@@ -34,18 +34,15 @@
         </p>
         <div class="cardItem__listButton">
 
-            <ul class="storage">
+            <ul class="btn_list">
                 <li class="storage__item">
-                    <label class="storage__label ">
-                        <input type="checkbox" value="Watched" class="storage__input visuallyhidden" />
-                        <span class="storage__btn" id="js-WatchedButton">Watched</span>
-                    </label>
-                </li>
+                    <button class="js-btnWatchedAdd">
+                        Add to watched
+                    </button>
                 <li class="storage__item">
-                    <label class="storage__label ">
-                        <input type="checkbox" value="Queue" class="storage__input  visuallyhidden" />
-                        <span class="storage__btn" id="js-QueueButton">Queue</span>
-                    </label>
+                    <button class="js-btnQueueAdd">
+                        Add to queue
+                    </button>
                 </li>
             </ul>
         </div>
