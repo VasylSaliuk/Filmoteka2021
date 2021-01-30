@@ -13,7 +13,8 @@
 @include for-size(tablet){
 .filmlist__item {
     margin: 20px;
-    width: 250px
+    width: 260px;
+    cursor: pointer;
   }}
 
   @include for-size(desktop){

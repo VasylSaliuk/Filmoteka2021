@@ -1,5 +1,5 @@
 'use strict';
-import trendFilmTemplate from '../templates/homePage.hbs'
+import trendFilmTemplate from '../templates/homePage.hbs';
 const filmList = document.querySelector('.main_filmlist');
 const api = {
   key: '0758483bbf141f2377e75ad4723d5ab5',
@@ -22,10 +22,9 @@ const api = {
       .then(data => data.results);
   },
 };
-console.log(api.fetchTrendFilms());
 
 function renderFilm(arr) {
-  const markup =  trendFilmTemplate(arr)
+  const markup = trendFilmTemplate(arr);
 
   filmList.insertAdjacentHTML('beforeEnd', markup);
 }
