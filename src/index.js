@@ -1,3 +1,4 @@
-import './sass/main.scss';
+import "./sass/main.scss";
+import './js/btnUp.js';
 import './js/1iniitalHomePage';
-import './js/3navigation';
+import './js/3navigation.js';
