@@ -10,7 +10,7 @@ filmItem.addEventListener('click', onClickFilm);
 
 function onClickFilm(e) {
   console.dir(e.target.id);
-  //   let selectFilm = e.target;
+    let selectFilm = e.target;
 
   const filmId = e.target.id;
   console.log(api.fetchMovieInfo(filmId));
@@ -19,14 +19,38 @@ function onClickFilm(e) {
     const cardTemplate = filmCard(data);
     const modal = basicLightbox.create(cardTemplate);
     modal.show();
+    const closeBtn = document.querySelector('.modal-close-btn');
+    closeBtn.addEventListener('click', onClickBtnClose);
+    window.addEventListener('keydown', closeModalHandler);
+
+    function closeModalHandler(e) {
+      if (e.code === 'Escape') {
+        modal.close();
+        window.removeEventListener('keydown', closeModalHandler);
+      }
+    }
+    function onClickBtnClose(e) {
+      modal.close();
+      window.removeEventListener('keydown', closeModalHandler);
+    }
+   
+    // const btnWatchedAdd = document.querySelector('.js-btnWatchedAdd');
+    // const btnQueueAdd = document.querySelector('.js-btnQueueAdd');
+    
+    // btnQueueAdd.addEventListener('click', controlQueue);
+    // btnWatchedAdd.addEventListener('click', controlWatched);
+
+
+
+  })
+
     // console.log(modal.show());
     // const btnWatchedAdd = document.querySelector('.js-btnWatchedAdd');
     // const btnQueueAdd = document.querySelector('.js-btnQueueAdd');
     // monitorButtonStatusText();
     // btnQueueAdd.addEventListener('click', controlQueue);
     // btnWatchedAdd.addEventListener('click', controlWatched);
-  });
-}
+ 
 
 // ======================================================================
 // const btnWatchedAdd = document.querySelector('.js-btnWatchedAdd');
@@ -112,34 +136,9 @@ function monitorButtonStatusText() {
   } else {
     btnWatchedAdd.textContent = 'Add to watched';
   }
-}
+}}
 
 // ============================================================
 
-    const closeBtn = document.querySelector('.modal-close-btn');
-    closeBtn.addEventListener('click', onClickBtnClose);
-    window.addEventListener('keydown', closeModalHandler);
-
-    function closeModalHandler(e) {
-      if (e.code === 'Escape') {
-        modal.close();
-        window.removeEventListener('keydown', closeModalHandler);
-      }
-    }
-    function onClickBtnClose(e) {
-      modal.close();
-      window.removeEventListener('keydown', closeModalHandler);
-    }
    
-    const btnWatchedAdd = document.querySelector('.js-btnWatchedAdd');
-    const btnQueueAdd = document.querySelector('.js-btnQueueAdd');
-    monitorButtonStatusText();
-    btnQueueAdd.addEventListener('click', controlQueue);
-    btnWatchedAdd.addEventListener('click', controlWatched);
 
-
-
-  });
-}
-   });
-}
