@@ -1,3 +1,5 @@
+
+
 @include for-size(tablet) {
   .main_filmlist {
     display: flex;
@@ -13,10 +15,26 @@
 @include for-size(tablet){
 .filmlist__item {
     margin: 20px;
-    width: 250px
+    width: 260px;
+    cursor: pointer;
   }}
 
-  @include for-size(desktop){
+  .filmlist__item{
+    position: relative;
+  }
 
-
+  .filmlist__img{
+    position: relative;
+  }
+  .filmlist__rate{
+    position: absolute;
+  }
+  .filmlist__date{
+    position: absolute;
+    font-weight: 500;
+   top: 0;
+    
+  }
+  .filmlist__icon{
+    fill: yellow;
   }
