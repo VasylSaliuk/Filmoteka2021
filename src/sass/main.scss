@@ -4,6 +4,7 @@
 
 @import 'normalize.scss';
 @import './utils/fonts';
+@import './utils/visually-hidden.scss';
 @import 'base.scss';
 @import './components/_footer.scss';
 @import './utils/mixin.scss';
@@ -11,3 +12,4 @@
 @import './components/header.scss';
 @import './components/homePage';
 @import './components/modal';
+@import './components/btnUp';
