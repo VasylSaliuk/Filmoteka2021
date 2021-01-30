@@ -51,12 +51,16 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "axios": "^0.21.0",
+    "basiclightbox": "^5.0.4",
     "core-js": "^3.6.5",
     "firebase": "^8.0.0",
     "handlebars": "^4.7.6",
     "html-webpack-partials-plugin": "^0.8.0",
+    "i": "^0.3.6",
     "lodash-es": "^4.17.15",
+    "lodash.throttle": "^4.1.1",
     "normalize.css": "^8.0.1",
+    "npm": "^6.14.11",
     "swiper": "^6.3.5"
   }
 }
