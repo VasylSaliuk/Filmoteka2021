@@ -1,15 +1,21 @@
 import refs from './refs';
 
 console.log(refs.libraryPage);
-
-function activeLibraryPage() {
-  refs.homePage.classList.add('hidden');
-  refs.libraryPage.classList.remove('hidden');
-}
+refs.linkHomePage.classList.add('isActive');
+refs.libraryPage.classList.add('hidden');
 
 function activeHomePage() {
   refs.homePage.classList.remove('hidden');
   refs.libraryPage.classList.add('hidden');
+  refs.linkHomePage.classList.add('isActive');
+  refs.linkLibrary.classList.remove('isActive');
+}
+
+function activeLibraryPage() {
+  refs.homePage.classList.add('hidden');
+  refs.libraryPage.classList.remove('hidden');
+  refs.linkLibrary.classList.add('isActive');
+  refs.linkHomePage.classList.remove('isActive');
 }
 
 refs.linkHomePage.addEventListener('click', activeHomePage);
