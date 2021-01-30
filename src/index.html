@@ -12,6 +12,7 @@
   <!-- endinject -->
 </head>
 
+<<<<<<< HEAD
 <body>
   <!-- inject:header -->
   <header id="home">
@@ -65,7 +66,64 @@
 
   <!-- inject:main -->
   
+=======
+ <body>
+    <!-- inject:header -->
+    <header>
+      <div class="container">
+        <nav class="navigation">
+          <div class="navigation-box">
+            <a href="#" class="logo">
+              <svg class="logo-icon" width="24" height="24">
+                <use href="./images/film-1.svg#film"></use>
+              </svg>
+              <span class="logo-name">Filmoteka</span>
+            </a>
+            <ul class="navigation-main">
+              <li class="home-link item">
+                <a class="navItem-text js-link-homepage" href="#">HOME</a>
+              </li>
+              <li class="library-link item">
+                <a class="navItem-text js-link-library" href="#">MY LIBRARY</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+>>>>>>> da46e52b4c030c0454c94efe14786e152ad23988
   <!-- endinject -->
+
+    <!-- inject:main -->
+    <main>
+      <section class="main_section js-home-section">
+        <div class="home_page_search">
+          <form class="search-form">
+            <button type="submit" class="search-form-btn">
+              <svg class="search-icon" width="12" height="12">
+                <use href="./images/loupe.svg#loupe"></use>
+              </svg>
+            </button>
+            <input
+              type="text"
+              class="input"
+              name="query"
+              placeholder="Write movie name and click Enter"
+            />
+          </form>
+        </div>
+        <div class="container">
+          <ul class="main_filmlist"></ul>
+        </div>
+      </section>
+      <section class="library_section js-library-section">
+        <div>
+          <button type="button" class="library-button">Watched</button>
+          <button type="button" class="library-button">Queue</button>
+        </div>
+      </section>
+    </main>
+    <!-- endinject -->
 
   <!-- inject:footer -->
   <footer class="footer" id="footer">
@@ -76,7 +134,6 @@
         <i class="material-icons material-icons-white scroll-up">keyboard_arrow_up</i>
         <!-- </a> -->
       </div>
-
     </div>
   </footer>
   <!-- endinject -->
@@ -84,6 +141,13 @@
   <!-- Сюда будет всталена ссылка на файл скриптов -->
   <!-- inject:js -->
   <!-- endinject -->
+
+  
+<div class="up-btn-wrapper visuallyhidden" data-up-btn>
+  <svg class="up-btn__icon">
+    <use href="./images/sprite.svg#up"></use>
+  </svg>
+</div>
 </body>
 
 </html>
