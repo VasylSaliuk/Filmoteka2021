@@ -31,36 +31,10 @@
           </ul>
         </div>
       </nav>
-      
-      <div>
-        <button type="button" class="library-button">Watched</button>
-        <button type="button" class="library-button">Queue</button>
-      </div>
-    </div>
-  </header>
-  <!-- endinject -->
 
-  <!-- inject:main -->
-  <main>
-  <section class="main_section">
-    <div class="container">
-      <form class="search-form">
-        <button type="submit" class="search-form-btn">
-          <svg class="search-icon" width="12" height="12">
-            <use href="./images/loupe.svg#loupe"></use>
-          </svg>
-        </button>
-        <input type="text" class="input" name="query" placeholder="Write movie name and click Enter" />
-      </form>
-<<<<<<< HEAD
       <div>
         <button type="button" class="library-button">Watched</button>
         <button type="button" class="library-button">Queue</button>
-      </div>
-      <p>Нижні кнопки для відладки логіки на вікно "Детейлз"</p>
-      <div>
-        <button type="button" class="library-button js-btnWatchedAdd">Add to watched</button>
-        <button type="button" class="library-button js-btnQueueAdd">Add to queue</button>
       </div>
     </div>
   </header>
@@ -70,46 +44,63 @@
   <main>
     <section class="main_section">
       <div class="container">
-        <ul class="main_filmlist">
-
-        </ul>
+        <form class="search-form">
+          <button type="submit" class="search-form-btn">
+            <svg class="search-icon" width="12" height="12">
+              <use href="./images/loupe.svg#loupe"></use>
+            </svg>
+          </button>
+          <input type="text" class="input" name="query" placeholder="Write movie name and click Enter" />
+        </form>
+        <div>
+          <button type="button" class="library-button">Watched</button>
+          <button type="button" class="library-button">Queue</button>
+        </div>
+        <!-- <p>Нижні кнопки для відладки логіки на вікно "Детейлз"</p>
+        <div>
+          <button type="button" class="library-button js-btnWatchedAdd">Add to watched</button>
+          <button type="button" class="library-button js-btnQueueAdd">Add to queue</button>
+        </div> -->
       </div>
-    </section>
-  </main>
-=======
-      <ul class="main_filmlist" >
-       
-      </ul>
-    </div>
-  </section>
-</main>
->>>>>>> f7a84796c8cb22e2768c45fbc2ea9a60f19cf043
-  <!-- endinject -->
+      </header>
+      <!-- endinject -->
 
-  <!-- inject:footer -->
-  <footer class="footer" id="footer">
-    <div class="container">
-      <div class="footer-copyright">
-        <a class="footer-text" href="#">MADE by ©DreamTeam</a>
-        <!-- <a href="#" class="scroll-up"> -->
-        <i class="material-icons material-icons-white scroll-up">keyboard_arrow_up</i>
-        <!-- </a> -->
+      <!-- inject:main -->
+      <main>
+        <section class="main_section">
+          <div class="container">
+            <ul class="main_filmlist">
+
+            </ul>
+          </div>
+        </section>
+      </main>
+      <!-- endinject -->
+
+      <!-- inject:footer -->
+      <footer class="footer" id="footer">
+        <div class="container">
+          <div class="footer-copyright">
+            <a class="footer-text" href="#">MADE by ©DreamTeam</a>
+            <!-- <a href="#" class="scroll-up"> -->
+            <i class="material-icons material-icons-white scroll-up">keyboard_arrow_up</i>
+            <!-- </a> -->
+          </div>
+
+        </div>
+      </footer>
+      <!-- endinject -->
+
+      <!-- Сюда будет всталена ссылка на файл скриптов -->
+      <!-- inject:js -->
+      <!-- endinject -->
+
+
+      <div class="up-btn-wrapper visuallyhidden" data-up-btn>
+        <svg class="up-btn__icon">
+          <use href="./images/sprite.svg#up"></use>
+        </svg>
       </div>
-
-    </div>
-  </footer>
-  <!-- endinject -->
-
-  <!-- Сюда будет всталена ссылка на файл скриптов -->
-  <!-- inject:js -->
-  <!-- endinject -->
-
-  
-<div class="up-btn-wrapper visuallyhidden" data-up-btn>
-  <svg class="up-btn__icon">
-    <use href="./images/sprite.svg#up"></use>
-  </svg>
-</div>
 </body>
 
 </html>
