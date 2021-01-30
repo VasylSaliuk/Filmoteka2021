@@ -142,3 +142,17 @@ function monitorButtonStatusText() {
 
    
 
+// const closeBtn = document.querySelector('.modal-close-btn');
+// closeBtn.addEventListener('click', onClickBtnClose);
+// window.addEventListener('keydown', closeModalHandler);
+
+// function closeModalHandler(e) {
+//   if (e.code === 'Escape') {
+//     modal.close();
+//     window.removeEventListener('keydown', closeModalHandler);
+//   }
+// }
+// function onClickBtnClose(e) {
+//   modal.close();
+//   window.removeEventListener('keydown', closeModalHandler);
+// }
