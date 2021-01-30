@@ -1,8 +1,7 @@
 header {
-  padding-top: 45px;
-  padding-bottom: 70px;
-  box-shadow: 0px 13px 23px -13px rgba(0, 0, 0, 0.41);
-  background-image: linear-gradient(to bottom, #77c1bb 45%, #ffffff 45%);
+  padding: 15px 0;
+
+  background-color: #77c1bb;
 }
 
 .navigation-box {
@@ -19,6 +18,9 @@ header {
 .search-form {
   position: relative;
   text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: 300px;
 }
 .search-form-btn {
   background-color: initial;
@@ -42,6 +44,10 @@ header {
   }
 }
 
+.home_page_search {
+  margin: 20px auto 30px;
+  box-shadow: 0px 13px 23px -13px rgba(0, 0, 0, 0.41);
+}
 .home-link {
   margin-right: 35px;
   // font-size: 14px;
@@ -58,9 +64,9 @@ header {
   font-weight: 700;
   color: rgba(55, 44, 72, 0.702);
 }
-.search-form {
-  margin-top: 35px;
-}
+// .search-form {
+//   // box-shadow: 0px 13px 23px -13px rgba(0, 0, 0, 0.41);
+// }
 .library-button {
   width: 140px;
   height: 40px;
@@ -77,11 +83,10 @@ header {
   .logo {
     display: flex;
   }
-  .search-form {
-    width: 340px;
-    margin-right: auto;
-    margin-left: auto;
-  }
+  // .search-form {
+  //   margin-right: auto;
+  //   margin-left: auto;
+  // }
   .logo-name {
     font-size: 20px;
     font-weight: 700;
@@ -90,8 +95,8 @@ header {
 }
 
 // desktop-------
-@include for-size(desktop) {
-  header {
-    padding-bottom: 90px;
-  }
-}
+// @include for-size(desktop) {
+//   header {
+//     padding-bottom: 90px;
+//   }
+// }

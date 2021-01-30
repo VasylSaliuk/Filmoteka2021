@@ -7,9 +7,11 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 const filmItem = document.querySelector('.main_filmlist');
 
 filmItem.addEventListener('click', onClickFilm);
+
 function onClickFilm(e) {
   console.dir(e.target.id);
   //   let selectFilm = e.target;
+
   const filmId = e.target.id;
   console.log(api.fetchMovieInfo(filmId));
   api.fetchMovieInfo(filmId).then(data => {
@@ -113,3 +115,20 @@ function monitorButtonStatusText() {
 }
 
 // ============================================================
+
+    const closeBtn = document.querySelector('.modal-close-btn');
+    closeBtn.addEventListener('click', onClickBtnClose);
+    window.addEventListener('keydown', closeModalHandler);
+
+    function closeModalHandler(e) {
+      if (e.code === 'Escape') {
+        modal.close();
+        window.removeEventListener('keydown', closeModalHandler);
+      }
+    }
+    function onClickBtnClose(e) {
+      modal.close();
+      window.removeEventListener('keydown', closeModalHandler);
+    }
+   });
+}
