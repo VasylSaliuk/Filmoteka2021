@@ -32,7 +32,11 @@ function onClickFilm(e) {
       window.removeEventListener('keydown', closeModalHandler);
     }
    
-
+    const btnWatchedAdd = document.querySelector('.js-btnWatchedAdd');
+    const btnQueueAdd = document.querySelector('.js-btnQueueAdd');
+    monitorButtonStatusText();
+    btnQueueAdd.addEventListener('click', controlQueue);
+    btnWatchedAdd.addEventListener('click', controlWatched);
 
 
 
