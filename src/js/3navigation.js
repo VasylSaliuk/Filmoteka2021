@@ -22,7 +22,7 @@ function activeLibraryPage() {
 }
 
 let selectFilm;
-function activeHomePage() {
+function activeHomePage1() {
   refs.homePage.classList.remove('hidden');
   refs.libraryPage.classList.add('hidden');
   if (!searchAndPaginationHomePage.inputValue) {
