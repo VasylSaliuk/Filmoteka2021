@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
+    "@pnotify/core": "^5.2.0",
     "axios": "^0.21.0",
     "basiclightbox": "^5.0.4",
     "core-js": "^3.6.5",
