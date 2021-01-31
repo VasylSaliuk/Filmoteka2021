@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = require('../utils/paths');
+// const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 module.exports = env => ({
   devtool: 'cheap-eval-source-map',
@@ -22,6 +23,9 @@ module.exports = env => ({
     new HtmlWebpackPlugin({
       template: './index.html',
     }),
+    // new HtmlWebpackPartialsPlugin({
+    //   path: './src/html/body.html',
+    // }),
   ],
   devServer: {
     contentBase: paths.BUILD_DIR,
