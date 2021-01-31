@@ -59,7 +59,7 @@ decrementPage() {
      }
    })
    .then(data => data);
- }
+ },
 
   fetchSearchMovies(query) {
     const url = `${this.baseUrl}search/movie?api_key=${this.key}&language=en-US&page=${this.pageNumber}&query=${query}`;
@@ -68,7 +68,7 @@ decrementPage() {
       .then(({ results }) => {
         return results;
       });
-  },
+  }
 };
 console.log(api.fetchTrendFilms());
 function renderFilm(arr) {
