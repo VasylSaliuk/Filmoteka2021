@@ -68,7 +68,7 @@ decrementPage() {
       .then(({ results }) => {
         return results;
       });
-  },
+  }
 };
 console.log(api.fetchTrendFilms());
 function renderFilm(arr) {
