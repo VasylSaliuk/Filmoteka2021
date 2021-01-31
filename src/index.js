@@ -5,5 +5,7 @@ import './js/2searchAndPlaginationHomePage.js';
 import './js/3navigation.js';
 import './js/4filmDeteilsPage.js';
 import './js/5libraryPage.js';
+import '../node_modules/basiclightbox/dist/basicLightbox.min.css';
 import './js/slider.js';
+import './js/trailers';
 import './js/notification.js';
