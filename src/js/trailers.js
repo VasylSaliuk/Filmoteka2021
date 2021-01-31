@@ -10,15 +10,14 @@ function createTrailerLink(elementRef) {
   );
 
   function drawModalForTrailler(id) {
-    const ApiKey = '0758483bbf141f2377e75ad4723d5ab5';
+    const ApiKey = '0f42664b7f6700c34263c8262c49b65b';
     const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${ApiKey}&language=en-US`;
     fetch(url)
       .then(response => response.json())
       .then(data => {
         const id = data.results[0].key;
         const instance = basicLightbox.create(`
-  <iframe width="560" height="315" src='https://www.youtube.com/embed/${id}'frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-`);
+  <iframe width="560" height="315" src='https://www.youtube.com/embed/${id}'frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
         instance.show();
         modalClBtTrailer(instance);
       })
@@ -39,13 +38,10 @@ function createTrailerLink(elementRef) {
       `<button
         type="button"
         class="lightbox__button"
-        data-action="close-lightbox"
-        ></button>
-    `,
+        data-action="close-lightbox">
+      </button>`,
     );
-    const modalCloseBtn = document.querySelector(
-      '[data-action="close-lightbox"]',
-    );
+    const modalCloseBtn = document.querySelector('[data-action="close-lightbox"]');
     modalCloseBtn.addEventListener('click', () => instance.close());
   }
 }
