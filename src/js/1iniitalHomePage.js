@@ -1,6 +1,6 @@
 'use strict';
 import trendFilmTemplate from '../templates/homePage.hbs';
-import refs from './refs';
+import refs from './refs.js';
 
 const filmList = document.querySelector('.main_filmlist');
 const api = {
@@ -70,6 +70,7 @@ decrementPage() {
       });
   }
 };
+
 console.log(api.fetchTrendFilms());
 function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
@@ -78,15 +79,12 @@ function renderFilm(arr) {
 
 document.addEventListener('DOMContentLoaded', homePageRender);
 
-
 function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
 }
 
 const searchForm=document.querySelector('.search-form')
 searchForm.addEventListener('submit', onSearchQuery)
-
-
 
 function onSearchQuery(e){
   e.preventDefault();
