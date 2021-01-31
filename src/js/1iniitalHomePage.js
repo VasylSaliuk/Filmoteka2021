@@ -1,6 +1,6 @@
 'use strict';
 import trendFilmTemplate from '../templates/homePage.hbs';
-
+import refs from './refs';
 
 const filmList = document.querySelector('.main_filmlist');
 const api = {
@@ -70,7 +70,7 @@ const api = {
       .then(({ results }) => {
         return results;
       });
-  },
+  }
 };
 
 console.log(api.fetchTrendFilms());
@@ -81,12 +81,15 @@ function renderFilm(arr) {
 
 document.addEventListener('DOMContentLoaded', homePageRender);
 
+
 function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
 }
 
 const searchForm=document.querySelector('.search-form')
 searchForm.addEventListener('submit', onSearchQuery)
+
+
 
 function onSearchQuery(e){
   e.preventDefault();
@@ -97,7 +100,8 @@ function onSearchQuery(e){
   filmList.innerHTML = '';
   console.log(api.fetchSearchMovies(queryValue))
   api.fetchSearchMovies(queryValue).then(renderFilm)
-
+  refs.linkLogo.addEventListener('click', homePageRender)
+  refs.homePage1.addEventListener('click', homePageRender)
 };
 
 // function addCardFunc(imgPath, filmTitle, movieId) {
