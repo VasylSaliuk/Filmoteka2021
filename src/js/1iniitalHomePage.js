@@ -29,23 +29,25 @@ const api = {
   updateURL() {
     this.newUrl = new URL(`http://localhost:4040/?page=${this.pageNumber}`);
   return this.newUrl;
-},
+  },
 
-resetPage() {
-  this.pageNumber = 1;
-  this.updateURL();
-  console.log(this.newUrl);
-},
-incrementPage() {
-  this.pageNumber += 1;
-  this.updateURL();
-  console.log(this.newUrl);
-},
-decrementPage() {
-  if (this.pageNumber === 1) return;
-  this.pageNumber -= 1;
-  this.updateURL();
-},
+  resetPage() {
+    this.pageNumber = 1;
+    this.updateURL();
+    console.log(this.newUrl);
+  },
+
+  incrementPage() {
+    this.pageNumber += 1;
+    this.updateURL();
+    console.log(this.newUrl);
+  },
+
+  decrementPage() {
+    if (this.pageNumber === 1) return;
+    this.pageNumber -= 1;
+    this.updateURL();
+  },
 
  fetchMovieInfo(id){
    const url= this.baseUrl+
