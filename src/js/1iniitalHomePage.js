@@ -1,6 +1,6 @@
 'use strict';
 import trendFilmTemplate from '../templates/homePage.hbs';
-import refs from './refs';
+import refs from './refs.js';
 
 const filmList = document.querySelector('.main_filmlist');
 const api = {
@@ -29,23 +29,25 @@ const api = {
   updateURL() {
     this.newUrl = new URL(`http://localhost:4040/?page=${this.pageNumber}`);
   return this.newUrl;
-},
+  },
 
-resetPage() {
-  this.pageNumber = 1;
-  this.updateURL();
-  console.log(this.newUrl);
-},
-incrementPage() {
-  this.pageNumber += 1;
-  this.updateURL();
-  console.log(this.newUrl);
-},
-decrementPage() {
-  if (this.pageNumber === 1) return;
-  this.pageNumber -= 1;
-  this.updateURL();
-},
+  resetPage() {
+    this.pageNumber = 1;
+    this.updateURL();
+    console.log(this.newUrl);
+  },
+
+  incrementPage() {
+    this.pageNumber += 1;
+    this.updateURL();
+    console.log(this.newUrl);
+  },
+
+  decrementPage() {
+    if (this.pageNumber === 1) return;
+    this.pageNumber -= 1;
+    this.updateURL();
+  },
 
  fetchMovieInfo(id){
    const url= this.baseUrl+
@@ -70,6 +72,7 @@ decrementPage() {
       });
   }
 };
+
 console.log(api.fetchTrendFilms());
 function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
@@ -78,15 +81,12 @@ function renderFilm(arr) {
 
 document.addEventListener('DOMContentLoaded', homePageRender);
 
-
 function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
 }
 
 const searchForm=document.querySelector('.search-form')
 searchForm.addEventListener('submit', onSearchQuery)
-
-
 
 function onSearchQuery(e){
   e.preventDefault();

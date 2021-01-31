@@ -11,7 +11,7 @@ const apiKey = '0758483bbf141f2377e75ad4723d5ab5';
 export default {
     fetchSearchMoviesList() {
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en&query=${this.inputValue}&page=${this.pageNumber}`;
-  
+
     return fetch(url)
       .then(response => response.json())
       .then(({ results, total_pages }) => {
@@ -32,7 +32,7 @@ export default {
         }
         return results;
       })
-    .catch(error => myError(error));
+      .catch(error => myError(error));
     },
     updateURL() {
         this.newUrl = new URL(`http://localhost:4040/?query=${this.inputValue}&page=${this.pageNumber}`);
@@ -67,7 +67,7 @@ export default {
     fetchPopularMoviesList.incrementPage();
     navigationPages.createPopularMovieList();
   };
-  
+
   export function prevBtnHandler() {
     fetchPopularMoviesList.decrementPage();
     navigationPages.createPopularMovieList();
@@ -77,7 +77,7 @@ export default {
     searchAndPaginationHomePage.incrementPage();
     navigationPages.activeHomePage();
   };
-  
+
   export function prevHomeBtnHandler() {
     searchAndPaginationHomePage.decrementPage();
     navigationPages.activeHomePage();
