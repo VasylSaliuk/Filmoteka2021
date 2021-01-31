@@ -1,6 +1,6 @@
 'use strict';
 import trendFilmTemplate from '../templates/homePage.hbs';
-
+import refs from './refs.js';
 
 const filmList = document.querySelector('.main_filmlist');
 const api = {
@@ -59,7 +59,7 @@ decrementPage() {
      }
    })
    .then(data => data);
- }
+ },
 
   fetchSearchMovies(query) {
     const url = `${this.baseUrl}search/movie?api_key=${this.key}&language=en-US&page=${this.pageNumber}&query=${query}`;
@@ -68,8 +68,9 @@ decrementPage() {
       .then(({ results }) => {
         return results;
       });
-  },
+  }
 };
+
 console.log(api.fetchTrendFilms());
 function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
@@ -94,7 +95,8 @@ function onSearchQuery(e){
   filmList.innerHTML = '';
   console.log(api.fetchSearchMovies(queryValue))
   api.fetchSearchMovies(queryValue).then(renderFilm)
-
+  refs.linkLogo.addEventListener('click', homePageRender)
+  refs.homePage1.addEventListener('click', homePageRender)
 };
 
 // function addCardFunc(imgPath, filmTitle, movieId) {

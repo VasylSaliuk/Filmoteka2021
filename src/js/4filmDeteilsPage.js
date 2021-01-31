@@ -1,5 +1,5 @@
 import './1iniitalHomePage.js';
-import api from './1iniitalHomePage';
+import api from './1iniitalHomePage.js';
 import filmCard from '../templates/filmCard.hbs';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
@@ -29,6 +29,7 @@ function onClickFilm(e) {
         window.removeEventListener('keydown', closeModalHandler);
       }
     }
+
     function onClickBtnClose(e) {
       modal.close();
       window.removeEventListener('keydown', closeModalHandler);
@@ -36,10 +37,10 @@ function onClickFilm(e) {
 
     const btnWatchedAdd = document.querySelector('.js-btnWatchedAdd');
     const btnQueueAdd = document.querySelector('.js-btnQueueAdd');
-
+    monitorButtonStatusText();
     btnQueueAdd.addEventListener('click', controlQueue);
     btnWatchedAdd.addEventListener('click', controlWatched);
-    
+
     function controlQueue() {
       console.log('+');
       let filmsQueueArr = [];
@@ -72,6 +73,7 @@ function onClickFilm(e) {
       localStorage.setItem('filmsWatched', JSON.stringify(filmsWatchedArr));
       monitorButtonStatusText();
     }
+    
     function monitorButtonStatusText() {
       let filmsQueueArr = [];
       let localStorageData = localStorage.getItem('filmsQueue');
@@ -94,8 +96,5 @@ function onClickFilm(e) {
         btnWatchedAdd.textContent = 'Add to watched';
       }
     }
-
-
-  });}
-
-  
+  });
+}

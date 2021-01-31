@@ -26,7 +26,8 @@
 //     margin-left: auto;
 // }
 .modal-close-btn {
-  display: none;
+  // display: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 767px) {
