@@ -73,7 +73,7 @@ const api = {
   }
 };
 
-console.log(api.fetchTrendFilms());
+
 function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
   filmList.innerHTML= markup;
@@ -83,18 +83,21 @@ document.addEventListener('DOMContentLoaded', homePageRender);
 
 function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
+  
 }
 
 const searchForm=document.querySelector('.search-form')
 searchForm.addEventListener('submit', onSearchQuery)
+searchForm.addEventListener('click', homePageRender)
 
 function onSearchQuery(e){
   e.preventDefault();
   let queryValue=e.target.elements.query.value;
   if (queryValue === '') {
-    return;
+    
+    return ;
   }
-  filmList.innerHTML = '';
+
   console.log(api.fetchSearchMovies(queryValue))
   api.fetchSearchMovies(queryValue).then(renderFilm)
   refs.linkLogo.addEventListener('click', homePageRender)
