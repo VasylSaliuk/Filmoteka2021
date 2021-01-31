@@ -4,10 +4,23 @@ import { nextBtnHandler, prevBtnHandler, nextHomeBtnHandler, prevHomeBtnHandler 
 import { myAlert } from './notification'
 console.log(refs.libraryPage);
 
+refs.linkHomePage.classList.add('isActive');
+refs.libraryPage.classList.add('hidden');
+
+function activeHomePage() {
+  refs.homePage.classList.remove('hidden');
+  refs.libraryPage.classList.add('hidden');
+  refs.linkHomePage.classList.add('isActive');
+  refs.linkLibrary.classList.remove('isActive');
+}
+
 function activeLibraryPage() {
   refs.homePage.classList.add('hidden');
   refs.libraryPage.classList.remove('hidden');
+  refs.linkLibrary.classList.add('isActive');
+  refs.linkHomePage.classList.remove('isActive');
 }
+
 let selectFilm;
 function activeHomePage() {
   refs.homePage.classList.remove('hidden');
@@ -26,19 +39,22 @@ function activeHomePage() {
     refs.prevBtn.classList.add('is-hidden');
   };
 
-
   function cleanPopularPage() {
     refs.popularPage.innerHTML = '';
   }
+  
   function cleanHomePage() {
     refs.moviesContainer.innerHTML = '';
   }
+  
   function cleanDetailsPage() {
     refs.detailsPage.innerHTML = '';
   }
+  
   function cleanLibraryPage() {
     refs.libraryPage.innerHTML = '';
   }
+  
   function activeMainPage() {
     refs.homePage.classList.remove('is-hidden');
     refs.searchForm.classList.remove('is-hidden');
