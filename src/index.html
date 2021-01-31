@@ -84,15 +84,16 @@
 
     <!-- inject:main -->
     <main>
-      <section class="main_section js-home-section">
+      <section class="main_section js-home-section" id="homePage_show">
         <div class="home_page_search">
-          <form class="search-form">
-            <button type="submit" class="search-form-btn">
+          <form class="search-form" id="homePage__search" action="">
+            <!-- <button type="submit" class="search-form-btn">
               <svg class="search-icon" width="12" height="12">
                 <use href="./images/loupe.svg#loupe"></use>
               </svg>
-            </button>
+            </button> -->
             <input
+              id="homePage__search-input"
               type="text"
               class="input"
               name="query"
@@ -101,9 +102,19 @@
           </form>
         </div>
         <div class="container">
-          <ul class="main_filmlist"></ul>
+          <section id="homePage">
+            <ul class="main_filmlist"></ul>
+            <ul class="popular-movie-list"></ul>
+            <div class="btn-container">
+            <button class="btn-prev btn-prev-home" type="button" data-action="prev">Prev</button>
+            <button class="btn-number" type="button">1</button>
+            <button class="btn-next btn-next-home" type="button" data-action="next">Next</button>
+            </div>
+          </section>
         </div>
+        
       </section>
+      <section id="detailsPage"></section>
       <section class="library_section js-library-section">
         <div class="container">
           <div>
@@ -124,6 +135,7 @@
       </div> -->
     </main>
     <!-- endinject -->
+    <!-- inject:pagination -->
 
     <!-- inject:footer -->
     <footer class="footer" id="footer">
@@ -143,7 +155,7 @@
     <!-- inject:js -->
     <!-- endinject -->
 
-    <div class="up-btn-wrapper visuallyhidden" data-up-btn>
+    <div class="up-btn-wrapper visuallyhidn" data-up-btn>
       <svg class="up-btn__icon">
         <use href="./images/sprite.svg#up"></use>
       </svg>
