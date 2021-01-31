@@ -1,18 +1,18 @@
 import refs from './refs';
 import searchAndPaginationHomePage from './2searchAndPlaginationHomePage';
 import { nextBtnHandler, prevBtnHandler, nextHomeBtnHandler, prevHomeBtnHandler } from './2searchAndPlaginationHomePage.js';
-import { myAlert } from './notification'
+import { myAlert } from './notification';
 console.log(refs.libraryPage);
 
 refs.linkHomePage.classList.add('isActive');
 refs.libraryPage.classList.add('hidden');
 
-function activeHomePage() {
-  refs.homePage.classList.remove('hidden');
-  refs.libraryPage.classList.add('hidden');
-  refs.linkHomePage.classList.add('isActive');
-  refs.linkLibrary.classList.remove('isActive');
-}
+// function activeHomePage() {
+//   refs.homePage.classList.remove('hidden');
+//   refs.libraryPage.classList.add('hidden');
+//   refs.linkHomePage.classList.add('isActive');
+//   refs.linkLibrary.classList.remove('isActive');
+// }
 
 function activeLibraryPage() {
   refs.homePage.classList.add('hidden');
@@ -22,9 +22,11 @@ function activeLibraryPage() {
 }
 
 let selectFilm;
-function activeHomePage() {
+function activeHomePage1() {
   refs.homePage.classList.remove('hidden');
   refs.libraryPage.classList.add('hidden');
+  refs.linkHomePage.classList.add('isActive');
+  refs.linkLibrary.classList.remove('isActive');
   if (!searchAndPaginationHomePage.inputValue) {
     return createPopularMovieList(),
     myAlert();
