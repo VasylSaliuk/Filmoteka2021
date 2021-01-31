@@ -1,7 +1,7 @@
 'use strict';
 import trendFilmTemplate from '../templates/homePage.hbs';
 const filmList = document.querySelector('.main_filmlist');
- const api = {
+const api = {
   key: '0758483bbf141f2377e75ad4723d5ab5',
   baseUrl: 'https://api.themoviedb.org/3/',
   options: 'movie/popular?',
@@ -22,23 +22,20 @@ const filmList = document.querySelector('.main_filmlist');
       .then(data => data.results);
   },
 
- fetchMovieInfo(id){
-   const url= this.baseUrl+
-   `movie/${id}?api_key=${this.key}`
-   return fetch(url)
-   .then(response => {
-     if (response.ok) {
-       return response.json();
-     } else {
-       return Promise.reject();
-     }
-   })
-   .then(data => data);
- }
-
-
+  fetchMovieInfo(id) {
+    const url = this.baseUrl + `movie/${id}?api_key=${this.key}`;
+    return fetch(url)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return Promise.reject();
+        }
+      })
+      .then(data => data);
+  },
 };
-console.log(api.fetchTrendFilms())
+console.log(api.fetchTrendFilms());
 function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
 
@@ -50,4 +47,4 @@ document.addEventListener('DOMContentLoaded', homePageRender);
 function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
 }
-export default api
+export default api;

@@ -4,4 +4,7 @@ export default {
   homePage: document.querySelector('.js-home-section'),
   libraryPage: document.querySelector('.js-library-section'),
   linkLogo: document.querySelector('.logo'),
+  libraryFilmList: document.querySelector('.js-library-filmlist'),
+  watchedBtnLib: document.querySelector('.js-watchedBtnLib'),
+  queueBtnLib: document.querySelector('.js-queueBtnLib'),
 };

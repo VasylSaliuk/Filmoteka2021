@@ -1,40 +1,37 @@
-
-
 @include for-size(tablet) {
-  .main_filmlist {
+  .main_filmlist,
+  .libraryPage_list {
     display: flex;
 
     flex-wrap: wrap;
     margin: -10px;
     justify-content: center;
-    
   }
- 
 }
 
-@include for-size(tablet){
-.filmlist__item {
+@include for-size(tablet) {
+  .filmlist__item {
     margin: 20px;
     width: 260px;
     cursor: pointer;
-  }}
+  }
+}
 
-  .filmlist__item{
-    position: relative;
-  }
+.filmlist__item {
+  position: relative;
+}
 
-  .filmlist__img{
-    position: relative;
-  }
-  .filmlist__rate{
-    position: absolute;
-  }
-  .filmlist__date{
-    position: absolute;
-    font-weight: 500;
-   top: 0;
-    
-  }
-  .filmlist__icon{
-    fill: yellow;
-  }
+.filmlist__img {
+  position: relative;
+}
+.filmlist__rate {
+  position: absolute;
+}
+.filmlist__date {
+  position: absolute;
+  font-weight: 500;
+  top: 0;
+}
+.filmlist__icon {
+  fill: yellow;
+}
