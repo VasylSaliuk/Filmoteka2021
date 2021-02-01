@@ -148,7 +148,7 @@ refs.prevBtn.addEventListener('click',prevBtnHandler);
   refs.pageBtn.textContent= counterValue+1
 };
 
-export function prevBtnHandler() {
+function prevBtnHandler() {
   api.decrementPage();
   homePageRender() 
   let counterValue1=Number(refs.pageBtn.textContent)
