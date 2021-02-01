@@ -71,10 +71,12 @@ const api = {
 
 function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
-  filmList.innerHTML = markup;
-}
+  filmList.innerHTML = markup;}
+  
 
 document.addEventListener('DOMContentLoaded', homePageRender);
+refs.linkLogo.addEventListener('click', homePageRender);
+refs.homePage1.addEventListener('click', homePageRender);
 
 function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
@@ -82,7 +84,7 @@ function homePageRender() {
 
 const searchForm = document.querySelector('.search-form');
 searchForm.addEventListener('submit', onSearchQuery);
-searchForm.addEventListener('click', (e)=>e.target.value='');
+
 
 function onSearchQuery(e) {
   e.preventDefault();
@@ -91,11 +93,10 @@ function onSearchQuery(e) {
     return;
   }
 
-  console.log(api.fetchSearchMovies(queryValue));
   api.fetchSearchMovies(queryValue).then(renderFilm);
-  refs.linkLogo.addEventListener('click', homePageRender);
-  refs.homePage1.addEventListener('click', homePageRender);
+  refs.inputForm.value=''
 }
+  
 
 // function addCardFunc(imgPath, filmTitle, movieId) {
 //   const fragment = document.createDocumentFragment();
