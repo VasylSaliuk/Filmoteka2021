@@ -96,11 +96,6 @@ function onClickFilm(e) {
         btnWatchedAdd.textContent = 'Add to watched';
       }
     }
-<<<<<<< HEAD
 
 
   });}
-=======
-  });
-}
->>>>>>> a2e47c2641ebf17879f8ffeccb60219f6744c6d9
