@@ -149,3 +149,7 @@ export default api;
 //   return fragment;
 //   // создаёт li согласно макета и вешает на неё слушателем функцию ActiveDetailsPage(movieId, itsLibraryFilm = false)
 // }
+
+// Очистка локалсторедж по ключу Watched
+// let filmsQueueArr = [];
+//       localStorage.setItem('filmsWatched', JSON.stringify(filmsQueueArr));
