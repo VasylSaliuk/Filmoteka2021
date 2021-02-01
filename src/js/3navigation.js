@@ -16,9 +16,8 @@ import { onClickFilm } from './4filmDeteilsPage';
 // import { myAlert } from './notification'
 // console.log(refs.libraryPage);
 
-export let selectFilm = {
-  id : 1,
-};
+refs.linkHomePage.classList.add('isActive');
+refs.libraryPage.classList.add('hidden');
 
 function activeHomePage() {
   refs.homePage.classList.remove('hidden');
@@ -154,6 +153,10 @@ scrollUpFooter.addEventListener('click', scrollToHome);
 //   refs.prevHomeBtn.addEventListener('click', prevHomeBtnHandler);
 // }
 
+// pagination.removeEventListener('click', plagNavigation);
+// pageNumber = 1;
+// resetPlagination();
+// fetchTrendFilms(pageNumber);
 
 // pagination.addEventListener('click', plagNavigation);
 // form.addEventListener('submit', searchFilms);
@@ -192,9 +195,9 @@ scrollUpFooter.addEventListener('click', scrollToHome);
 
 //  Плавний скролінг на верх домашньої сторінки при натисканні кнопки в футері
 
-function updateMovieMarkUp(results) {
-  const markUp = fetchMovieTpl(results); 
-  refs.moviesContainer.insertAdjacentHTML('beforeend', markUp);
-}
+// const scrollUpId = document
+//   .querySelector('.scroll-up')
+//   .addEventListener('click', scrollToHome);
+
 // =============================================================================
 // export default {createPopularMovieList, activeHomePage, activeLibraryPage}

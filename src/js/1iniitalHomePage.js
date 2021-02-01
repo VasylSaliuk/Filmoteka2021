@@ -15,12 +15,14 @@ const api = {
   fetchTrendFilms() {
     const url = this.baseUrl + this.options + `api_key=${this.key}&language=en-US&page=${this.pageNumber}`;
     return fetch(url)
-    .then(response => response.json())
-    .then(({ results }) => {
-      return results;    
-  })
-  .catch(error => myError(error));
-  
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return Promise.reject();
+        }
+      })
+      .then(data => data.results);
   },
 
   fetchMovieInfo(id) {
