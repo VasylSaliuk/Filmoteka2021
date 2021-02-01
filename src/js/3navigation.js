@@ -21,23 +21,23 @@ function activeLibraryPage() {
   refs.linkHomePage.classList.remove('isActive');
 }
 
-let selectFilm;
-function activeHomePage1() {
-  refs.homePage.classList.remove('hidden');
-  refs.libraryPage.classList.add('hidden');
-  if (!searchAndPaginationHomePage.inputValue) {
-    return createPopularMovieList(),
-    myAlert();
-  };
-  searchAndPaginationHomePage.fetchSearchMoviesList()
-    .then(updateMovieMarkUp)
-  refs.pageBtn.textContent = searchAndPaginationHomePage.pageNumber;
-  if (searchAndPaginationHomePage.pageNumber !== 1) {
-    refs.prevBtn.classList.remove('is-hidden');
-  };
-  if (searchAndPaginationHomePage.pageNumber === 1) {
-    refs.prevBtn.classList.add('is-hidden');
-  };
+// let selectFilm;
+// function activeHomePage1() {
+//   refs.homePage.classList.remove('hidden');
+//   refs.libraryPage.classList.add('hidden');
+//   if (!searchAndPaginationHomePage.inputValue) {
+//     return createPopularMovieList(),
+//     myAlert();
+//   };
+//   searchAndPaginationHomePage.fetchSearchMoviesList()
+//     .then(updateMovieMarkUp)
+//   refs.pageBtn.textContent = searchAndPaginationHomePage.pageNumber;
+//   if (searchAndPaginationHomePage.pageNumber !== 1) {
+//     refs.prevBtn.classList.remove('is-hidden');
+//   };
+//   if (searchAndPaginationHomePage.pageNumber === 1) {
+//     refs.prevBtn.classList.add('is-hidden');
+//   };
 
   // function cleanPopularPage() {
   //   refs.popularPage.innerHTML = '';
@@ -61,7 +61,7 @@ function activeHomePage1() {
     refs.btnContainer.classList.remove('is-hidden');
     refs.nextBtn.classList.remove('is-hidden');
   }
-}
+// }
 //   function createPopularMovieList() {
 //     activeMainPage();
 //     cleanHomePage();
