@@ -1,7 +1,7 @@
 {{#each this}}
 <li class="filmlist__item">
    
-    <img  id="{{id}}" class="filmlist__img" width='100%'  src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}">
+    <img  id="{{id}}" class="filmlist__img" width='100%'  src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" onerror="this.onerror=null;this.src='https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-';">
      <h2>{{title}}</h2>
      <p class="filmlist__cardtext">
       <span class="filmlist__date">Release date:{{release_date}}</span>  

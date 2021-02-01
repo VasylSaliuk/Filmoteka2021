@@ -11,10 +11,7 @@ const api = {
   inputValue: '',
 
   fetchTrendFilms() {
-    const url =
-      this.baseUrl +
-      this.options +
-      `api_key=${this.key}&language=en-US&page=${this.pageNumber}`;
+    const url = this.baseUrl + this.options + `api_key=${this.key}&language=en-US&page=${this.pageNumber}`;
     return fetch(url)
       .then(response => {
         if (response.ok) {
@@ -28,7 +25,7 @@ const api = {
 
   updateURL() {
     this.newUrl = new URL(`http://localhost:4040/?page=${this.pageNumber}`);
-  return this.newUrl;
+    return this.newUrl;
   },
 
   resetPage() {
@@ -49,19 +46,18 @@ const api = {
     this.updateURL();
   },
 
- fetchMovieInfo(id){
-   const url= this.baseUrl+
-   `movie/${id}?api_key=${this.key}`
-   return fetch(url)
-   .then(response => {
-     if (response.ok) {
-       return response.json();
-     } else {
-       return Promise.reject();
-     }
-   })
-   .then(data => data);
- },
+  fetchMovieInfo(id) {
+    const url = this.baseUrl + `movie/${id}?api_key=${this.key}`;
+    return fetch(url)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return Promise.reject();
+        }
+      })
+      .then(data => data);
+  },
 
   fetchSearchMovies(query) {
     const url = `${this.baseUrl}search/movie?api_key=${this.key}&language=en-US&page=${this.pageNumber}&query=${query}`;
@@ -70,36 +66,45 @@ const api = {
       .then(({ results }) => {
         return results;
       });
-  }
+  },
 };
 
-console.log(api.fetchTrendFilms());
 function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
-  filmList.innerHTML= markup;
-}
+  filmList.innerHTML = markup;}
+  
 
 document.addEventListener('DOMContentLoaded', homePageRender);
+refs.linkLogo.addEventListener('click', homePageReset);
+refs.homePage1.addEventListener('click', homePageReset);
 
-function homePageRender() {
+ function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
+
 }
 
-const searchForm=document.querySelector('.search-form')
-searchForm.addEventListener('submit', onSearchQuery)
+function homePageReset(){
+  api.resetPage(), 
+  homePageRender()
+  refs.pageBtn.textContent=1
+}
 
-function onSearchQuery(e){
+
+const searchForm = document.querySelector('.search-form');
+searchForm.addEventListener('submit', onSearchQuery);
+
+
+function onSearchQuery(e) {
   e.preventDefault();
-  let queryValue=e.target.elements.query.value;
+  let queryValue = e.target.elements.query.value;
   if (queryValue === '') {
     return;
   }
-  filmList.innerHTML = '';
-  console.log(api.fetchSearchMovies(queryValue))
-  api.fetchSearchMovies(queryValue).then(renderFilm)
-  refs.linkLogo.addEventListener('click', homePageRender)
-  refs.homePage1.addEventListener('click', homePageRender)
-};
+
+  api.fetchSearchMovies(queryValue).then(renderFilm);
+  refs.inputForm.value=''
+}
+  
 
 // function addCardFunc(imgPath, filmTitle, movieId) {
 //   const fragment = document.createDocumentFragment();
@@ -132,4 +137,32 @@ function onSearchQuery(e){
 //   return fragment;
 //   // создаёт li согласно макета и вешает на неё слушателем функцию ActiveDetailsPage(movieId, itsLibraryFilm = false)
 // }
+refs.nextBtn.addEventListener('click',nextBtnHandler);
+refs.prevBtn.addEventListener('click',prevBtnHandler);
+
+
+ function nextBtnHandler() {
+ api.incrementPage();
+ homePageRender() 
+ let counterValue=Number(refs.pageBtn.textContent)
+  refs.pageBtn.textContent= counterValue+1
+};
+
+function prevBtnHandler() {
+  api.decrementPage();
+  homePageRender() 
+  let counterValue1=Number(refs.pageBtn.textContent)
+
+  
+  if  (counterValue1===1){
+    api.resetPage()
+    return
+  }
+  if (counterValue1>1){
+    refs.pageBtn.textContent= counterValue1-1;
+  }
+
+};
+
 export default api;
+   
