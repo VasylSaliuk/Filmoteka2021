@@ -1,6 +1,34 @@
 import refs from './refs.js';
 import api from './1iniitalHomePage'
-import  './1iniitalHomePage';
+
+import  {homePageRender}  from './1iniitalHomePage';
+
+refs.nextBtn.addEventListener('click', nextBtnHandler);
+refs.prevBtn.addEventListener('click', prevBtnHandler);
+
+function nextBtnHandler() {
+  api.incrementPage();
+  homePageRender();
+  let counterValue = Number(refs.pageBtn.textContent);
+  refs.pageBtn.textContent = counterValue + 1;
+}
+
+function prevBtnHandler() {
+  api.decrementPage();
+  homePageRender();
+  let counterValue1 = Number(refs.pageBtn.textContent);
+
+  if (counterValue1 === 1) {
+    api.resetPage();
+    return;
+  }
+  if (counterValue1 > 1) {
+    refs.pageBtn.textContent = counterValue1 - 1;
+  }
+}
+
+
+
 // import navigationPages from '../js/3navigation.js';
 // import { myError, notice } from './notification.js';
 
