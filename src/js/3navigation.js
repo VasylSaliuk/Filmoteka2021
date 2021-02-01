@@ -22,6 +22,7 @@ refs.libraryPage.classList.add('hidden');
 // }
 
 function activeLibraryPage() {
+  localStorage.setItem('curentPage', 'queuePage');
   refs.homePage.classList.add('hidden');
   refs.searchFormWrap.classList.add('hidden');
   refs.libraryPage.classList.remove('hidden');
@@ -34,6 +35,7 @@ function activeLibraryPage() {
 
 let selectFilm;
 function activeHomePage() {
+  localStorage.setItem('curentPage', 'homePage');
   refs.searchFormWrap.classList.remove('hidden');
   refs.homePage.classList.remove('hidden');
   refs.libraryPage.classList.add('hidden');

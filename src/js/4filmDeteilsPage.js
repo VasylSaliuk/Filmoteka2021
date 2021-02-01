@@ -3,6 +3,7 @@ import api from './1iniitalHomePage.js';
 import filmCard from '../templates/filmCard.hbs';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
+import { reloadLibraryPage } from './5libraryPage';
 
 const filmItem = document.querySelector('.main_filmlist');
 
@@ -26,12 +27,14 @@ export function onClickFilm(e) {
     function closeModalHandler(e) {
       if (e.code === 'Escape') {
         modal.close();
+        reloadLibraryPage();
         window.removeEventListener('keydown', closeModalHandler);
       }
     }
 
     function onClickBtnClose(e) {
       modal.close();
+      reloadLibraryPage();
       window.removeEventListener('keydown', closeModalHandler);
     }
 
