@@ -47,7 +47,7 @@
 
   border: 0;
   outline: none;
-  background-image: url('../../images/icons8-play-button-2.svg');
+  // background-image: url('../../images/icons8-play-button-2.svg');
   background-color: transparent;
 }
 
@@ -105,14 +105,14 @@
 }
 
 .slider-card:hover .overlay-btn-youtube-text {
-  position: relative;
+  // position: relative;
   display: flex;
   opacity: 1;
   transform: translateX(-63%);
 }
 
 .btn-youtube-text-slider {
-  position: absolute;
+  // position: absolute;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color: #c4302b;
