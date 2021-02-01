@@ -11,10 +11,7 @@ const api = {
   inputValue: '',
 
   fetchTrendFilms() {
-    const url =
-      this.baseUrl +
-      this.options +
-      `api_key=${this.key}&language=en-US&page=${this.pageNumber}`;
+    const url = this.baseUrl + this.options + `api_key=${this.key}&language=en-US&page=${this.pageNumber}`;
     return fetch(url)
       .then(response => {
         if (response.ok) {
@@ -28,7 +25,7 @@ const api = {
 
   updateURL() {
     this.newUrl = new URL(`http://localhost:4040/?page=${this.pageNumber}`);
-  return this.newUrl;
+    return this.newUrl;
   },
 
   resetPage() {
@@ -49,19 +46,18 @@ const api = {
     this.updateURL();
   },
 
- fetchMovieInfo(id){
-   const url= this.baseUrl+
-   `movie/${id}?api_key=${this.key}`
-   return fetch(url)
-   .then(response => {
-     if (response.ok) {
-       return response.json();
-     } else {
-       return Promise.reject();
-     }
-   })
-   .then(data => data);
- },
+  fetchMovieInfo(id) {
+    const url = this.baseUrl + `movie/${id}?api_key=${this.key}`;
+    return fetch(url)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return Promise.reject();
+        }
+      })
+      .then(data => data);
+  },
 
   fetchSearchMovies(query) {
     const url = `${this.baseUrl}search/movie?api_key=${this.key}&language=en-US&page=${this.pageNumber}&query=${query}`;
@@ -70,39 +66,36 @@ const api = {
       .then(({ results }) => {
         return results;
       });
-  }
+  },
 };
-
 
 function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
-  filmList.innerHTML= markup;
+  filmList.innerHTML = markup;
 }
 
 document.addEventListener('DOMContentLoaded', homePageRender);
 
 function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
-  
 }
 
-const searchForm=document.querySelector('.search-form')
-searchForm.addEventListener('submit', onSearchQuery)
-searchForm.addEventListener('click', homePageRender)
+const searchForm = document.querySelector('.search-form');
+searchForm.addEventListener('submit', onSearchQuery);
+searchForm.addEventListener('click', (e)=>e.target.value='');
 
-function onSearchQuery(e){
+function onSearchQuery(e) {
   e.preventDefault();
-  let queryValue=e.target.elements.query.value;
+  let queryValue = e.target.elements.query.value;
   if (queryValue === '') {
-    
-    return ;
+    return;
   }
 
-  console.log(api.fetchSearchMovies(queryValue))
-  api.fetchSearchMovies(queryValue).then(renderFilm)
-  refs.linkLogo.addEventListener('click', homePageRender)
-  refs.homePage1.addEventListener('click', homePageRender)
-};
+  console.log(api.fetchSearchMovies(queryValue));
+  api.fetchSearchMovies(queryValue).then(renderFilm);
+  refs.linkLogo.addEventListener('click', homePageRender);
+  refs.homePage1.addEventListener('click', homePageRender);
+}
 
 // function addCardFunc(imgPath, filmTitle, movieId) {
 //   const fragment = document.createDocumentFragment();
