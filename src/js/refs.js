@@ -22,4 +22,5 @@ export default {
   detailsPage: document.querySelector('#detailsPage'),
   moviesContainer: document.querySelector('.main_filmlist'),
   libBtnList: document.querySelector('.libraryPage_list'),
+  searchFormWrap: document.querySelector('.home_page_search'),
 };

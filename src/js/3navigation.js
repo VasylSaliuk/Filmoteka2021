@@ -7,6 +7,8 @@ import {
   prevHomeBtnHandler,
 } from './2searchAndPlaginationHomePage.js';
 import { myAlert } from './notification';
+import { onQueueBtnClick } from './5libraryPage';
+import { onClickFilm } from './4filmDeteilsPage';
 console.log(refs.libraryPage);
 
 refs.linkHomePage.classList.add('isActive');
@@ -21,13 +23,18 @@ refs.libraryPage.classList.add('hidden');
 
 function activeLibraryPage() {
   refs.homePage.classList.add('hidden');
+  refs.searchFormWrap.classList.add('hidden');
   refs.libraryPage.classList.remove('hidden');
   refs.linkLibrary.classList.add('isActive');
   refs.linkHomePage.classList.remove('isActive');
+  refs.queueBtnLib.classList.add('onClick');
+  onQueueBtnClick();
+  refs.libraryFilmList.addEventListener('click', onClickFilm);
 }
 
 let selectFilm;
 function activeHomePage() {
+  refs.searchFormWrap.classList.remove('hidden');
   refs.homePage.classList.remove('hidden');
   refs.libraryPage.classList.add('hidden');
   refs.linkHomePage.classList.add('isActive');
@@ -44,7 +51,7 @@ function activeHomePage() {
     refs.prevBtn.classList.add('is-hidden');
   }
 
-    function cleanPopularPage() {
+  function cleanPopularPage() {
     refs.popularPage.innerHTML = '';
   }
 
@@ -86,7 +93,7 @@ function createPopularMovieList() {
   refs.prevBtn.removeEventListener('click', prevBtnHandler);
   refs.nextHomeBtn.addEventListener('click', nextHomeBtnHandler);
   refs.prevHomeBtn.addEventListener('click', prevHomeBtnHandler);
-};
+}
 
 // pagination.removeEventListener('click', plagNavigation);
 // pageNumber = 1;

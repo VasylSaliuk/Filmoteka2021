@@ -8,7 +8,7 @@ const filmItem = document.querySelector('.main_filmlist');
 
 filmItem.addEventListener('click', onClickFilm);
 
-function onClickFilm(e) {
+export function onClickFilm(e) {
   console.dir(e.target.id);
   const filmId = e.target.id;
   console.log(api.fetchMovieInfo(filmId));
@@ -73,7 +73,7 @@ function onClickFilm(e) {
       localStorage.setItem('filmsWatched', JSON.stringify(filmsWatchedArr));
       monitorButtonStatusText();
     }
-    
+
     function monitorButtonStatusText() {
       let filmsQueueArr = [];
       let localStorageData = localStorage.getItem('filmsQueue');
