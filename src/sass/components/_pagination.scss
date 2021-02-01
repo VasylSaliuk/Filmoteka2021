@@ -1,3 +1,5 @@
+    //BUTTONS
+
 .btn-container {
   margin: 0 auto 22px;
   text-align: center;
@@ -25,6 +27,18 @@
   width: 50px;
 }
 
+.activeBtnHeader {
+  border-bottom: 3px solid #000;
+  color: #000;
+}
+[data-pnotify].pnotify.stack-bar-top {
+  width: 200px;
+  border-radius: 0;
+}
+// .hidden {
+//   display: none;
+
+// }
 
 
 #homePage__search {
@@ -70,8 +84,7 @@
     transform: translateX(-50%);
     font-size: 12px;
   }
-  
-  //BUTTONS
+
   
   #homePage__pagination {
     margin: 0 auto;
@@ -174,6 +187,4 @@
     }
   }
   
-  .hidden {
-    visibility: hidden;
-  }
+  

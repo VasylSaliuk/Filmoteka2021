@@ -2,6 +2,8 @@
 import trendFilmTemplate from '../templates/homePage.hbs';
 import refs from './refs.js';
 
+
+
 const filmList = document.querySelector('.main_filmlist');
 const api = {
   key: '0758483bbf141f2377e75ad4723d5ab5',
@@ -16,14 +18,12 @@ const api = {
       this.options +
       `api_key=${this.key}&language=en-US&page=${this.pageNumber}`;
     return fetch(url)
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          return Promise.reject();
-        }
-      })
-      .then(data => data.results);
+    .then(response => response.json())
+    .then(({ results }) => {
+      return results;    
+  })
+  .catch(error => myError(error));
+  
   },
 
   updateURL() {
@@ -71,7 +71,7 @@ const api = {
         return results;
       });
   }
-};
+}
 
 console.log(api.fetchTrendFilms());
 function renderFilm(arr) {
