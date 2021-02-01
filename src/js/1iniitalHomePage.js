@@ -75,12 +75,20 @@ function renderFilm(arr) {
   
 
 document.addEventListener('DOMContentLoaded', homePageRender);
-refs.linkLogo.addEventListener('click', homePageRender);
-refs.homePage1.addEventListener('click', homePageRender);
+refs.linkLogo.addEventListener('click', homePageReset);
+refs.homePage1.addEventListener('click', homePageReset);
 
  function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
+
 }
+
+function homePageReset(){
+  api.resetPage(), 
+  homePageRender()
+  refs.pageBtn.textContent=1
+}
+
 
 const searchForm = document.querySelector('.search-form');
 searchForm.addEventListener('submit', onSearchQuery);
