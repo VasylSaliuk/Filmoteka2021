@@ -6,10 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Filmoteka</title>
     <!-- Сюда будет всталена ссылка на файл стилей -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- inject:css -->
     <!-- endinject -->
   </head>
@@ -24,11 +21,11 @@
               <svg class="logo-icon" width="24" height="24">
                 <use href="./images/film-1.svg#film"></use>
               </svg>
-                <span class="logo-name">Filmoteka</span>
+              <span class="logo-name">Filmoteka</span>
             </a>
             <ul class="navigation-main">
               <li class="home-link item">
-                <a class="navItem-text js-link-homepage " href="#">HOME</a>
+                <a class="navItem-text js-link-homepage" href="#">HOME</a>
               </li>
               <li class="library-link item">
                 <a class="navItem-text js-link-library" href="#">MY LIBRARY</a>
@@ -70,12 +67,8 @@
             </ul>
           </div>
           <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-              prev
-            </button>
-            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-              next
-            </button>
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
           </div>
         </div>
       </section>
@@ -87,7 +80,8 @@
       <section class="main_section js-home-section" id="homePage_show">
         <div class="home_page_search">
           <form class="search-form" id="homePage__search" action="">
-            <!-- <button type="submit" class="search-form-btn">
+
+                        <!-- <button type="submit" class="search-form-btn">
               <svg class="search-icon" width="12" height="12">
                 <use href="./images/loupe.svg#loupe"></use>
               </svg>
@@ -101,27 +95,27 @@
             />
           </form>
         </div>
+        
         <div class="container">
           <section id="homePage">
             <ul class="main_filmlist"></ul>
-            <ul class="popular-movie-list"></ul>
+            <!-- <ul class="popular-movie-list"></ul> -->
             <div class="btn-container">
-            <button class="btn-prev btn-prev-home" type="button" data-action="prev">Prev</button>
-            <button class="btn-number" type="button">1</button>
-            <button class="btn-next btn-next-home" type="button" data-action="next">Next</button>
+              <button class="btn-prev btn-prev-home" type="button" data-action="prev">Prev</button>
+              <button class="btn-number" type="button">1</button>
+              <button class="btn-next btn-next-home" type="button" data-action="next">Next</button>
             </div>
           </section>
         </div>
-        
       </section>
       <section id="detailsPage"></section>
       <section class="library_section js-library-section">
+        <div class="library-button-wrap">
+          <button type="button" class="library-button js-watchedBtnLib">Watched</button>
+          <button type="button" class="library-button js-queueBtnLib">Queue</button>
+        </div>
         <div class="container">
-          <div>
-            <button type="button" class="library-button">Watched</button>
-            <button type="button" class="library-button">Queue</button>
-          </div>
-          <ul class="libraryPage_list"></ul>
+          <ul class="libraryPage_list js-library-filmlist"></ul>
         </div>
       </section>
       <!-- <p>Нижні кнопки для відладки логіки на вікно "Детейлз"</p> -->
@@ -143,8 +137,7 @@
         <div class="footer-copyright">
           <a class="footer-text" href="#">MADE by ©DreamTeam</a>
           <!-- <a href="#" class="scroll-up"> -->
-          <i class="material-icons material-icons-white scroll-up"
-            >keyboard_arrow_up</i>
+          <i class="material-icons material-icons-white scroll-up">keyboard_arrow_up</i>
           <!-- </a> -->
         </div>
       </div>

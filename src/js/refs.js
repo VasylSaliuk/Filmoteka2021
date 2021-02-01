@@ -5,6 +5,9 @@ export default {
   homePage1: document.querySelector('.js-link-homepage'),
   libraryPage: document.querySelector('.js-library-section'),
   linkLogo: document.querySelector('.logo'),
+  libraryFilmList: document.querySelector('.js-library-filmlist'),
+  watchedBtnLib: document.querySelector('.js-watchedBtnLib'),
+  queueBtnLib: document.querySelector('.js-queueBtnLib'),
   btnContainer: document.querySelector('.btn-container'),
   nextBtn: document.querySelector('.btn-next'),
   nextHomeBtn: document.querySelector('.btn-next-home'),
@@ -19,4 +22,6 @@ export default {
   detailsPage: document.querySelector('#detailsPage'),
   moviesContainer: document.querySelector('.main_filmlist'),
   libBtnList: document.querySelector('.libraryPage_list'),
+  searchFormWrap: document.querySelector('.home_page_search'),
+  searchForm: document.querySelector('.search-form'),
 };

@@ -1,5 +1,6 @@
 @include for-size(tablet) {
-  .main_filmlist {
+  .main_filmlist,
+  .libraryPage_list {
     display: flex;
 
     flex-wrap: wrap;
