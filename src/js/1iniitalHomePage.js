@@ -2,6 +2,8 @@
 import trendFilmTemplate from '../templates/homePage.hbs';
 import refs from './refs.js';
 
+localStorage.setItem('curentPage', 'homePage');
+
 const filmList = document.querySelector('.main_filmlist');
 const api = {
   key: '0758483bbf141f2377e75ad4723d5ab5',
@@ -21,6 +23,19 @@ const api = {
         }
       })
       .then(data => data.results);
+  },
+
+  fetchMovieInfo(id) {
+    const url = this.baseUrl + `movie/${id}?api_key=${this.key}`;
+    return fetch(url)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return Promise.reject();
+        }
+      })
+      .then(data => data);
   },
 
   updateURL() {
@@ -71,8 +86,8 @@ const api = {
 
 function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
-  filmList.innerHTML = markup;}
-  
+  filmList.innerHTML = markup;
+}
 
 document.addEventListener('DOMContentLoaded', homePageRender);
 refs.linkLogo.addEventListener('click', homePageReset);
@@ -89,10 +104,8 @@ function homePageReset(){
   refs.pageBtn.textContent=1
 }
 
-
 const searchForm = document.querySelector('.search-form');
 searchForm.addEventListener('submit', onSearchQuery);
-
 
 function onSearchQuery(e) {
   e.preventDefault();
@@ -100,11 +113,18 @@ function onSearchQuery(e) {
   if (queryValue === '') {
     return;
   }
+<<<<<<< HEAD
   
+=======
+
+  filmList.innerHTML = '';
+  console.log(api.fetchSearchMovies(queryValue));
+>>>>>>> a90a46dc4fad38279f0fd468c226abcabd00d77a
   api.fetchSearchMovies(queryValue).then(renderFilm);
+  refs.linkLogo.addEventListener('click', homePageRender);
+  refs.homePage1.addEventListener('click', homePageRender);
   refs.inputForm.value=''
 }
-  
 
 // function addCardFunc(imgPath, filmTitle, movieId) {
 //   const fragment = document.createDocumentFragment();
@@ -140,7 +160,6 @@ function onSearchQuery(e) {
 refs.nextBtn.addEventListener('click',nextBtnHandler);
 refs.prevBtn.addEventListener('click',prevBtnHandler);
 
-
  function nextBtnHandler() {
  api.incrementPage();
  homePageRender() 
@@ -161,7 +180,6 @@ function prevBtnHandler() {
   if (counterValue1>1){
     refs.pageBtn.textContent= counterValue1-1;
   }
-
 };
 
 export default api;

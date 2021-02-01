@@ -3,12 +3,13 @@ import api from './1iniitalHomePage.js';
 import filmCard from '../templates/filmCard.hbs';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
+import { reloadLibraryPage } from './5libraryPage';
 
 const filmItem = document.querySelector('.main_filmlist');
 
 filmItem.addEventListener('click', onClickFilm);
 
-function onClickFilm(e) {
+export function onClickFilm(e) {
   console.dir(e.target.id);
   const filmId = e.target.id;
   console.log(api.fetchMovieInfo(filmId));
@@ -26,12 +27,14 @@ function onClickFilm(e) {
     function closeModalHandler(e) {
       if (e.code === 'Escape') {
         modal.close();
+        reloadLibraryPage();
         window.removeEventListener('keydown', closeModalHandler);
       }
     }
 
     function onClickBtnClose(e) {
       modal.close();
+      reloadLibraryPage();
       window.removeEventListener('keydown', closeModalHandler);
     }
 
@@ -73,7 +76,7 @@ function onClickFilm(e) {
       localStorage.setItem('filmsWatched', JSON.stringify(filmsWatchedArr));
       monitorButtonStatusText();
     }
-    
+
     function monitorButtonStatusText() {
       let btnQueueText = document.querySelector('.details-span-queue');
       let btnWatchedText = document.querySelector('.details-span-watched');
