@@ -1,4 +1,6 @@
-// import refs from './refs.js';
+import refs from './refs.js';
+import api from './1iniitalHomePage'
+import  './1iniitalHomePage';
 // import navigationPages from '../js/3navigation.js';
 // import { myError, notice } from './notification.js';
 
@@ -63,25 +65,25 @@
   // };
 
 
-  export function nextBtnHandler() {
-    fetchPopularMoviesList.incrementPage();
-    navigationPages.createPopularMovieList();
-  };
+  // export function nextBtnHandler() {
+  //   fetchPopularMoviesList.incrementPage();
+  //   navigationPages.createPopularMovieList();
+  // };
   
-  export function prevBtnHandler() {
-    fetchPopularMoviesList.decrementPage();
-    navigationPages.createPopularMovieList();
-  };
+  // export function prevBtnHandler() {
+  //   fetchPopularMoviesList.decrementPage();
+  //   navigationPages.createPopularMovieList();
+  // };
 
-  export function nextHomeBtnHandler() {
-    searchAndPaginationHomePage.incrementPage();
-    navigationPages.activeHomePage();
-  };
+  // export function nextHomeBtnHandler() {
+  //   searchAndPaginationHomePage.incrementPage();
+  //   navigationPages.activeHomePage();
+  // };
   
-  export function prevHomeBtnHandler() {
-    searchAndPaginationHomePage.decrementPage();
-    navigationPages.activeHomePage();
-  };
+  // export function prevHomeBtnHandler() {
+  //   searchAndPaginationHomePage.decrementPage();
+  //   navigationPages.activeHomePage();
+  // };
 
 
 // const filmList = document.querySelector('.main_filmlist');
@@ -193,3 +195,27 @@
 
 //   input.value = '';
 // }
+// refs.nextBtn.addEventListener('click',nextBtnHandler);
+// refs.prevBtn.addEventListener('click',prevBtnHandler);
+// refs.pageBtn
+
+//  function nextBtnHandler() {
+//  api.incrementPage();
+//  homePageRender() 
+//   refs.pageBtn.textContent+=1
+// };
+
+// export function prevBtnHandler() {
+//   fetchPopularMoviesList.decrementPage();
+//   navigationPages.createPopularMovieList();
+// };
+
+// export function nextHomeBtnHandler() {
+//   searchAndPaginationHomePage.incrementPage();
+//   navigationPages.activeHomePage();
+// };
+
+// export function prevHomeBtnHandler() {
+//   searchAndPaginationHomePage.decrementPage();
+//   navigationPages.activeHomePage();
+// };

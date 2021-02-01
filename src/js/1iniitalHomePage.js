@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', homePageRender);
 refs.linkLogo.addEventListener('click', homePageRender);
 refs.homePage1.addEventListener('click', homePageRender);
 
-function homePageRender() {
+ function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
 }
 
@@ -129,4 +129,32 @@ function onSearchQuery(e) {
 //   return fragment;
 //   // создаёт li согласно макета и вешает на неё слушателем функцию ActiveDetailsPage(movieId, itsLibraryFilm = false)
 // }
+refs.nextBtn.addEventListener('click',nextBtnHandler);
+refs.prevBtn.addEventListener('click',prevBtnHandler);
+
+
+ function nextBtnHandler() {
+ api.incrementPage();
+ homePageRender() 
+ let counterValue=Number(refs.pageBtn.textContent)
+  refs.pageBtn.textContent= counterValue+1
+};
+
+export function prevBtnHandler() {
+  api.decrementPage();
+  homePageRender() 
+  let counterValue1=Number(refs.pageBtn.textContent)
+
+  
+  if  (counterValue1===1){
+    api.resetPage()
+    return
+  }
+  if (counterValue1>1){
+    refs.pageBtn.textContent= counterValue1-1;
+  }
+
+};
+
 export default api;
+   
