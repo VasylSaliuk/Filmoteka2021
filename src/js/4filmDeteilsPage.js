@@ -108,5 +108,6 @@ export function onClickFilm(e) {
         btnWatchedText.textContent = 'Add to watched';
       }
     }
-  });
-}
+
+
+  });}
