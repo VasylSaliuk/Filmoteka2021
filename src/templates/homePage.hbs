@@ -1,15 +1,15 @@
 {{#each this}}
 <li class="filmlist__item">
-   
-    <img  id="{{id}}" class="filmlist__img" width='100%'  src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}">
-     <h2>{{title}}</h2>
-     <p class="filmlist__cardtext">
-      <span class="filmlist__date">Release date:{{release_date}}</span>  
-   </p>
-   <svg class="filmlist__icon" width="12" height="12">
-            <use href="./images/star-empty.svg"></use>
-          </svg>
-    <span class="filmlist__rate">{{vote_average}}</span>
+
+  <img id="{{id}}" class="filmlist__img" width='100%' src="https://image.tmdb.org/t/p/w500{{poster_path}}"
+    alt="{{title}}">
+  <span class="filmlist__rate">{{vote_average}}</span>
+  <h2 class="filmlist__title">{{title}}</h2>
+  <svg class="filmlist__icon" width="12" height="12">
+    <use href="./images/star-empty.svg"></use>
+  </svg>
+  <p class="filmlist__cardtext">
+    <span class="filmlist__date">{{release_date}}</span>
+  </p>
 </li>
 {{/each}}
- 
