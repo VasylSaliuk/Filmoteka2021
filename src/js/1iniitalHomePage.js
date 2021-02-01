@@ -84,16 +84,24 @@ const api = {
   },
 };
 
-console.log(api.fetchTrendFilms());
 function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
   filmList.innerHTML = markup;
 }
 
 document.addEventListener('DOMContentLoaded', homePageRender);
+refs.linkLogo.addEventListener('click', homePageReset);
+refs.homePage1.addEventListener('click', homePageReset);
 
-function homePageRender() {
+ function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
+
+}
+
+function homePageReset(){
+  api.resetPage(), 
+  homePageRender()
+  refs.pageBtn.textContent=1
 }
 
 const searchForm = document.querySelector('.search-form');
@@ -105,11 +113,13 @@ function onSearchQuery(e) {
   if (queryValue === '') {
     return;
   }
+
   filmList.innerHTML = '';
   console.log(api.fetchSearchMovies(queryValue));
   api.fetchSearchMovies(queryValue).then(renderFilm);
   refs.linkLogo.addEventListener('click', homePageRender);
   refs.homePage1.addEventListener('click', homePageRender);
+  refs.inputForm.value=''
 }
 
 // function addCardFunc(imgPath, filmTitle, movieId) {
@@ -143,4 +153,30 @@ function onSearchQuery(e) {
 //   return fragment;
 //   // создаёт li согласно макета и вешает на неё слушателем функцию ActiveDetailsPage(movieId, itsLibraryFilm = false)
 // }
+refs.nextBtn.addEventListener('click',nextBtnHandler);
+refs.prevBtn.addEventListener('click',prevBtnHandler);
+
+ function nextBtnHandler() {
+ api.incrementPage();
+ homePageRender() 
+ let counterValue=Number(refs.pageBtn.textContent)
+  refs.pageBtn.textContent= counterValue+1
+};
+
+function prevBtnHandler() {
+  api.decrementPage();
+  homePageRender() 
+  let counterValue1=Number(refs.pageBtn.textContent)
+
+  
+  if  (counterValue1===1){
+    api.resetPage()
+    return
+  }
+  if (counterValue1>1){
+    refs.pageBtn.textContent= counterValue1-1;
+  }
+};
+
 export default api;
+   

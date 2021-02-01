@@ -1,87 +1,89 @@
 import refs from './refs.js';
-import navigationPages from '../js/3navigation.js';
-import { myError, notice } from './notification.js';
+import api from './1iniitalHomePage'
+import  './1iniitalHomePage';
+// import navigationPages from '../js/3navigation.js';
+// import { myError, notice } from './notification.js';
 
-//import fetchTrendFilms from './1iniitalHomePage.js';
-const apiKey = '0758483bbf141f2377e75ad4723d5ab5';
-// const renderFilms = [];
-// const genres = [];
-//let pageNumber = 1;
+// import fetchTrendFilms from './1iniitalHomePage.js';
+// const apiKey = '0758483bbf141f2377e75ad4723d5ab5';
+// // const renderFilms = [];
+// // const genres = [];
+// //let pageNumber = 1;
 
-export default {
-    fetchSearchMoviesList() {
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en&query=${this.inputValue}&page=${this.pageNumber}`;
+// export default {
+//     fetchSearchMoviesList() {
+//     const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en&query=${this.inputValue}&page=${this.pageNumber}`;
+  
+//     return fetch(url)
+//       .then(response => response.json())
+//       .then(({ results, total_pages }) => {
+//         if (total_pages === 1 || results > 1 && results <= 20) {
+//           refs.nextBtn.classList.add('is-hidden');
+//           notice({
+//           text: 'That`s all what we can found',
+//           delay: 1500,
+//           });
+//         }
+//         if (total_pages === 0) {
+//           refs.nextBtn.classList.add('is-hidden');
+//           refs.pageBtn.textContent = total_pages;
+//           notice({
+//           text: 'No movies. Please, specify your query',
+//           delay: 1500,
+//           });
+//         }
+//         return results;
+//       })
+//     .catch(error => myError(error));
+//     },
+//     updateURL() {
+//         this.newUrl = new URL(`http://localhost:4040/?query=${this.inputValue}&page=${this.pageNumber}`);
+//       return this.newUrl;
+//     },
+    // resetPage() {
+    //   this.pageNumber = 1;
+    //   this.updateURL();
+    //   console.log(this.newUrl);
+    // },
+    // incrementPage() {
+    //   this.pageNumber += 1;
+    //   this.updateURL();
+    //   console.log(this.newUrl);
+    // },
+    // decrementPage() {
+    //   if (this.pageNumber === 1) return;
+    //   this.pageNumber -= 1;
+    //   this.updateURL();
+    //   console.log(this.newUrl);
+    // },
+    // get query() {
+    //   return this.inputValue;
+    // },
+    // set query(newValue) {
+    //   this.inputValue = newValue;
+    // }
+  // };
 
-    return fetch(url)
-      .then(response => response.json())
-      .then(({ results, total_pages }) => {
-        if (total_pages === 1 || results > 1 && results <= 20) {
-          refs.nextBtn.classList.add('is-hidden');
-          notice({
-          text: 'That`s all what we can found',
-          delay: 1500,
-          });
-        }
-        if (total_pages === 0) {
-          refs.nextBtn.classList.add('is-hidden');
-          refs.pageBtn.textContent = total_pages;
-          notice({
-          text: 'No movies. Please, specify your query',
-          delay: 1500,
-          });
-        }
-        return results;
-      })
-      .catch(error => myError(error));
-    },
-    updateURL() {
-        this.newUrl = new URL(`http://localhost:4040/?query=${this.inputValue}&page=${this.pageNumber}`);
-      return this.newUrl;
-    },
-    resetPage() {
-      this.pageNumber = 1;
-      this.updateURL();
-      console.log(this.newUrl);
-    },
-    incrementPage() {
-      this.pageNumber += 1;
-      this.updateURL();
-      console.log(this.newUrl);
-    },
-    decrementPage() {
-      if (this.pageNumber === 1) return;
-      this.pageNumber -= 1;
-      this.updateURL();
-      console.log(this.newUrl);
-    },
-    get query() {
-      return this.inputValue;
-    },
-    set query(newValue) {
-      this.inputValue = newValue;
-    }
-  };
 
+  // export function nextBtnHandler() {
+  //   fetchPopularMoviesList.incrementPage();
+  //   navigationPages.createPopularMovieList();
+  // };
+  
+  // export function prevBtnHandler() {
+  //   fetchPopularMoviesList.decrementPage();
+  //   navigationPages.createPopularMovieList();
+  // };
 
-  export function nextBtnHandler() {
-    fetchPopularMoviesList.incrementPage();
-    navigationPages.createPopularMovieList();
-  };
-
-  export function prevBtnHandler() {
-    fetchPopularMoviesList.decrementPage();
-    navigationPages.createPopularMovieList();
-  };
-
-  export function nextHomeBtnHandler() {
-    searchAndPaginationHomePage.incrementPage();
-    navigationPages.activeHomePage();
-  };
-
-  export function prevHomeBtnHandler() {
-    searchAndPaginationHomePage.decrementPage();
-    navigationPages.activeHomePage();
-  };
+  // export function nextHomeBtnHandler() {
+  //   searchAndPaginationHomePage.incrementPage();
+  //   navigationPages.activeHomePage();
+  // };
+  
+  // export function prevHomeBtnHandler() {
+  //   searchAndPaginationHomePage.decrementPage();
+  //   navigationPages.activeHomePage();
+  // };
 
 
 // const filmList = document.querySelector('.main_filmlist');
@@ -193,3 +195,27 @@ export default {
 
 //   input.value = '';
 // }
+// refs.nextBtn.addEventListener('click',nextBtnHandler);
+// refs.prevBtn.addEventListener('click',prevBtnHandler);
+// refs.pageBtn
+
+//  function nextBtnHandler() {
+//  api.incrementPage();
+//  homePageRender() 
+//   refs.pageBtn.textContent+=1
+// };
+
+// export function prevBtnHandler() {
+//   fetchPopularMoviesList.decrementPage();
+//   navigationPages.createPopularMovieList();
+// };
+
+// export function nextHomeBtnHandler() {
+//   searchAndPaginationHomePage.incrementPage();
+//   navigationPages.activeHomePage();
+// };
+
+// export function prevHomeBtnHandler() {
+//   searchAndPaginationHomePage.decrementPage();
+//   navigationPages.activeHomePage();
+// };
