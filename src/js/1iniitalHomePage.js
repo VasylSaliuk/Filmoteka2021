@@ -84,28 +84,26 @@ const api = {
   },
 };
 
+document.addEventListener('DOMContentLoaded', homePageRender);
+refs.linkLogo.addEventListener('click', homePageReset);
+refs.homePage1.addEventListener('click', homePageReset);
+refs.searchForm.addEventListener('submit', onSearchQuery);
+refs.linkLogo.addEventListener('click', homePageReset);
+refs.homePage1.addEventListener('click', homePageReset);
+
 function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
   filmList.innerHTML = markup;
 }
 
-document.addEventListener('DOMContentLoaded', homePageRender);
-refs.linkLogo.addEventListener('click', homePageReset);
-refs.homePage1.addEventListener('click', homePageReset);
-
- function homePageRender() {
+export function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
-
 }
 
-function homePageReset(){
-  api.resetPage(), 
-  homePageRender()
-  refs.pageBtn.textContent=1
+function homePageReset() {
+  api.resetPage(), homePageRender();
+  refs.pageBtn.textContent = 1;
 }
-
-const searchForm = document.querySelector('.search-form');
-searchForm.addEventListener('submit', onSearchQuery);
 
 function onSearchQuery(e) {
   e.preventDefault();
@@ -113,18 +111,12 @@ function onSearchQuery(e) {
   if (queryValue === '') {
     return;
   }
-<<<<<<< HEAD
-  
-=======
-
-  filmList.innerHTML = '';
-  console.log(api.fetchSearchMovies(queryValue));
->>>>>>> a90a46dc4fad38279f0fd468c226abcabd00d77a
+  refs.pageBtn.textContent = 1;
   api.fetchSearchMovies(queryValue).then(renderFilm);
-  refs.linkLogo.addEventListener('click', homePageRender);
-  refs.homePage1.addEventListener('click', homePageRender);
-  refs.inputForm.value=''
+  refs.inputForm.value = '';
 }
+
+export default api;
 
 // function addCardFunc(imgPath, filmTitle, movieId) {
 //   const fragment = document.createDocumentFragment();
@@ -157,30 +149,3 @@ function onSearchQuery(e) {
 //   return fragment;
 //   // создаёт li согласно макета и вешает на неё слушателем функцию ActiveDetailsPage(movieId, itsLibraryFilm = false)
 // }
-refs.nextBtn.addEventListener('click',nextBtnHandler);
-refs.prevBtn.addEventListener('click',prevBtnHandler);
-
- function nextBtnHandler() {
- api.incrementPage();
- homePageRender() 
- let counterValue=Number(refs.pageBtn.textContent)
-  refs.pageBtn.textContent= counterValue+1
-};
-
-function prevBtnHandler() {
-  api.decrementPage();
-  homePageRender() 
-  let counterValue1=Number(refs.pageBtn.textContent)
-
-  
-  if  (counterValue1===1){
-    api.resetPage()
-    return
-  }
-  if (counterValue1>1){
-    refs.pageBtn.textContent= counterValue1-1;
-  }
-};
-
-export default api;
-   

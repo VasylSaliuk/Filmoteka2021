@@ -23,4 +23,5 @@ export default {
   moviesContainer: document.querySelector('.main_filmlist'),
   libBtnList: document.querySelector('.libraryPage_list'),
   searchFormWrap: document.querySelector('.home_page_search'),
+  searchForm: document.querySelector('.search-form'),
 };
