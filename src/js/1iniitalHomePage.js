@@ -100,7 +100,7 @@ function onSearchQuery(e) {
   if (queryValue === '') {
     return;
   }
-
+  
   api.fetchSearchMovies(queryValue).then(renderFilm);
   refs.inputForm.value=''
 }
