@@ -82,6 +82,22 @@ const api = {
         return results;
       });
   },
+  renderTrendy() {
+    const url = `https://api.themoviedb.org/3/trending/all/day?api_key=0f42664b7f6700c34263c8262c49b65b`;
+    return fetch(url)
+      .then(response => response.json())
+      .then(({ results }) => {
+        return results;
+      })
+      
+      .catch(err => {
+        refs.sliderContainer.innerHTML = `<img class="catch-error-pagination" src="${errorUrl}" />`;
+      })
+    },
+
+
+
+
 };
 
 document.addEventListener('DOMContentLoaded', homePageRender);
