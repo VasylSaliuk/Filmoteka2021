@@ -23,11 +23,19 @@
   position: relative;
   background-color: cadetblue;
   border-radius: 10px 10px 10px 10px;
+  transform: scale(1);
+  transition: transform 250ms linear;
+  &:hover,
+  &:focus{
+    transform: scale(1.03);
+  }
+
 }
 
 .filmlist__img {
   position: relative;
   border-radius: 10px 10px 0px 0px;
+  
 }
 .filmlist__title {
   font-size: 20px;
