@@ -27,12 +27,14 @@
   transition: transform 250ms linear;
   &:hover,
   &:focus{
-    transform: scale(1.03);
+    transform: scale(1.05);
   }
 
 }
 
 .filmlist__img {
+  display:block;
+  width: 100%;
   position: relative;
   border-radius: 10px 10px 0px 0px;
   
