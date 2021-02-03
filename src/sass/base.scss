@@ -13,6 +13,9 @@ body {
   //   Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-family: 'Roboto', sans-serif;
 }
+main {
+  min-height: calc(100vh - 155px);
+}
 a {
   text-decoration: none;
 }

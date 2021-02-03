@@ -7,7 +7,7 @@ import {
   prevHomeBtnHandler,
 } from './2searchAndPlaginationHomePage.js';
 import { myAlert } from './notification';
-import { onQueueBtnClick } from './5libraryPage';
+import { onQueueBtnClick, onWatchedBtnClick } from './5libraryPage';
 import { onClickFilm } from './4filmDeteilsPage';
 console.log(refs.libraryPage);
 
@@ -31,11 +31,18 @@ function activeLibraryPage() {
   refs.queueBtnLib.classList.add('onClick');
   onQueueBtnClick();
   refs.libraryFilmList.addEventListener('click', onClickFilm);
+  refs.queueBtnLib.addEventListener('click', onQueueBtnClick);
+  refs.watchedBtnLib.addEventListener('click', onWatchedBtnClick);
 }
 
 let selectFilm;
 function activeHomePage() {
   localStorage.setItem('curentPage', 'homePage');
+
+  refs.libraryFilmList.removeEventListener('click', onClickFilm);
+  refs.queueBtnLib.removeEventListener('click', onQueueBtnClick);
+  refs.watchedBtnLib.removeEventListener('click', onWatchedBtnClick);
+
   refs.searchFormWrap.classList.remove('hidden');
   refs.homePage.classList.remove('hidden');
   refs.libraryPage.classList.add('hidden');
