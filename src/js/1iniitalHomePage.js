@@ -2,6 +2,7 @@
 import trendFilmTemplate from '../templates/homePage.hbs';
 import refs from './refs.js';
 import { myAlert } from './notification';
+import {nextBtnHandler, prevBtnHandler, nextBtnHandlerSearch, prevBtnHandlerSearch} from './2searchAndPlaginationHomePage'
 
 localStorage.setItem('curentPage', 'homePage');
 
@@ -12,6 +13,15 @@ const api = {
   options: 'movie/popular?',
   pageNumber: 1,
   inputValue: '',
+  query:'',
+
+  getQuery(){
+     return this.query
+  },
+
+  setQuery(newQuery){
+    this.query=newQuery
+  },
 
   fetchTrendFilms() {
     const url = this.baseUrl + this.options + `api_key=${this.key}&language=en-US&page=${this.pageNumber}`;
@@ -23,21 +33,12 @@ const api = {
           return Promise.reject();
         }
       })
-      .then(data => data.results);
+      .then(data => {
+        
+        return data.results});
   },
 
-  fetchMovieInfo(id) {
-    const url = this.baseUrl + `movie/${id}?api_key=${this.key}`;
-    return fetch(url)
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          return Promise.reject();
-        }
-      })
-      .then(data => data);
-  },
+ 
 
   updateURL() {
     this.newUrl = new URL(`http://localhost:4040/?page=${this.pageNumber}`);
@@ -82,8 +83,8 @@ const api = {
       .then(data => data);
   },
 
-  fetchSearchMovies(query) {
-    const url = `${this.baseUrl}search/movie?api_key=${this.key}&language=en-US&page=${this.pageNumber}&query=${query}`;
+  fetchSearchMovies() {
+    const url = `${this.baseUrl}search/movie?api_key=${this.key}&language=en-US&page=${this.pageNumber}&query=${this.query}`;
     return fetch(url)
       .then(response => response.json())
       .then((results ) => {
@@ -95,7 +96,7 @@ const api = {
           myAlert()
         } 
         else{
-        refs.searchDescription.textContent=  `We found ${results.total_results} on request "${query}"`
+        refs.searchDescription.textContent=  `We found ${results.total_results} on request "${this.query}"`
        
       } 
         return results.results;
@@ -106,6 +107,7 @@ const api = {
     return fetch(url)
       .then(response => response.json())
       .then(({ results }) => {
+        
         return results;
       })
       .catch(err => {
@@ -121,7 +123,7 @@ refs.searchForm.addEventListener('submit', onSearchQuery);
 refs.linkLogo.addEventListener('click', homePageReset);
 refs.homePage1.addEventListener('click', homePageReset);
 
-function renderFilm(arr) {
+export function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
   filmList.innerHTML = markup;
   
@@ -129,35 +131,67 @@ function renderFilm(arr) {
 
 export function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
+  refs.nextBtn.removeEventListener('click', nextBtnHandlerSearch);
+  refs.prevBtn.removeEventListener('click', prevBtnHandlerSearch);
+  refs.nextBtn.addEventListener('click', nextBtnHandler);
+  refs.prevBtn.addEventListener('click', prevBtnHandler);
+ 
 }
 
 
 function homePageReset() {
+  
   api.resetPage(), homePageRender();
   refs.pageBtn.textContent = 1;
   refs.searchDescription.textContent=''
 }
 
-export function onSearchQuery(e) {
+ function onSearchQuery(e) {
   e.preventDefault();
-  let queryValue = e.target.elements.query.value;
+  api.setQuery(e.target.elements.query.value)
   api.pageNumber=1
-  if (queryValue === '' || queryValue === ' ' || queryValue === null) {
-    
+  refs.nextBtn.removeEventListener('click', nextBtnHandler);
+  refs.prevBtn.removeEventListener('click', prevBtnHandler);
+  refs.nextBtn.addEventListener('click', nextBtnHandlerSearch);
+  refs.prevBtn.addEventListener('click', prevBtnHandlerSearch);
+  if (api.query === '' || api.query === ' ' || api.query === null) {
+   
     api.resetPage()
     refs.searchDescription.textContent=''
     return  myAlert();
   } 
   refs.pageBtn.textContent = 1;
-  api.fetchSearchMovies(queryValue).then(renderFilm);
+  api.fetchSearchMovies().then(renderFilm);
   refs.inputForm.value = '';
   refs.searchDescription.textContent=''
+  
 }
+
+
+
 
 export default api;
 
 
 
+
+
+
+// function nextBtnHandlerSearch(e){
+//   console.log('кнопка поиска', e)
+//   api.incrementPage();
+ 
+  
+//   refs.pageBtn.textContent = api.pageNumber;
+//   refs.prevBtn.classList.remove('hidden');
+//   if (api.pageNumber === 1) {  
+//     refs.prevBtn.classList.add('hidden');
+//   }
+// }
+
+// function prevBtnHandlerSearch(){
+
+// }
 
 //         // refs.prevBtn.addEventListener('click', prevBtnHandlerSearch);
 //         refs.nextBtn.addEventListener('click', nextBtnHandlerSearch)
