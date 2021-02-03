@@ -11,23 +11,37 @@ function nextBtnHandler() {
   homePageRender();
   let counterValue = Number(refs.pageBtn.textContent);
   refs.pageBtn.textContent = counterValue + 1;
+  refs.prevBtn.classList.remove('hidden');
+  if (counterValue1 === 1) {  
+    refs.prevBtn.classList.add('hidden');
+  }
 }
 
 function prevBtnHandler() {
   api.decrementPage();
   homePageRender();
   let counterValue1 = Number(refs.pageBtn.textContent);
-
-  if (counterValue1 === 1) {
+  
+  if (counterValue1 === 1) {    
     api.resetPage();
     return;
+  }
+  if (counterValue1 ===2) {
+    refs.prevBtn.classList.add('hidden');
   }
   if (counterValue1 > 1) {
     refs.pageBtn.textContent = counterValue1 - 1;
   }
 }
 
-
+// searchAndPaginationHomePage.fetchSearchMoviesList().then(updateMovieMarkUp);
+//   refs.pageBtn.textContent = searchAndPaginationHomePage.pageNumber;
+//   if (searchAndPaginationHomePage.pageNumber !== 1) {
+//     refs.prevBtn.classList.remove('is-hidden');
+//   }
+//   if (searchAndPaginationHomePage.pageNumber === 1) {
+//     refs.prevBtn.classList.add('is-hidden');
+//   }
 
 // import navigationPages from '../js/3navigation.js';
 // import { myError, notice } from './notification.js';

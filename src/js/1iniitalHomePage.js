@@ -114,6 +114,7 @@ export function homePageRender() {
 function homePageReset() {
   api.resetPage(), homePageRender();
   refs.pageBtn.textContent = 1;
+  
 }
 
 function onSearchQuery(e) {
