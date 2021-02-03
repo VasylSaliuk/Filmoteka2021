@@ -34,14 +34,7 @@ function prevBtnHandler() {
   }
 }
 
-// searchAndPaginationHomePage.fetchSearchMoviesList().then(updateMovieMarkUp);
-//   refs.pageBtn.textContent = searchAndPaginationHomePage.pageNumber;
-//   if (searchAndPaginationHomePage.pageNumber !== 1) {
-//     refs.prevBtn.classList.remove('is-hidden');
-//   }
-//   if (searchAndPaginationHomePage.pageNumber === 1) {
-//     refs.prevBtn.classList.add('is-hidden');
-//   }
+
 
 // import navigationPages from '../js/3navigation.js';
 // import { myError, notice } from './notification.js';
