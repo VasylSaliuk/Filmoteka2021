@@ -59,13 +59,13 @@ header {
 //   right: 0;
 //   padding: 0;
 // }
-.input {
-  width: 100%;
-  font-size: 14px;
-  line-height: 1.14;
-  border: transparent;
-  border-bottom: 1px solid #141414;
-}
+// .input {
+//   width: 100%;
+//   font-size: 14px;
+//   line-height: 1.14;
+//   border: transparent;
+//   border-bottom: 1px solid #141414;
+// }
 
 @include for-size(mobile) {
   .logo-name {
@@ -97,6 +97,7 @@ header {
   }
   .logo {
     display: flex;
+    z-index: 5;
   }
   // .search-form {
   //   margin-right: auto;

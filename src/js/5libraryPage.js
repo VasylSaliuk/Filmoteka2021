@@ -5,6 +5,8 @@ import filmTemplate from '../templates/homePage.hbs';
 
 refs.queueBtnLib.addEventListener('click', onQueueBtnClick);
 refs.watchedBtnLib.addEventListener('click', onWatchedBtnClick);
+// refs.prevHomeBtn.addEventListener('click', );
+// refs.nextHomeBtn.addEventListener('click', );
 
 export function onQueueBtnClick() {
   const QUEUE_ARRAY = JSON.parse(localStorage.getItem('filmsQueue'));

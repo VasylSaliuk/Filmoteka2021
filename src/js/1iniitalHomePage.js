@@ -1,6 +1,7 @@
 'use strict';
 import trendFilmTemplate from '../templates/homePage.hbs';
 import refs from './refs.js';
+import { myAlert } from './notification';
 
 localStorage.setItem('curentPage', 'homePage');
 
@@ -75,7 +76,7 @@ const api = {
         if (response.ok) {
           return response.json();
         } else {
-          return Promise.reject();
+          return Promise.reject(); 
         }
       })
       .then(data => data);
@@ -162,12 +163,10 @@ function homePageReset() {
 export function onSearchQuery(e) {
   e.preventDefault();
   let queryValue = e.target.elements.query.value;
-  if (queryValue === '') {
-    return;
-  }
-  api.resetPage()
-  refs.pageBtn.textContent =1;
-  
+  if (queryValue === '' || queryValue === ' ' || queryValue === null) {
+    return  myAlert();
+  } 
+  refs.pageBtn.textContent = 1;
   api.fetchSearchMovies(queryValue).then(renderFilm);
   refs.inputForm.value = '';
 }

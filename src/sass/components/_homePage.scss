@@ -79,8 +79,9 @@
   width: 60px;
   top: -15px;
 
-  transform: skewY(20deg);
+  // transform: skewX(10deg);
   background-color: $warningColor;
+  border-radius: 10px;
   z-index: -2;
 }
 

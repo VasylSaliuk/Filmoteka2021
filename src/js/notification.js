@@ -4,7 +4,7 @@ import '@pnotify/core/dist/PNotify.css';
 
 const myAlert = () =>
   alert({
-    text: 'You should enter something',
+    text: 'Кина не будет, введи что-то путёвое',
     type: 'info',
     hide: true,
     delay: 1000,
