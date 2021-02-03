@@ -89,15 +89,15 @@ const api = {
       .then((results ) => {
         
         console.log( results)
-      //   if (results.total_pages===0){
-      //     refs.searchDescription.textContent=  'Sorry, there no result found. Try searching to something else!'
-      //     homePageRender()
+        if (results.total_pages===0){
+         
+          homePageRender()
+          myAlert()
+        } 
+        else{
+        refs.searchDescription.textContent=  `We found ${results.total_results} on request "${query}"`
        
-      //   } 
-      //   else{
-      //   refs.searchDescription.textContent=  `We found ${results.total_results} on request "${query}"`
-       
-      // } 
+      } 
         return results.results;
       });
   },
@@ -141,15 +141,23 @@ function homePageReset() {
 export function onSearchQuery(e) {
   e.preventDefault();
   let queryValue = e.target.elements.query.value;
+  api.pageNumber=1
   if (queryValue === '' || queryValue === ' ' || queryValue === null) {
+    
+    api.resetPage()
+    refs.searchDescription.textContent=''
     return  myAlert();
   } 
   refs.pageBtn.textContent = 1;
   api.fetchSearchMovies(queryValue).then(renderFilm);
   refs.inputForm.value = '';
+  refs.searchDescription.textContent=''
 }
 
 export default api;
+
+
+
 
 //         // refs.prevBtn.addEventListener('click', prevBtnHandlerSearch);
 //         refs.nextBtn.addEventListener('click', nextBtnHandlerSearch)
