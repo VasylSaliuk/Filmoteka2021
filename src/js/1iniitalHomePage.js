@@ -112,30 +112,8 @@ const api = {
         refs.sliderContainer.innerHTML = `<img class="catch-error-pagination" src="${errorUrl}" />`;
       });
   },
-  //  drawModalForTrailler(id) {
-   
-  //   const url = `${this.baseUrl}movie/${id}/videos?api_key=${this.key}&language=en-US`;
-  //  return fetch(url)
-  //     .then(response => response.json())}
-
-
+ 
 };
-
-;
-//         // refs.prevBtn.addEventListener('click', prevBtnHandlerSearch);
-//         refs.nextBtn.addEventListener('click', nextBtnHandlerSearch)
-// function nextBtnHandlerSearch(){
-//   api.incrementPage();
-//   api.getPage();
-//   api.setPage();
-//   onSearchQuery()
-
-
-// }
-
-
-
-
 document.addEventListener('DOMContentLoaded', homePageRender);
 refs.linkLogo.addEventListener('click', homePageReset);
 refs.homePage1.addEventListener('click', homePageReset);
@@ -172,6 +150,28 @@ export function onSearchQuery(e) {
 }
 
 export default api;
+
+//         // refs.prevBtn.addEventListener('click', prevBtnHandlerSearch);
+//         refs.nextBtn.addEventListener('click', nextBtnHandlerSearch)
+// function nextBtnHandlerSearch(){
+//   api.incrementPage();
+//   api.getPage();
+//   api.setPage();
+//   onSearchQuery()
+
+
+// }
+
+
+
+ //  drawModalForTrailler(id) {
+   
+  //   const url = `${this.baseUrl}movie/${id}/videos?api_key=${this.key}&language=en-US`;
+  //  return fetch(url)
+  //     .then(response => response.json())}
+
+
+
 
 // function addCardFunc(imgPath, filmTitle, movieId) {
 //   const fragment = document.createDocumentFragment();
