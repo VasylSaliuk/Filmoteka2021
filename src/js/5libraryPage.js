@@ -1,6 +1,7 @@
-import api from './1iniitalHomePage';
 import refs from './refs';
 import filmTemplate from '../templates/homePage.hbs';
+import qUrl from '../images/imageQ1.jpg';
+import wUrl from '../images/imageW1.jpg';
 // console.log(api);
 
 refs.queueBtnLib.addEventListener('click', onQueueBtnClick);
@@ -15,20 +16,19 @@ export function onQueueBtnClick() {
   refs.queueBtnLib.classList.add('onClick');
   refs.watchedBtnLib.classList.remove('onClick');
   if (QUEUE_ARRAY === null || QUEUE_ARRAY.length === 0) {
-    refs.libraryFilmList.innerHTML = '<li>There is nothing in the QUEUE list.</li>';
+    refs.libraryFilmList.innerHTML = `<img src="${qUrl}" alt="">`;
   }
-
   appendFilmsMarkup(QUEUE_ARRAY);
 }
 
-function onWatchedBtnClick() {
+export function onWatchedBtnClick() {
   const WATCHED_ARRAY = JSON.parse(localStorage.getItem('filmsWatched'));
   clearFilmList();
   localStorage.setItem('curentPage', 'watchedPage');
   refs.queueBtnLib.classList.remove('onClick');
   refs.watchedBtnLib.classList.add('onClick');
   if (WATCHED_ARRAY === null || WATCHED_ARRAY.length === 0) {
-    refs.libraryFilmList.innerHTML = '<li>There is nothing in the WATCHED list.</li>';
+    refs.libraryFilmList.innerHTML = `<img src="${wUrl}" alt="">`;
   }
 
   appendFilmsMarkup(WATCHED_ARRAY);

@@ -27,14 +27,14 @@ export function onClickFilm(e) {
     function closeModalHandler(e) {
       if (e.code === 'Escape') {
         modal.close();
-        reloadLibraryPage();
+
         window.removeEventListener('keydown', closeModalHandler);
       }
     }
 
     function onClickBtnClose(e) {
       modal.close();
-      reloadLibraryPage();
+
       window.removeEventListener('keydown', closeModalHandler);
     }
 
@@ -59,6 +59,7 @@ export function onClickFilm(e) {
       }
       localStorage.setItem('filmsQueue', JSON.stringify(filmsQueueArr));
       monitorButtonStatusText();
+      reloadLibraryPage();
     }
 
     function controlWatched() {
@@ -75,6 +76,7 @@ export function onClickFilm(e) {
       }
       localStorage.setItem('filmsWatched', JSON.stringify(filmsWatchedArr));
       monitorButtonStatusText();
+      reloadLibraryPage();
     }
 
     function monitorButtonStatusText() {
