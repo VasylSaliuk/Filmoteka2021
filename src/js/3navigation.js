@@ -1,11 +1,6 @@
 import refs from './refs.js';
-import searchAndPaginationHomePage from './2searchAndPlaginationHomePage.js';
-import {
-  nextBtnHandler,
-  prevBtnHandler,
-  nextHomeBtnHandler,
-  prevHomeBtnHandler,
-} from './2searchAndPlaginationHomePage.js';
+
+
 import { myAlert } from './notification';
 import { onQueueBtnClick, onWatchedBtnClick } from './5libraryPage';
 // import searchAndPaginationHomePage from './2searchAndPlaginationHomePage.js';
@@ -16,7 +11,7 @@ import { onQueueBtnClick, onWatchedBtnClick } from './5libraryPage';
 //   prevHomeBtnHandler,
 // } from './2searchAndPlaginationHomePage.js';
 // import { myAlert } from './notification';
-import { onQueueBtnClick } from './5libraryPage';
+// import { onQueueBtnClick } from './5libraryPage';
 import { onClickFilm } from './4filmDeteilsPage';
 // console.log(refs.libraryPage);
 // import searchAndPaginationHomePage from './2searchAndPlaginationHomePage';
@@ -27,13 +22,13 @@ import { onClickFilm } from './4filmDeteilsPage';
 refs.linkHomePage.classList.add('isActive');
 refs.libraryPage.classList.add('hidden');
 
-function activeHomePage() {
-  refs.homePage.classList.remove('hidden');
-  refs.libraryPage.classList.add('hidden');
-  refs.linkHomePage.classList.add('isActive');
-  refs.linkLibrary.classList.remove('isActive');
-  refs.searchFormWrap.classList.remove('hidden');
-}
+// function activeHomePage() {
+//   refs.homePage.classList.remove('hidden');
+//   refs.libraryPage.classList.add('hidden');
+//   refs.linkHomePage.classList.add('isActive');
+//   refs.linkLibrary.classList.remove('isActive');
+//   refs.searchFormWrap.classList.remove('hidden');
+// }
 
 function activeLibraryPage() {
   localStorage.setItem('curentPage', 'queuePage');
@@ -61,42 +56,42 @@ function activeHomePage() {
   refs.homePage.classList.remove('hidden');
   refs.libraryPage.classList.add('hidden');
   refs.linkHomePage.classList.add('isActive');
-  refs.linkLibrary.classList.remove('isActive');
-  if (!searchAndPaginationHomePage.inputValue) {
-    return createPopularMovieList(), myAlert();
-  }
-  searchAndPaginationHomePage.fetchSearchMoviesList().then(updateMovieMarkUp);
-  refs.pageBtn.textContent = searchAndPaginationHomePage.pageNumber;
-  if (searchAndPaginationHomePage.pageNumber !== 1) {
-    refs.prevBtn.classList.remove('is-hidden');
-  }
-  if (searchAndPaginationHomePage.pageNumber === 1) {
-    refs.prevBtn.classList.add('is-hidden');
-  }
+  refs.linkLibrary.classList.remove('isActive');}
+//   if (!searchAndPaginationHomePage.inputValue) {
+//     return createPopularMovieList(), myAlert();
+//   }
+//   searchAndPaginationHomePage.fetchSearchMoviesList().then(updateMovieMarkUp);
+//   refs.pageBtn.textContent = searchAndPaginationHomePage.pageNumber;
+//   if (searchAndPaginationHomePage.pageNumber !== 1) {
+//     refs.prevBtn.classList.remove('is-hidden');
+//   }
+//   if (searchAndPaginationHomePage.pageNumber === 1) {
+//     refs.prevBtn.classList.add('is-hidden');
+//   }
 
-  function cleanPopularPage() {
-    refs.popularPage.innerHTML = '';
-  }
+//   function cleanPopularPage() {
+//     refs.popularPage.innerHTML = '';
+//   }
 
-  function cleanHomePage() {
-    refs.moviesContainer.innerHTML = '';
-  }
+//   function cleanHomePage() {
+//     refs.moviesContainer.innerHTML = '';
+//   }
 
-  function cleanDetailsPage() {
-    refs.detailsPage.innerHTML = '';
-  }
+//   function cleanDetailsPage() {
+//     refs.detailsPage.innerHTML = '';
+//   }
 
-  function cleanLibraryPage() {
-    refs.libraryPage.innerHTML = '';
-  }
+//   function cleanLibraryPage() {
+//     refs.libraryPage.innerHTML = '';
+//   }
 
-  function activeMainPage() {
-    refs.homePage.classList.remove('is-hidden');
-    refs.searchForm.classList.remove('is-hidden');
-    refs.btnContainer.classList.remove('is-hidden');
-    refs.nextBtn.classList.remove('is-hidden');
-  }
-}
+//   function activeMainPage() {
+//     refs.homePage.classList.remove('is-hidden');
+//     refs.searchForm.classList.remove('is-hidden');
+//     refs.btnContainer.classList.remove('is-hidden');
+//     refs.nextBtn.classList.remove('is-hidden');
+//   }
+// }
 refs.linkHomePage.addEventListener('click', activeHomePage);
 refs.linkLibrary.addEventListener('click', activeLibraryPage);
 refs.linkLogo.addEventListener('click', activeHomePage);
