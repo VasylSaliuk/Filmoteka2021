@@ -2,7 +2,12 @@
 import trendFilmTemplate from '../templates/homePage.hbs';
 import refs from './refs.js';
 import { myAlert } from './notification';
-import {nextBtnHandler, prevBtnHandler, nextBtnHandlerSearch, prevBtnHandlerSearch} from './2searchAndPlaginationHomePage'
+import {
+  nextBtnHandler,
+  prevBtnHandler,
+  nextBtnHandlerSearch,
+  prevBtnHandlerSearch,
+} from './2searchAndPlaginationHomePage';
 
 localStorage.setItem('curentPage', 'homePage');
 
@@ -13,14 +18,14 @@ const api = {
   options: 'movie/popular?',
   pageNumber: 1,
   inputValue: '',
-  query:'',
+  query: '',
 
-  getQuery(){
-     return this.query
+  getQuery() {
+    return this.query;
   },
 
-  setQuery(newQuery){
-    this.query=newQuery
+  setQuery(newQuery) {
+    this.query = newQuery;
   },
 
   fetchTrendFilms() {
@@ -34,11 +39,9 @@ const api = {
         }
       })
       .then(data => {
-        
-        return data.results});
+        return data.results;
+      });
   },
-
- 
 
   updateURL() {
     this.newUrl = new URL(`http://localhost:4040/?page=${this.pageNumber}`);
@@ -50,12 +53,12 @@ const api = {
     this.updateURL();
     console.log(this.newUrl);
   },
-  setPage(newpageNumber){
-    this.pageNumber=newpageNumber
+  setPage(newpageNumber) {
+    this.pageNumber = newpageNumber;
   },
 
-  getPage(){
-  return this.pageNumber
+  getPage() {
+    return this.pageNumber;
   },
 
   incrementPage() {
@@ -77,7 +80,7 @@ const api = {
         if (response.ok) {
           return response.json();
         } else {
-          return Promise.reject(); 
+          return Promise.reject();
         }
       })
       .then(data => data);
@@ -87,18 +90,14 @@ const api = {
     const url = `${this.baseUrl}search/movie?api_key=${this.key}&language=en-US&page=${this.pageNumber}&query=${this.query}`;
     return fetch(url)
       .then(response => response.json())
-      .then((results ) => {
-        
-        console.log( results)
-        if (results.total_pages===0){
-         
-          homePageRender()
-          myAlert()
-        } 
-        else{
-        refs.searchDescription.textContent=  `We found ${results.total_results} on request "${this.query}"`
-       
-      } 
+      .then(results => {
+        console.log(results);
+        if (results.total_pages === 0) {
+          homePageRender();
+          myAlert();
+        } else {
+          refs.searchDescription.textContent = `We found ${results.total_results} on request "${this.query}"`;
+        }
         return results.results;
       });
   },
@@ -107,14 +106,12 @@ const api = {
     return fetch(url)
       .then(response => response.json())
       .then(({ results }) => {
-        
         return results;
       })
       .catch(err => {
         refs.sliderContainer.innerHTML = `<img class="catch-error-pagination" src="${errorUrl}" />`;
       });
   },
- 
 };
 document.addEventListener('DOMContentLoaded', homePageRender);
 refs.linkLogo.addEventListener('click', homePageReset);
@@ -126,7 +123,6 @@ refs.homePage1.addEventListener('click', homePageReset);
 export function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
   filmList.innerHTML = markup;
-  
 }
 
 export function homePageRender() {
@@ -135,56 +131,41 @@ export function homePageRender() {
   refs.prevBtn.removeEventListener('click', prevBtnHandlerSearch);
   refs.nextBtn.addEventListener('click', nextBtnHandler);
   refs.prevBtn.addEventListener('click', prevBtnHandler);
- 
 }
-
 
 function homePageReset() {
-  
   api.resetPage(), homePageRender();
   refs.pageBtn.textContent = 1;
-  refs.searchDescription.textContent=''
+  refs.searchDescription.textContent = '';
 }
 
- function onSearchQuery(e) {
+function onSearchQuery(e) {
   e.preventDefault();
-  api.setQuery(e.target.elements.query.value)
-  api.pageNumber=1
+  api.setQuery(e.target.elements.query.value);
+  api.pageNumber = 1;
   refs.nextBtn.removeEventListener('click', nextBtnHandler);
   refs.prevBtn.removeEventListener('click', prevBtnHandler);
   refs.nextBtn.addEventListener('click', nextBtnHandlerSearch);
   refs.prevBtn.addEventListener('click', prevBtnHandlerSearch);
   if (api.query === '' || api.query === ' ' || api.query === null) {
-   
-    api.resetPage()
-    refs.searchDescription.textContent=''
-    return  myAlert();
-  } 
+    api.resetPage();
+    refs.searchDescription.textContent = '';
+    return myAlert();
+  }
   refs.pageBtn.textContent = 1;
   api.fetchSearchMovies().then(renderFilm);
   refs.inputForm.value = '';
-  refs.searchDescription.textContent=''
-  
+  refs.searchDescription.textContent = '';
 }
-
-
-
-
 export default api;
-
-
-
-
-
 
 // function nextBtnHandlerSearch(e){
 //   console.log('кнопка поиска', e)
 //   api.incrementPage();
- 
-  
+
 //   refs.pageBtn.textContent = api.pageNumber;
 //   refs.prevBtn.classList.remove('hidden');
-//   if (api.pageNumber === 1) {  
+//   if (api.pageNumber === 1) {
 //     refs.prevBtn.classList.add('hidden');
 //   }
 // }
@@ -201,19 +182,13 @@ export default api;
 //   api.setPage();
 //   onSearchQuery()
 
-
 // }
 
+//  drawModalForTrailler(id) {
 
-
- //  drawModalForTrailler(id) {
-   
-  //   const url = `${this.baseUrl}movie/${id}/videos?api_key=${this.key}&language=en-US`;
-  //  return fetch(url)
-  //     .then(response => response.json())}
-
-
-
+//   const url = `${this.baseUrl}movie/${id}/videos?api_key=${this.key}&language=en-US`;
+//  return fetch(url)
+//     .then(response => response.json())}
 
 // function addCardFunc(imgPath, filmTitle, movieId) {
 //   const fragment = document.createDocumentFragment();

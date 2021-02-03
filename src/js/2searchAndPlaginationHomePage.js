@@ -23,6 +23,8 @@ export function prevBtnHandler() {
   }
 }
 
+
+
 export function nextBtnHandlerSearch() {
   api.incrementPage();
   api.fetchSearchMovies().then(renderFilm);
