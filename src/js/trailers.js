@@ -7,7 +7,7 @@ function createTrailerLink(elementRef) {
      drawModalForTrailler(e.target.dataset.id);
     }),
   );
-   
+
  function drawModalForTrailler(id){
     const ApiKey = '0f42664b7f6700c34263c8262c49b65b';
     const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${ApiKey}&language=en-US`;
@@ -21,14 +21,14 @@ function createTrailerLink(elementRef) {
       instance.show();
       modalClBtTrailer(instance);
     })
-    .catch(() => {
-      const instance = basicLightbox.create(`
-    <iframe width="560" height="315" src='http://www.youtube.com/embed/zwBpUdZ0lrQ' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      `);
+    // .catch(() => {
+    //   const instance = basicLightbox.create(`
+    // <iframe width="560" height="315" src='http://www.youtube.com/embed/zwBpUdZ0lrQ' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    //   `);
 
       instance.show();
       modalClBtTrailer(instance);
-    });
+    };
 
   function modalClBtTrailer(instance) {
     const modalBox = document.querySelector('.basicLightbox--iframe');
@@ -43,6 +43,6 @@ function createTrailerLink(elementRef) {
 
     modalCloseBtn.addEventListener('click', () => instance.close());
   }
-}}
+}
 
 export default { createTrailerLink };
