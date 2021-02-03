@@ -89,15 +89,15 @@ const api = {
       .then((results ) => {
         
         console.log( results)
-        if (results.total_pages===0){
-          refs.searchDescription.textContent=  'Sorry, there no result found. Try searching to something else!'
-          homePageRender()
+      //   if (results.total_pages===0){
+      //     refs.searchDescription.textContent=  'Sorry, there no result found. Try searching to something else!'
+      //     homePageRender()
        
-        } 
-        else{
-        refs.searchDescription.textContent=  `We found ${results.total_results} on request "${query}"`
+      //   } 
+      //   else{
+      //   refs.searchDescription.textContent=  `We found ${results.total_results} on request "${query}"`
        
-      } 
+      // } 
         return results.results;
       });
   },
