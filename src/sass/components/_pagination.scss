@@ -1,3 +1,5 @@
+    //BUTTONS
+
 .btn-container {
   margin: 0 auto 22px;
   text-align: center;
@@ -5,18 +7,22 @@
 
 .btn-prev,
 .btn-number,
-.btn-next {
+.btn-next,
+.btn-next-home,
+.btn-prev-home {
   font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 22px;
   font-weight: 700;
-  color: rgb(85, 98, 112);
-  height: 50px;
+  color: rgb(5, 55, 107);
+  height: 40px;
   border-radius: 8px;
   outline: none;
 }
 
 .btn-prev,
-.btn-next {
+.btn-next,
+.btn-next-home,
+.btn-prev-home {
   width: 98px;
   cursor: pointer;
 }
@@ -174,4 +180,5 @@
 
 .hidden {
   visibility: hidden;
+  display: none;
 }

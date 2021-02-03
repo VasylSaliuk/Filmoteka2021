@@ -5,22 +5,31 @@ import  {homePageRender}  from './1iniitalHomePage';
 
 refs.nextBtn.addEventListener('click', nextBtnHandler);
 refs.prevBtn.addEventListener('click', prevBtnHandler);
+// refs.prevHomeBtn.addEventListener('click', );
+// refs.nextHomeBtn.addEventListener('click', );
 
 function nextBtnHandler() {
   api.incrementPage();
   homePageRender();
   let counterValue = Number(refs.pageBtn.textContent);
   refs.pageBtn.textContent = counterValue + 1;
+  refs.prevBtn.classList.remove('hidden');
+  if (counterValue1 === 1) {  
+    refs.prevBtn.classList.add('hidden');
+  }
 }
 
 function prevBtnHandler() {
   api.decrementPage();
   homePageRender();
   let counterValue1 = Number(refs.pageBtn.textContent);
-
-  if (counterValue1 === 1) {
+  
+  if (counterValue1 === 1) {    
     api.resetPage();
     return;
+  }
+  if (counterValue1 ===2) {
+    refs.prevBtn.classList.add('hidden');
   }
   if (counterValue1 > 1) {
     refs.pageBtn.textContent = counterValue1 - 1;
