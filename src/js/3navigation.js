@@ -45,6 +45,7 @@ function activeLibraryPage() {
 let selectFilm;
 function activeHomePage() {
   localStorage.setItem('curentPage', 'homePage');
+  
 
   refs.libraryFilmList.removeEventListener('click', onClickFilm);
   refs.queueBtnLib.removeEventListener('click', onQueueBtnClick);
