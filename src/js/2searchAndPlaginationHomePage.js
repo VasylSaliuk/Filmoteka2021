@@ -11,10 +11,10 @@ refs.prevBtn.addEventListener('click', prevBtnHandler);
 function nextBtnHandler() {
   api.incrementPage();
   homePageRender();
-  let counterValue = Number(refs.pageBtn.textContent);
-  refs.pageBtn.textContent = counterValue + 1;
+  // let counterValue =
+  refs.pageBtn.textContent = api.pageNumber;
   refs.prevBtn.classList.remove('hidden');
-  if (counterValue1 === 1) {  
+  if (api.pageNumber === 1) {  
     refs.prevBtn.classList.add('hidden');
   }
 }
@@ -22,18 +22,18 @@ function nextBtnHandler() {
 function prevBtnHandler() {
   api.decrementPage();
   homePageRender();
-  let counterValue1 = Number(refs.pageBtn.textContent);
-  
+  // let counterValue1 = Number(refs.pageBtn.textContent);
+  refs.pageBtn.textContent = api.pageNumber;
   if (counterValue1 === 1) {    
     api.resetPage();
     return;
   }
-  if (counterValue1 ===2) {
+  if (api.pageNumber ===2) {
     refs.prevBtn.classList.add('hidden');
   }
-  if (counterValue1 > 1) {
-    refs.pageBtn.textContent = counterValue1 - 1;
-  }
+  
+    
+ 
 }
 
 
