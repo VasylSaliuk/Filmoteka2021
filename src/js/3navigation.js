@@ -10,7 +10,6 @@ import refs from './refs.js';
 import { onQueueBtnClick } from './5libraryPage';
 import { onClickFilm } from './4filmDeteilsPage';
 // console.log(refs.libraryPage);
-
 // import searchAndPaginationHomePage from './2searchAndPlaginationHomePage';
 // import { nextBtnHandler, prevBtnHandler, nextHomeBtnHandler, prevHomeBtnHandler } from './2searchAndPlaginationHomePage.js';
 // import { myAlert } from './notification'

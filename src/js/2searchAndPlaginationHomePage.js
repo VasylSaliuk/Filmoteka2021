@@ -5,6 +5,8 @@ import  {homePageRender}  from './1iniitalHomePage';
 
 refs.nextBtn.addEventListener('click', nextBtnHandler);
 refs.prevBtn.addEventListener('click', prevBtnHandler);
+// refs.prevHomeBtn.addEventListener('click', );
+// refs.nextHomeBtn.addEventListener('click', );
 
 function nextBtnHandler() {
   api.incrementPage();
