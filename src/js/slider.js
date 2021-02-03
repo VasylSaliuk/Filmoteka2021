@@ -1,9 +1,10 @@
+import api from './1iniitalHomePage';
 import Glide from '@glidejs/glide';
 import filmsCardSliderTpl from '../templates/cardFilmSlider.hbs';
 import trailer from './trailers.js';
+import refs from './refs.js';
 
-const sliderContainer = document.querySelector('.js-slider-container');
-renderTrendy();
+
 
 const glide = new Glide('.glide', {
   type: 'slider',
@@ -16,20 +17,9 @@ const glide = new Glide('.glide', {
 
 glide.mount();
 
-function renderTrendy() {
-  const url = `https://api.themoviedb.org/3/trending/all/day?api_key=0f42664b7f6700c34263c8262c49b65b`;
-  return fetch(url)
-    .then(response => response.json())
-    .then(({ results }) => {
-      return results;
-    })
-    .then(renderSliderFilms)
-    .catch(err => {
-      sliderContainer.innerHTML = `<img class="catch-error-pagination" src="${errorUrl}" />`;
-    });
-}
+api.renderTrendy().then(renderSliderFilms);
 
 function renderSliderFilms(articles) {
-  sliderContainer.innerHTML = filmsCardSliderTpl(articles);
+  refs.sliderContainer.innerHTML = filmsCardSliderTpl(articles);
   trailer.createTrailerLink(document.querySelectorAll('.btn-youtube-slider'));
 }
