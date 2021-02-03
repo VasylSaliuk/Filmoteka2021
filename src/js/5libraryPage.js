@@ -18,7 +18,6 @@ export function onQueueBtnClick() {
   if (QUEUE_ARRAY === null || QUEUE_ARRAY.length === 0) {
     refs.libraryFilmList.innerHTML = `<img src="${qUrl}" alt="">`;
   }
-
   appendFilmsMarkup(QUEUE_ARRAY);
 }
 
