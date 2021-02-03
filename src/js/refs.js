@@ -25,4 +25,8 @@ export default {
   searchFormWrap: document.querySelector('.home_page_search'),
   searchForm: document.querySelector('.search-form'),
   sliderContainer : document.querySelector('.js-slider-container'),
+   modalCloseBtn : document.querySelector('[data-action="close-lightbox"]'),
+    modalBox : document.querySelector('.basicLightbox--iframe'),
+    searchDescription: document.querySelector('.search__description'),
+
 };
