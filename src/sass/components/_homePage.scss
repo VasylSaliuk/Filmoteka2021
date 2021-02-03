@@ -18,6 +18,7 @@
 }
 
 .filmlist__item {
+  margin: 20px;
   overflow: hidden;
   flex-shrink: 0;
   position: relative;
@@ -37,7 +38,7 @@
   width: 100%;
   position: relative;
   border-radius: 10px 10px 0px 0px;
-  
+
 }
 .filmlist__title {
   font-size: 20px;
