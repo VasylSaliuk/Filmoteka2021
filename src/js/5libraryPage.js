@@ -1,7 +1,7 @@
 import api from './1iniitalHomePage';
 import refs from './refs';
 import filmTemplate from '../templates/homePage.hbs';
-console.log(api);
+// console.log(api);
 
 refs.queueBtnLib.addEventListener('click', onQueueBtnClick);
 refs.watchedBtnLib.addEventListener('click', onWatchedBtnClick);

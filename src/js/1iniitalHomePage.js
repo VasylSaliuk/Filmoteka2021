@@ -48,6 +48,13 @@ const api = {
     this.updateURL();
     console.log(this.newUrl);
   },
+  setPage(newpageNumber){
+    this.pageNumber=newpageNumber
+  },
+
+  getPage(){
+  return this.pageNumber
+  },
 
   incrementPage() {
     this.pageNumber += 1;
@@ -78,12 +85,23 @@ const api = {
     const url = `${this.baseUrl}search/movie?api_key=${this.key}&language=en-US&page=${this.pageNumber}&query=${query}`;
     return fetch(url)
       .then(response => response.json())
-      .then(({ results }) => {
-        return results;
+      .then((results ) => {
+        
+        console.log( results)
+        if (results.total_pages===0){
+          refs.searchDescription.textContent=  'Sorry, there no result found. Try searching to something else!'
+          homePageRender()
+       
+        } 
+        else{
+        refs.searchDescription.textContent=  `We found ${results.total_results} on request "${query}"`
+       
+      } 
+        return results.results;
       });
   },
   renderTrendy() {
-    const url = `https://api.themoviedb.org/3/trending/all/day?api_key=${this.key}`;
+    const url = `${this.baseUrl}trending/all/day?api_key=${this.key}`;
     return fetch(url)
       .then(response => response.json())
       .then(({ results }) => {
@@ -93,7 +111,29 @@ const api = {
         refs.sliderContainer.innerHTML = `<img class="catch-error-pagination" src="${errorUrl}" />`;
       });
   },
+  //  drawModalForTrailler(id) {
+   
+  //   const url = `${this.baseUrl}movie/${id}/videos?api_key=${this.key}&language=en-US`;
+  //  return fetch(url)
+  //     .then(response => response.json())}
+
+
 };
+
+;
+//         // refs.prevBtn.addEventListener('click', prevBtnHandlerSearch);
+//         refs.nextBtn.addEventListener('click', nextBtnHandlerSearch)
+// function nextBtnHandlerSearch(){
+//   api.incrementPage();
+//   api.getPage();
+//   api.setPage();
+//   onSearchQuery()
+
+
+// }
+
+
+
 
 document.addEventListener('DOMContentLoaded', homePageRender);
 refs.linkLogo.addEventListener('click', homePageReset);
@@ -105,24 +145,29 @@ refs.homePage1.addEventListener('click', homePageReset);
 function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
   filmList.innerHTML = markup;
+  
 }
 
 export function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
 }
 
+
 function homePageReset() {
   api.resetPage(), homePageRender();
   refs.pageBtn.textContent = 1;
+  refs.searchDescription.textContent=''
 }
 
-function onSearchQuery(e) {
+export function onSearchQuery(e) {
   e.preventDefault();
   let queryValue = e.target.elements.query.value;
   if (queryValue === '') {
     return;
   }
-  refs.pageBtn.textContent = 1;
+  api.resetPage()
+  refs.pageBtn.textContent =1;
+  
   api.fetchSearchMovies(queryValue).then(renderFilm);
   refs.inputForm.value = '';
 }

@@ -9,22 +9,17 @@ refs.prevBtn.addEventListener('click', prevBtnHandler);
 function nextBtnHandler() {
   api.incrementPage();
   homePageRender();
-  let counterValue = Number(refs.pageBtn.textContent);
-  refs.pageBtn.textContent = counterValue + 1;
+ 
+  refs.pageBtn.textContent = api.pageNumber
+  
 }
 
 function prevBtnHandler() {
   api.decrementPage();
   homePageRender();
-  let counterValue1 = Number(refs.pageBtn.textContent);
-
-  if (counterValue1 === 1) {
-    api.resetPage();
-    return;
-  }
-  if (counterValue1 > 1) {
-    refs.pageBtn.textContent = counterValue1 - 1;
-  }
+  
+    refs.pageBtn.textContent = api.pageNumber
+  
 }
 
 
