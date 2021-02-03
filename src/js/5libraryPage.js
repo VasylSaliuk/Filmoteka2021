@@ -14,7 +14,8 @@ export function onQueueBtnClick() {
   }
 
   appendFilmsMarkup(QUEUE_ARRAY);
-}
+
+  
 
 export function onWatchedBtnClick() {
   const WATCHED_ARRAY = JSON.parse(localStorage.getItem('filmsWatched'));
