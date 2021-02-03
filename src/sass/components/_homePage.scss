@@ -23,11 +23,21 @@
   position: relative;
   background-color: cadetblue;
   border-radius: 10px 10px 10px 10px;
+  transform: scale(1);
+  transition: transform 250ms linear;
+  &:hover,
+  &:focus{
+    transform: scale(1.05);
+  }
+
 }
 
 .filmlist__img {
+  display:block;
+  width: 100%;
   position: relative;
   border-radius: 10px 10px 0px 0px;
+  
 }
 .filmlist__title {
   font-size: 20px;
@@ -69,8 +79,9 @@
   width: 60px;
   top: -15px;
 
-  transform: skewY(20deg);
+  // transform: skewX(10deg);
   background-color: $warningColor;
+  border-radius: 10px;
   z-index: -2;
 }
 

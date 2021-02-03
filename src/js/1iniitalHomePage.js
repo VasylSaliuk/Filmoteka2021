@@ -82,6 +82,17 @@ const api = {
         return results;
       });
   },
+  renderTrendy() {
+    const url = `https://api.themoviedb.org/3/trending/all/day?api_key=${this.key}`;
+    return fetch(url)
+      .then(response => response.json())
+      .then(({ results }) => {
+        return results;
+      })
+      .catch(err => {
+        refs.sliderContainer.innerHTML = `<img class="catch-error-pagination" src="${errorUrl}" />`;
+      });
+  },
 };
 
 document.addEventListener('DOMContentLoaded', homePageRender);
@@ -149,3 +160,7 @@ export default api;
 //   return fragment;
 //   // создаёт li согласно макета и вешает на неё слушателем функцию ActiveDetailsPage(movieId, itsLibraryFilm = false)
 // }
+
+// Очистка локалсторедж по ключу Watched
+// let filmsQueueArr = [];
+//       localStorage.setItem('filmsWatched', JSON.stringify(filmsQueueArr));
