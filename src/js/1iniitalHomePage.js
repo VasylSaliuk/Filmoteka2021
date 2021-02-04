@@ -127,6 +127,7 @@ export function renderFilm(arr) {
 
 export function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
+  refs.prevBtn.classList.add('hidden');
   refs.nextBtn.removeEventListener('click', nextBtnHandlerSearch);
   refs.prevBtn.removeEventListener('click', prevBtnHandlerSearch);
   refs.nextBtn.addEventListener('click', nextBtnHandler);
