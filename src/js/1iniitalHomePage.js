@@ -44,14 +44,14 @@ const api = {
       });
   },
 
-  updateURL() {
-    this.newUrl = new URL(`http://localhost:4040/?page=${this.pageNumber}`);
-    return this.newUrl;
-  },
+  // updateURL() {
+  //   this.newUrl = new URL(`http://localhost:4040/?page=${this.pageNumber}`);
+  //   return this.newUrl;
+  // },
 
   resetPage() {
     this.pageNumber = 1;
-    this.updateURL();
+    // this.updateURL();
     console.log(this.newUrl);
   },
   setPage(newpageNumber) {
@@ -64,7 +64,7 @@ const api = {
 
   incrementPage() {
     this.pageNumber += 1;
-    this.updateURL();
+    // this.updateURL();
     console.log(this.newUrl);
   },
 
@@ -102,6 +102,7 @@ const api = {
         return results.results;
       });
   },
+  
   renderTrendy() {
     const url = `${this.baseUrl}trending/all/day?api_key=${this.key}`;
     return fetch(url)

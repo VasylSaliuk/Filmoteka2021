@@ -7,6 +7,7 @@ import { homePageRender, renderFilm } from './1iniitalHomePage.js';
 export function nextBtnHandler() {
   api.incrementPage();
   homePageRender();
+  placeholder.spinner.show();
   refs.pageBtn.textContent = api.pageNumber;
   refs.prevBtn.classList.remove('hidden');
   if (api.pageNumber === 1) {
@@ -17,7 +18,7 @@ export function nextBtnHandler() {
 export function prevBtnHandler() {
   api.decrementPage();
   homePageRender();
-
+  placeholder.spinner.show();
   refs.pageBtn.textContent = api.pageNumber;
   if (api.pageNumber === 1) {
     refs.prevBtn.classList.add('hidden');
