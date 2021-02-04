@@ -132,6 +132,7 @@ export function homePageRender() {
   refs.prevBtn.removeEventListener('click', prevBtnHandlerSearch);
   refs.nextBtn.addEventListener('click', nextBtnHandler);
   refs.prevBtn.addEventListener('click', prevBtnHandler);
+  refs.prevBtn.classList.add('hidden');
 }
 
 function homePageReset() {
