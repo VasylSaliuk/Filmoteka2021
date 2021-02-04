@@ -8,6 +8,11 @@
     justify-content: center;
   }
 }
+@include for-size(mobile) {
+  .filmlist__item {
+    margin-bottom: 15px;
+  }
+}
 
 @include for-size(tablet) {
   .filmlist__item {
@@ -26,18 +31,16 @@
   transform: scale(1);
   transition: transform 250ms linear;
   &:hover,
-  &:focus{
+  &:focus {
     transform: scale(1.05);
   }
-
 }
 
 .filmlist__img {
-  display:block;
+  display: block;
   width: 100%;
   position: relative;
   border-radius: 10px 10px 0px 0px;
-  
 }
 .filmlist__title {
   font-size: 20px;
@@ -94,7 +97,7 @@
 .filmlist__icon {
   fill: yellow;
 }
-.search__description{
+.search__description {
   text-align: center;
   font-size: medium;
   font-weight: 500;
