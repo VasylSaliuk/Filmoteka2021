@@ -1,7 +1,8 @@
 import refs from './refs.js';
 import api from './1iniitalHomePage';
+import placeholder from './spinner.js';
 
-import { homePageRender, renderFilm } from './1iniitalHomePage';
+import { homePageRender, renderFilm } from './1iniitalHomePage.js';
 
 export function nextBtnHandler() {
   api.incrementPage();
@@ -22,8 +23,6 @@ export function prevBtnHandler() {
     refs.prevBtn.classList.add('hidden');
   }
 }
-
-
 
 export function nextBtnHandlerSearch() {
   api.incrementPage();

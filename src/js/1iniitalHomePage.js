@@ -1,7 +1,8 @@
 'use strict';
 import trendFilmTemplate from '../templates/homePage.hbs';
 import refs from './refs.js';
-import { myAlert } from './notification';
+import placeholder from './spinner.js';
+import { myAlert } from './notification.js';
 import {
   nextBtnHandler,
   prevBtnHandler,
@@ -131,6 +132,7 @@ export function homePageRender() {
   refs.prevBtn.removeEventListener('click', prevBtnHandlerSearch);
   refs.nextBtn.addEventListener('click', nextBtnHandler);
   refs.prevBtn.addEventListener('click', prevBtnHandler);
+  placeholder.spinner.close();
 }
 
 function homePageReset() {
