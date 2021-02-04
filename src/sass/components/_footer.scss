@@ -61,16 +61,19 @@
 }
 
 .footer-text {
-  margin-right: 15px;
-  font-size: 25px;
+  // margin-right: 15px;
+  font-size: 20px;
   color: rgba(15, 14, 15, 0.702);
+  font-weight: 600;
 }
 .hover-text {
+  margin-right: 7px;
   color: #8cf0f0;
   font-weight: 300;
+  font-size: 25px;
   &:hover,
   &:focus {
     color: #105a61;
-    box-shadow: #203d3f;
+    box-shadow: #090d0e;
   }
 }
