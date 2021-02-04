@@ -15,17 +15,23 @@ header {
   font-size: 14px;
   font-weight: 700;
   color: rgba(55, 44, 72, 0.702);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 .library-link {
   font-size: 14px;
   font-weight: 700;
   color: rgba(55, 44, 72, 0.702);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 .navItem-text {
   position: relative;
   font-size: 14px;
   font-weight: 700;
   color: rgba(55, 44, 72, 0.702);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 .isActive {
   color: #141414;
@@ -44,29 +50,6 @@ header {
   display: flex;
 }
 
-// .search-form {
-//   position: relative;
-//   text-align: center;
-//   margin-right: auto;
-//   margin-left: auto;
-//   width: 300px;
-// }
-// .search-form-btn {
-//   background-color: initial;
-//   border: transparent;
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   padding: 0;
-// }
-// .input {
-//   width: 100%;
-//   font-size: 14px;
-//   line-height: 1.14;
-//   border: transparent;
-//   border-bottom: 1px solid #141414;
-// }
-
 @include for-size(mobile) {
   .logo-name {
     display: none;
@@ -79,9 +62,6 @@ header {
   box-shadow: 0px 13px 23px -13px rgba(0, 0, 0, 0.41);
 }
 
-// .search-form {
-//   // box-shadow: 0px 13px 23px -13px rgba(0, 0, 0, 0.41);
-// }
 .library-button {
   width: 140px;
   height: 40px;
@@ -99,20 +79,12 @@ header {
     display: flex;
     z-index: 5;
   }
-  // .search-form {
-  //   margin-right: auto;
-  //   margin-left: auto;
-  // }
+
   .logo-name {
     font-size: 20px;
     font-weight: 700;
     color: rgba(55, 44, 72, 0.702);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
   }
 }
-
-// desktop-------
-// @include for-size(desktop) {
-//   header {
-//     padding-bottom: 90px;
-//   }
-// }
