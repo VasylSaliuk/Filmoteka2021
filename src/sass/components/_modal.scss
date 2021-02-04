@@ -1,22 +1,22 @@
 .modal-close-btn {
-  // display: none;
   font-size: 18px;
   position: absolute;
-  top: 16px;
-  right: 16px;
-  color: rgb(17, 17, 17);
+  top: 15px;
+  right: 10px;
+  color: #20bcc6;
   border: 1px solid transparent;
   border-radius: 50%;
   width: 25px;
   height: 25px;
   cursor: pointer;
-  // z-index: 3;
-  // transition: all 0.2s linear;
 
   &:hover,
   &:focus {
     color: #20bcc6;
     box-shadow: 0 0 15px #20bcc6;
+  }
+  @include for-size(mobile) {
+    display: none;
   }
 }
 
@@ -28,6 +28,9 @@
     width: 320px;
     margin-top: 350px;
   }
+}
+.body-scroll-disable {
+  overflow: hidden;
 }
 
 .genres {
@@ -132,7 +135,7 @@
   font-weight: 500;
   background-color: #f7f7f7;
   border-radius: 5px;
-  padding: 1px 4px 1px 4px;
+  // padding: 1px 4px 1px 4px;
   text-align: center;
   line-height: 1.5;
 }
@@ -140,12 +143,14 @@
   // margin-left: 5px;
   color: rgb(0, 0, 0);
   font-weight: 500;
+  padding: 2px 2px;
 }
 .cardItem__title_data {
   // margin-left: px;
   text-transform: uppercase;
   color: rgb(0, 0, 0);
   font-weight: 500;
+  padding: 2px 2px;
 }
 .cardItem__genre {
   display: inline-block;

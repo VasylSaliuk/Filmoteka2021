@@ -5,7 +5,7 @@
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-  background-color: #77c1bb;
+  background-color: cadetblue;
 
   // border: solid brown 3px;
 }
@@ -56,11 +56,21 @@
 //   // }
 // }
 
-// .material-icons-white {
-//   color: white;
-// }
+.material-icons {
+  color: white;
+}
 
 .footer-text {
   margin-right: 15px;
-  color: rgba(55, 44, 72, 0.702);
+  font-size: 25px;
+  color: rgba(15, 14, 15, 0.702);
+}
+.hover-text {
+  color: #8cf0f0;
+  font-weight: 300;
+  &:hover,
+  &:focus {
+    color: #105a61;
+    box-shadow: #203d3f;
+  }
 }
