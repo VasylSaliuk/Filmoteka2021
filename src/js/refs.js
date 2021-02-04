@@ -28,5 +28,6 @@ export default {
    modalCloseBtn : document.querySelector('[data-action="close-lightbox"]'),
     modalBox : document.querySelector('.basicLightbox--iframe'),
     searchDescription: document.querySelector('.search__description'),
-
+    sliderImg: document.querySelector('.slider-card'),
+    filmItem : document.querySelector('.main_filmlist'),
 };
