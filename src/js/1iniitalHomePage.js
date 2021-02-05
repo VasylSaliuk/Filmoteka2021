@@ -44,14 +44,11 @@ const api = {
       });
   },
 
-  // updateURL() {
-  //   this.newUrl = new URL(`http://localhost:4040/?page=${this.pageNumber}`);
-  //   return this.newUrl;
-  // },
+  
 
   resetPage() {
     this.pageNumber = 1;
-    // this.updateURL();
+   
     console.log(this.newUrl);
   },
   setPage(newpageNumber) {
@@ -64,14 +61,14 @@ const api = {
 
   incrementPage() {
     this.pageNumber += 1;
-    // this.updateURL();
+   
     console.log(this.newUrl);
   },
 
   decrementPage() {
     if (this.pageNumber === 1) return;
     this.pageNumber -= 1;
-    this.updateURL();
+    
   },
 
   fetchMovieInfo(id) {
@@ -136,8 +133,8 @@ export function homePageRender() {
   refs.nextBtn.addEventListener('click', nextBtnHandler);
   refs.prevBtn.addEventListener('click', prevBtnHandler);
   placeholder.spinner.close();
-  refs.prevBtn.classList.add('hidden');
 }
+ 
 
 function homePageReset() {
   api.resetPage(), homePageRender();
@@ -147,6 +144,7 @@ function homePageReset() {
 }
 
 function onSearchQuery(e) {
+  refs.prevBtn.classList.add('hidden');
   e.preventDefault();
   api.setQuery(e.target.elements.query.value);
   api.pageNumber = 1;
