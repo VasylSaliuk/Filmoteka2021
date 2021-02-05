@@ -127,18 +127,19 @@ export function renderFilm(arr) {
 
 export function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
-  refs.prevBtn.classList.add('hidden');
+  
   refs.nextBtn.removeEventListener('click', nextBtnHandlerSearch);
   refs.prevBtn.removeEventListener('click', prevBtnHandlerSearch);
   refs.nextBtn.addEventListener('click', nextBtnHandler);
   refs.prevBtn.addEventListener('click', prevBtnHandler);
-  refs.prevBtn.classList.add('hidden');
+ 
 }
 
 function homePageReset() {
   api.resetPage(), homePageRender();
   refs.pageBtn.textContent = 1;
   refs.searchDescription.textContent = '';
+  refs.prevBtn.classList.add('hidden');
 }
 
 function onSearchQuery(e) {
@@ -161,69 +162,3 @@ function onSearchQuery(e) {
 }
 export default api;
 
-// function nextBtnHandlerSearch(e){
-//   console.log('кнопка поиска', e)
-//   api.incrementPage();
-
-//   refs.pageBtn.textContent = api.pageNumber;
-//   refs.prevBtn.classList.remove('hidden');
-//   if (api.pageNumber === 1) {
-//     refs.prevBtn.classList.add('hidden');
-//   }
-// }
-
-// function prevBtnHandlerSearch(){
-
-// }
-
-//         // refs.prevBtn.addEventListener('click', prevBtnHandlerSearch);
-//         refs.nextBtn.addEventListener('click', nextBtnHandlerSearch)
-// function nextBtnHandlerSearch(){
-//   api.incrementPage();
-//   api.getPage();
-//   api.setPage();
-//   onSearchQuery()
-
-// }
-
-//  drawModalForTrailler(id) {
-
-//   const url = `${this.baseUrl}movie/${id}/videos?api_key=${this.key}&language=en-US`;
-//  return fetch(url)
-//     .then(response => response.json())}
-
-// function addCardFunc(imgPath, filmTitle, movieId) {
-//   const fragment = document.createDocumentFragment();
-
-//   const listItemRef = document.createElement('li');
-//   listItemRef.classList.add('movie-list__item');
-//   listItemRef.addEventListener('click', () => {
-//     activeDetailsPage(movieId, false);
-//   });
-
-//   const linkRef = document.createElement('a');
-//   linkRef.classList.add('movie-list__link');
-//   linkRef.href = '#';
-
-//   const imgRef = document.createElement('img');
-//   imgRef.classList.add('movie-list__image');
-//   imgRef.src = `https://image.tmdb.org/t/p/original${imgPath}`;
-//   if (imgPath === null) imgRef.src = './images/No_image.jpg';
-//   imgRef.alt = filmTitle;
-
-//   const textRef = document.createElement('p');
-//   textRef.classList.add('movie-list__text');
-//   textRef.textContent = filmTitle;
-
-//   listItemRef.appendChild(linkRef);
-//   linkRef.appendChild(imgRef);
-//   linkRef.appendChild(textRef);
-//   fragment.appendChild(listItemRef);
-
-//   return fragment;
-//   // создаёт li согласно макета и вешает на неё слушателем функцию ActiveDetailsPage(movieId, itsLibraryFilm = false)
-// }
-
-// Очистка локалсторедж по ключу Watched
-// let filmsQueueArr = [];
-//       localStorage.setItem('filmsWatched', JSON.stringify(filmsQueueArr));
