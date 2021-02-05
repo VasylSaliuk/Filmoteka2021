@@ -28,6 +28,7 @@ export function prevBtnHandler() {
 export function nextBtnHandlerSearch() {
   api.incrementPage();
   api.fetchSearchMovies().then(renderFilm);
+  placeholder.spinner.show();
   refs.pageBtn.textContent = api.pageNumber;
   refs.prevBtn.classList.remove('hidden');
   if (api.pageNumber === 1) {
@@ -38,6 +39,7 @@ export function nextBtnHandlerSearch() {
 export function prevBtnHandlerSearch() {
   api.decrementPage();
   api.fetchSearchMovies().then(renderFilm);
+  placeholder.spinner.show();
   refs.pageBtn.textContent = api.pageNumber;
   if (api.pageNumber === 1) {
     refs.prevBtn.classList.add('hidden');
