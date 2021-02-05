@@ -1,7 +1,8 @@
 'use strict';
 import trendFilmTemplate from '../templates/homePage.hbs';
 import refs from './refs.js';
-import { myAlert } from './notification';
+import placeholder from './spinner.js';
+import { myAlert } from './notification.js';
 import {
   nextBtnHandler,
   prevBtnHandler,
@@ -43,14 +44,14 @@ const api = {
       });
   },
 
-  updateURL() {
-    this.newUrl = new URL(`http://localhost:4040/?page=${this.pageNumber}`);
-    return this.newUrl;
-  },
+  // updateURL() {
+  //   this.newUrl = new URL(`http://localhost:4040/?page=${this.pageNumber}`);
+  //   return this.newUrl;
+  // },
 
   resetPage() {
     this.pageNumber = 1;
-    this.updateURL();
+    // this.updateURL();
     console.log(this.newUrl);
   },
   setPage(newpageNumber) {
@@ -63,7 +64,7 @@ const api = {
 
   incrementPage() {
     this.pageNumber += 1;
-    this.updateURL();
+    // this.updateURL();
     console.log(this.newUrl);
   },
 
@@ -101,6 +102,7 @@ const api = {
         return results.results;
       });
   },
+
   renderTrendy() {
     const url = `${this.baseUrl}trending/all/day?api_key=${this.key}`;
     return fetch(url)
@@ -123,6 +125,7 @@ refs.homePage1.addEventListener('click', homePageReset);
 export function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
   filmList.innerHTML = markup;
+  placeholder.spinner.close();
 }
 
 export function homePageRender() {
@@ -132,7 +135,8 @@ export function homePageRender() {
   refs.prevBtn.removeEventListener('click', prevBtnHandlerSearch);
   refs.nextBtn.addEventListener('click', nextBtnHandler);
   refs.prevBtn.addEventListener('click', prevBtnHandler);
- 
+  placeholder.spinner.close();
+  refs.prevBtn.classList.add('hidden');
 }
 
 function homePageReset() {

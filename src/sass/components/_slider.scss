@@ -33,6 +33,7 @@
   line-height: 2;
   text-transform: uppercase;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  letter-spacing: 1.5px;
 }
 
 .btn-youtube-slider {
@@ -47,7 +48,7 @@
 
   border: 0;
   outline: none;
-  // background-image: url('../../images/icons8-play-button-2.svg');
+  background-image: url('../images/youtubeRound.svg');
   background-color: transparent;
 }
 
@@ -88,7 +89,7 @@
   justify-content: center;
   flex-direction: column;
   height: 19px;
-  width: 70px;
+  width: 60px;
 
   pointer-events: none;
   font-family: 'Roboto', sans-serif;
@@ -100,7 +101,7 @@
   left: 75px;
   z-index: 2;
   opacity: 0;
-  transform: translateX(-63%);
+  transform: translateX(-73%);
   transition: all 400ms ease-in;
 }
 
@@ -108,7 +109,7 @@
   // position: relative;
   display: flex;
   opacity: 1;
-  transform: translateX(-63%);
+  transform: translateX(-55%);
 }
 
 .btn-youtube-text-slider {
