@@ -3,7 +3,7 @@ import Glide from '@glidejs/glide';
 import filmsCardSliderTpl from '../templates/cardFilmSlider.hbs';
 import trailer from './trailers.js';
 import refs from './refs.js';
-import {onClickSlider} from './4filmDeteilsPage'
+
 
 
 const glide = new Glide('.glide', {
@@ -23,5 +23,3 @@ function renderSliderFilms(articles) {
   refs.sliderContainer.innerHTML = filmsCardSliderTpl(articles);
   trailer.createTrailerLink(document.querySelectorAll('.btn-youtube-slider'));
 }
-
-// controlModal( refs.sliderImg, refs.filmItem)

@@ -44,14 +44,11 @@ const api = {
       });
   },
 
-  // updateURL() {
-  //   this.newUrl = new URL(`http://localhost:4040/?page=${this.pageNumber}`);
-  //   return this.newUrl;
-  // },
+  
 
   resetPage() {
     this.pageNumber = 1;
-    // this.updateURL();
+   
     console.log(this.newUrl);
   },
   setPage(newpageNumber) {
@@ -64,14 +61,14 @@ const api = {
 
   incrementPage() {
     this.pageNumber += 1;
-    // this.updateURL();
+   
     console.log(this.newUrl);
   },
 
   decrementPage() {
     if (this.pageNumber === 1) return;
     this.pageNumber -= 1;
-    this.updateURL();
+    
   },
 
   fetchMovieInfo(id) {
@@ -102,7 +99,7 @@ const api = {
         return results.results;
       });
   },
-  
+
   renderTrendy() {
     const url = `${this.baseUrl}trending/all/day?api_key=${this.key}`;
     return fetch(url)
@@ -125,26 +122,29 @@ refs.homePage1.addEventListener('click', homePageReset);
 export function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
   filmList.innerHTML = markup;
+  placeholder.spinner.close();
 }
 
 export function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
-  refs.prevBtn.classList.add('hidden');
+  
   refs.nextBtn.removeEventListener('click', nextBtnHandlerSearch);
   refs.prevBtn.removeEventListener('click', prevBtnHandlerSearch);
   refs.nextBtn.addEventListener('click', nextBtnHandler);
   refs.prevBtn.addEventListener('click', prevBtnHandler);
   placeholder.spinner.close();
-  refs.prevBtn.classList.add('hidden');
 }
+ 
 
 function homePageReset() {
   api.resetPage(), homePageRender();
   refs.pageBtn.textContent = 1;
   refs.searchDescription.textContent = '';
+  refs.prevBtn.classList.add('hidden');
 }
 
 function onSearchQuery(e) {
+  refs.prevBtn.classList.add('hidden');
   e.preventDefault();
   api.setQuery(e.target.elements.query.value);
   api.pageNumber = 1;
@@ -164,69 +164,3 @@ function onSearchQuery(e) {
 }
 export default api;
 
-// function nextBtnHandlerSearch(e){
-//   console.log('кнопка поиска', e)
-//   api.incrementPage();
-
-//   refs.pageBtn.textContent = api.pageNumber;
-//   refs.prevBtn.classList.remove('hidden');
-//   if (api.pageNumber === 1) {
-//     refs.prevBtn.classList.add('hidden');
-//   }
-// }
-
-// function prevBtnHandlerSearch(){
-
-// }
-
-//         // refs.prevBtn.addEventListener('click', prevBtnHandlerSearch);
-//         refs.nextBtn.addEventListener('click', nextBtnHandlerSearch)
-// function nextBtnHandlerSearch(){
-//   api.incrementPage();
-//   api.getPage();
-//   api.setPage();
-//   onSearchQuery()
-
-// }
-
-//  drawModalForTrailler(id) {
-
-//   const url = `${this.baseUrl}movie/${id}/videos?api_key=${this.key}&language=en-US`;
-//  return fetch(url)
-//     .then(response => response.json())}
-
-// function addCardFunc(imgPath, filmTitle, movieId) {
-//   const fragment = document.createDocumentFragment();
-
-//   const listItemRef = document.createElement('li');
-//   listItemRef.classList.add('movie-list__item');
-//   listItemRef.addEventListener('click', () => {
-//     activeDetailsPage(movieId, false);
-//   });
-
-//   const linkRef = document.createElement('a');
-//   linkRef.classList.add('movie-list__link');
-//   linkRef.href = '#';
-
-//   const imgRef = document.createElement('img');
-//   imgRef.classList.add('movie-list__image');
-//   imgRef.src = `https://image.tmdb.org/t/p/original${imgPath}`;
-//   if (imgPath === null) imgRef.src = './images/No_image.jpg';
-//   imgRef.alt = filmTitle;
-
-//   const textRef = document.createElement('p');
-//   textRef.classList.add('movie-list__text');
-//   textRef.textContent = filmTitle;
-
-//   listItemRef.appendChild(linkRef);
-//   linkRef.appendChild(imgRef);
-//   linkRef.appendChild(textRef);
-//   fragment.appendChild(listItemRef);
-
-//   return fragment;
-//   // создаёт li согласно макета и вешает на неё слушателем функцию ActiveDetailsPage(movieId, itsLibraryFilm = false)
-// }
-
-// Очистка локалсторедж по ключу Watched
-// let filmsQueueArr = [];
-//       localStorage.setItem('filmsWatched', JSON.stringify(filmsQueueArr));
