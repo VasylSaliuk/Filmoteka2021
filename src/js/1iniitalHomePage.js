@@ -102,7 +102,7 @@ const api = {
         return results.results;
       });
   },
-  
+
   renderTrendy() {
     const url = `${this.baseUrl}trending/all/day?api_key=${this.key}`;
     return fetch(url)
@@ -125,6 +125,7 @@ refs.homePage1.addEventListener('click', homePageReset);
 export function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
   filmList.innerHTML = markup;
+  placeholder.spinner.close();
 }
 
 export function homePageRender() {
