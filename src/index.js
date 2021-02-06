@@ -14,4 +14,3 @@ import './js/notification.js';
 import './js/raiting.js';
 =======
 import './js/ourTeam.js';
->>>>>>> 70323219238f2b820d4720c89f42af79d4cfa94e
