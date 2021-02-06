@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+.firstPage {
+	background-color: #232323;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	
+	svg {
+		max-width: 40rem;
+		width: 100%;
+		height: auto;
+		fill: none;
+		stroke: $white;
+		stroke-width: 3;
+		
+		tspan > tspan {
+			stroke-dasharray: 1500;
+			stroke-dashoffset: -1500;
+			
+			@for $i from 1 through 19 {
+				
+				&:nth-of-type(#{$i}) {
+					animation: draw 300ms #{$i * 150}ms forwards;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+@keyframes draw {
+	
+	100% {
+		stroke-dashoffset: 0;
+	}
+	
+}

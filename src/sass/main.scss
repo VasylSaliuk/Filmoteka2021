@@ -8,6 +8,7 @@
 @import './utils/pnotify';
 @import './utils/mixin.scss';
 @import './utils/container';
+@import './components/firstPage.scss';
 @import './components/header.scss';
 @import './components/footer.scss';
 @import './components/homePage';
@@ -18,5 +19,9 @@
 @import './components/spinner';
 // @import './components/trailers';
 @import './components/slider';
+<<<<<<< HEAD
 @import './components/stars.scss';
 
+=======
+@import './components/ourTeam';
+>>>>>>> 70323219238f2b820d4720c89f42af79d4cfa94e

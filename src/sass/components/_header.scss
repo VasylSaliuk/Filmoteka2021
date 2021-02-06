@@ -1,7 +1,7 @@
 header {
   padding: 15px 0;
 
-  background-color: #77c1bb;
+  background-color: #232323;
 }
 
 .navigation-box {
@@ -14,14 +14,14 @@ header {
   margin-right: 35px;
   font-size: 14px;
   font-weight: 700;
-  color: rgba(55, 44, 72, 0.702);
+  color: $textColor;
   text-transform: uppercase;
   letter-spacing: 1.5px;
 }
 .library-link {
   font-size: 14px;
   font-weight: 700;
-  color: rgba(55, 44, 72, 0.702);
+  color: $textColor;
   text-transform: uppercase;
   letter-spacing: 1.5px;
 }
@@ -29,12 +29,12 @@ header {
   position: relative;
   font-size: 14px;
   font-weight: 700;
-  color: rgba(55, 44, 72, 0.702);
+  color: $textColor;
   text-transform: uppercase;
   letter-spacing: 1.5px;
 }
 .isActive {
-  color: #141414;
+  color: #dac9c9d0;
 
   &:after {
     content: '';
@@ -59,7 +59,7 @@ header {
 .home_page_search,
 .library-button-wrap {
   margin: 20px auto 30px;
-  box-shadow: 0px 13px 23px -13px rgba(0, 0, 0, 0.41);
+  box-shadow: 0px 13px 23px -13px rgba(219, 213, 213, 0.651);
 }
 
 .library-button {
@@ -83,8 +83,52 @@ header {
   .logo-name {
     font-size: 20px;
     font-weight: 700;
-    color: rgba(55, 44, 72, 0.702);
+    color: $textColor;
     text-transform: uppercase;
     letter-spacing: 1.5px;
   }
+}
+
+.js-btnThemeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  margin-bottom: 6px;
+  margin-left: 40px;
+}
+
+.js-btnThemeToggle:hover {
+  cursor: pointer;
+}
+
+.textBtnThemeToggle {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color: white;
+  background-color: inherit;
+  margin-right: 0px;
+  margin-left: 20px;
+}
+.textBtnThemeToggle:hover {
+  cursor: pointer;
+}
+
+.light_theme {
+  color: #232323;
+  background-color: white;
+}
+
+.dark_theme {
+  color: white;
+  background-color: #232323;
 }
