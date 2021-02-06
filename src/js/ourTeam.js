@@ -60,21 +60,21 @@ const markup =`<div class="team-wrapper">
     </div>
 </div>`;
 const container = document.querySelector('.js-team-modal');
-const markup2 = `<img src="${vasylUrl}"/>`;
+// const markup2 = `<img src="${vasylUrl}"/>`;
 
 container.addEventListener('click', openModal);
+window.addEventListener('keydown', closeModalHandler);
 
 const modal = basicLightbox.create(markup);
 
 function openModal(e) {
+  e.preventDefault();
   modal.show();
+}
 
-  window.addEventListener('keydown', closeModalHandler);
-
-  function closeModalHandler(e) {
-    if (e.code === 'Escape') {
-      modal.close();
-      window.removeEventListener('keydown', closeModalHandler);
-    }
+function closeModalHandler(e) {
+  if (e.code === 'Escape') {
+    modal.close();
+    window.removeEventListener('keydown', closeModalHandler);
   }
 }
