@@ -57,7 +57,8 @@
 .cardItem__name {
   color: #34dde9;
   font-size: 25px;
-  margin-bottom: 40px;
+  margin-top: 15px;
+  margin-bottom: 30px;
 
   @include for-size(mobile) {
     text-align: center;
@@ -283,7 +284,9 @@
 }
 
 .js-btnWatchedAdd,
-.js-btnQueueAdd {
+.js-btnQueueAdd,
+.js-btnCast,
+.js-btnReviews {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -297,11 +300,14 @@
   background-color: inherit;
   padding: 8px;
   border: 2px solid #ffffff;
+  margin-right: 5px;
   margin-bottom: 6px;
 }
 
 .js-btnWatchedAdd:hover,
-.js-btnQueueAdd:hover {
+.js-btnQueueAdd:hover,
+.js-btnCast:hover,
+.js-btnReviews:hover {
   cursor: pointer;
   border: 2px solid #77c1bb;
   box-shadow: 0 0 6px 1px #77c1bb;
