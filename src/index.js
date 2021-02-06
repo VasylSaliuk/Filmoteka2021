@@ -1,5 +1,6 @@
 import './sass/main.scss';
 import './js/btnUp.js';
+import './js/firstPage.js'
 import './js/1iniitalHomePage';
 import './js/2searchAndPlaginationHomePage.js';
 import './js/3navigation.js';
