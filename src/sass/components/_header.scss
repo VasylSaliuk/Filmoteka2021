@@ -88,3 +88,47 @@ header {
     letter-spacing: 1.5px;
   }
 }
+
+.js-btnThemeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  margin-bottom: 6px;
+  margin-left: 40px;
+}
+
+.js-btnThemeToggle:hover {
+  cursor: pointer;
+}
+
+.textBtnThemeToggle {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color: white;
+  background-color: inherit;
+  margin-right: 0px;
+  margin-left: 20px;
+}
+.textBtnThemeToggle:hover {
+  cursor: pointer;
+}
+
+.light_theme {
+  color: #232323;
+  background-color: white;
+}
+
+.dark_theme {
+  color: white;
+  background-color: #232323;
+}
