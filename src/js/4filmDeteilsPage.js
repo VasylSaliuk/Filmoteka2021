@@ -13,10 +13,10 @@ export function onClickFilm(e) {
  
   const filmId = e.target.id;
 
-  console.log(api.fetchMovieInfo(filmId));
+  
   api.fetchMovieInfo(filmId).then(data => {
     let selectFilm = data;
-    console.log(selectFilm);
+    
     const cardTemplate = filmCard(data);
     const modal = basicLightbox.create(cardTemplate);
     modal.show();
@@ -44,7 +44,7 @@ export function onClickFilm(e) {
     btnQueueAdd.addEventListener('click', controlQueue);
     btnWatchedAdd.addEventListener('click', controlWatched);
     function controlQueue() {
-      console.log('+');
+      
       let filmsQueueArr = [];
       //   localStorage.setItem('filmsQueue', JSON.stringify(filmsQueueArr));
       let localStorageData = localStorage.getItem('filmsQueue');
@@ -62,7 +62,7 @@ export function onClickFilm(e) {
     }
 
     function controlWatched() {
-      console.log('+');
+      
       let filmsWatchedArr = [];
       let localStorageData = localStorage.getItem('filmsWatched');
       if (localStorageData !== null) {
