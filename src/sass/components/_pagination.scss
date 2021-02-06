@@ -1,7 +1,7 @@
 //BUTTONS
 
 .btn-container {
-  margin: 0 auto 22px;
+  padding: 20px 22px;
   text-align: center;
 }
 
@@ -36,15 +36,15 @@
 }
 
 #homePage__search {
-  position: relative;
+  position: relatives;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   min-height: 68px;
-  background-color: #f3f6f6;
+  background-color: #232323c0;
   box-shadow: 0 5px 9px 1px rgba(0, 0, 0, 0.23);
-  margin-bottom: 15px;
+  // margin-bottom: 15px;
 }
 
 #homePage__search-input {
@@ -161,10 +161,6 @@
     font-size: 18px;
     left: 18px;
     bottom: 12px;
-  }
-
-  #homePage__search {
-    margin: 0 0 30px;
   }
 
   #homePage__search-input {
