@@ -47,3 +47,27 @@ refs.linkLogo.addEventListener('click', activeHomePage);
 
 // let scrollUpFooter = document.querySelector('.scroll-up');
 // scrollUpFooter.addEventListener('click', scrollToHome);
+const body = document.querySelector('body');
+const switchTheme = document.querySelector('.textBtnThemeToggle');
+switchTheme.addEventListener('click', changeTheme);
+
+function changeTheme() {
+  console.log(1);
+  let localStorageCurentTheme = localStorage.getItem('curentTheme');
+  if (localStorageCurentTheme == null) {
+    localStorage.setItem('curentTheme', 'light');
+    return;
+  }
+  if (localStorageCurentTheme === 'light') {
+    localStorage.setItem('curentTheme', 'dark');
+    switchTheme.textContent = 'dark_mode';
+    body.classList.add('dark_theme');
+    body.classList.remove('light_theme');
+  }
+  if (localStorageCurentTheme === 'dark') {
+    localStorage.setItem('curentTheme', 'light');
+    switchTheme.textContent = 'light_mode';
+    body.classList.add('light_theme');
+    body.classList.remove('dark_theme');
+  }
+}
