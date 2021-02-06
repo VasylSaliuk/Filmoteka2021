@@ -10,4 +10,7 @@ import '../node_modules/basiclightbox/dist/basicLightbox.min.css';
 import './js/slider.js';
 import './js/trailers';
 import './js/notification.js';
+<<<<<<< HEAD
+import './js/raiting.js';
+=======
 import './js/ourTeam.js';
