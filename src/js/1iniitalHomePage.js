@@ -9,6 +9,8 @@ import {
   nextBtnHandlerSearch,
   prevBtnHandlerSearch,
 } from './2searchAndPlaginationHomePage';
+import trailer from './trailers.js';
+
 
 localStorage.setItem('curentPage', 'homePage');
 
@@ -72,12 +74,13 @@ const api = {
   },
 
   fetchMovieInfo(id) {
-    const url = this.baseUrl + `movie/${id}?api_key=${this.key}`;
+    const url = `${this.baseUrl}movie/${id}?api_key=${this.key}`;
     return fetch(url)
       .then(response => {
         if (response.ok) {
           return response.json();
-        } else {
+        } 
+        else {
           return Promise.reject();
         }
       })
@@ -89,12 +92,12 @@ const api = {
     return fetch(url)
       .then(response => response.json())
       .then(results => {
-        console.log(results);
+        // console.log(results);
         if (results.total_pages === 0) {
           homePageRender();
           myAlert();
         } else {
-          refs.searchDescription.textContent = `We found ${results.total_results} on request "${this.query}"`;
+          refs.searchDescription.textContent = `We are found ${results.total_results} on request "${this.query}"`;
         }
         return results.results;
       });
@@ -107,9 +110,9 @@ const api = {
       .then(({ results }) => {
         return results;
       })
-      .catch(err => {
-        refs.sliderContainer.innerHTML = `<img class="catch-error-pagination" src="${errorUrl}" />`;
-      });
+      // .catch(err => {
+      //   refs.sliderContainer.innerHTML = `<img class="catch-error-pagination" src="${errorUrl}" />`;
+      // });
   },
 };
 document.addEventListener('DOMContentLoaded', homePageRender);
@@ -119,10 +122,12 @@ refs.searchForm.addEventListener('submit', onSearchQuery);
 refs.linkLogo.addEventListener('click', homePageReset);
 refs.homePage1.addEventListener('click', homePageReset);
 
+
 export function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
   filmList.innerHTML = markup;
   placeholder.spinner.close();
+  trailer.createTrailerLink(document.querySelectorAll('.btn-youtube-slider'));
 }
 
 export function homePageRender() {
@@ -144,6 +149,7 @@ function homePageReset() {
 }
 
 function onSearchQuery(e) {
+ 
   refs.prevBtn.classList.add('hidden');
   e.preventDefault();
   api.setQuery(e.target.elements.query.value);

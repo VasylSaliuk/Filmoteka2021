@@ -29,5 +29,6 @@ export default {
     modalBox : document.querySelector('.basicLightbox--iframe'),
     searchDescription: document.querySelector('.search__description'),
     sliderImg: document.querySelector('.js-slider-container'),
+    
     filmItem : document.querySelector('.main_filmlist'),
 };
