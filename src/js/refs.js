@@ -1,4 +1,5 @@
 export default {
+  firstPage: document.querySelector('.firstPage'),
   linkHomePage: document.querySelector('.js-link-homepage'),
   linkLibrary: document.querySelector('.js-link-library'),
   homePage: document.querySelector('.js-home-section'),
