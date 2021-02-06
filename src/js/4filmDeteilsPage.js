@@ -10,7 +10,8 @@ refs.sliderImg.addEventListener('click', onClickFilm);
 refs.filmItem.addEventListener('click', onClickFilm);
 
 export function onClickFilm(e) {
- 
+  console.dir(e.target)
+  if (e.target.nodeName === 'H2'||e.target.nodeName === 'BUTTON'|| e.target.nodeName==='UL') return;
   const filmId = e.target.id;
 
   
