@@ -1,7 +1,7 @@
 import api from './1iniitalHomePage';
 import Glide from '@glidejs/glide';
 import filmsCardSliderTpl from '../templates/cardFilmSlider.hbs';
-
+import trailer from './trailers.js';
 import refs from './refs.js';
 
 
@@ -21,5 +21,5 @@ api.renderTrendy().then(renderSliderFilms);
 
 function renderSliderFilms(articles) {
   refs.sliderContainer.innerHTML = filmsCardSliderTpl(articles);
-
+  trailer.createTrailerLink(document.querySelectorAll('.btn-youtube-slider'));
 }
