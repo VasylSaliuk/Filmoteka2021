@@ -46,13 +46,11 @@ const api = {
       });
   },
 
-  
-
   resetPage() {
     this.pageNumber = 1;
-   
     console.log(this.newUrl);
   },
+
   setPage(newpageNumber) {
     this.pageNumber = newpageNumber;
   },
@@ -63,14 +61,13 @@ const api = {
 
   incrementPage() {
     this.pageNumber += 1;
-   
     console.log(this.newUrl);
   },
 
   decrementPage() {
     if (this.pageNumber === 1) return;
     this.pageNumber -= 1;
-    
+
   },
 
   fetchMovieInfo(id) {
@@ -79,7 +76,21 @@ const api = {
       .then(response => {
         if (response.ok) {
           return response.json();
-        } 
+        }
+        else {
+          return Promise.reject();
+        }
+      })
+      .then(data => data);
+  },
+
+  fetchMovieCastInfo(id) {
+    const url = `${this.baseUrl}movie/${id}/credits?api_key=${this.key}`;
+    return fetch(url)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
         else {
           return Promise.reject();
         }
@@ -115,6 +126,7 @@ const api = {
       // });
   },
 };
+
 document.addEventListener('DOMContentLoaded', homePageRender);
 refs.linkLogo.addEventListener('click', homePageReset);
 refs.homePage1.addEventListener('click', homePageReset);
@@ -132,14 +144,13 @@ export function renderFilm(arr) {
 
 export function homePageRender() {
   api.fetchTrendFilms().then(renderFilm);
-  
+
   refs.nextBtn.removeEventListener('click', nextBtnHandlerSearch);
   refs.prevBtn.removeEventListener('click', prevBtnHandlerSearch);
   refs.nextBtn.addEventListener('click', nextBtnHandler);
   refs.prevBtn.addEventListener('click', prevBtnHandler);
   placeholder.spinner.close();
 }
- 
 
 function homePageReset() {
   api.resetPage(), homePageRender();
@@ -149,7 +160,6 @@ function homePageReset() {
 }
 
 function onSearchQuery(e) {
- 
   refs.prevBtn.classList.add('hidden');
   e.preventDefault();
   api.setQuery(e.target.elements.query.value);
@@ -168,5 +178,6 @@ function onSearchQuery(e) {
   refs.inputForm.value = '';
   refs.searchDescription.textContent = '';
 }
+
 export default api;
 

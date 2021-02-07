@@ -1,6 +1,7 @@
 import './1iniitalHomePage.js';
 import api from './1iniitalHomePage.js';
 import filmCard from '../templates/filmCard.hbs';
+import filmCast from '../templates/filmCastCard.hbs';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import { reloadLibraryPage } from './5libraryPage';
@@ -12,10 +13,29 @@ refs.filmItem.addEventListener('click', onClickFilm);
 export function onClickFilm(e) {
   const filmId = e.target.id;
 
-  
+  api.fetchMovieCastInfo(filmId).then(data => {
+    // let selectFilm = data;
+    const cardCastTemplate = filmCast(data);
+    const modalCast = basicLightbox.create(cardCastTemplate);
+    const modal = basicLightbox.create(cardTemplate);
+    // modal.close();
+    modalCast.show();
+    window.addEventListener('keydown', closeModalHandler);
+    function closeModalHandler(e) {
+      if (e.code === 'Escape') {
+        modalCast.close();
+        // modal.show();
+        window.removeEventListener('keydown', closeModalHandler);
+      }
+    }
+    const btnCast = document.querySelector('.js-btnCast');
+    btnCast.addEventListener('click', onClickFilm);
+
+  })
+
   api.fetchMovieInfo(filmId).then(data => {
     let selectFilm = data;
-    
+
     const cardTemplate = filmCard(data);
     const modal = basicLightbox.create(cardTemplate);
     modal.show();
@@ -26,14 +46,12 @@ export function onClickFilm(e) {
     function closeModalHandler(e) {
       if (e.code === 'Escape') {
         modal.close();
-
         window.removeEventListener('keydown', closeModalHandler);
       }
     }
 
     function onClickBtnClose(e) {
       modal.close();
-
       window.removeEventListener('keydown', closeModalHandler);
     }
 
@@ -42,11 +60,12 @@ export function onClickFilm(e) {
     monitorButtonStatusText();
     btnQueueAdd.addEventListener('click', controlQueue);
     btnWatchedAdd.addEventListener('click', controlWatched);
+
     function controlQueue() {
-      
       let filmsQueueArr = [];
       //   localStorage.setItem('filmsQueue', JSON.stringify(filmsQueueArr));
       let localStorageData = localStorage.getItem('filmsQueue');
+
       if (localStorageData !== null) {
         filmsQueueArr.push(...JSON.parse(localStorageData));
       }
@@ -55,15 +74,16 @@ export function onClickFilm(e) {
       } else {
         filmsQueueArr.push(selectFilm);
       }
+
       localStorage.setItem('filmsQueue', JSON.stringify(filmsQueueArr));
       monitorButtonStatusText();
       reloadLibraryPage();
     }
 
     function controlWatched() {
-      
       let filmsWatchedArr = [];
       let localStorageData = localStorage.getItem('filmsWatched');
+
       if (localStorageData !== null) {
         filmsWatchedArr.push(...JSON.parse(localStorageData));
       }
@@ -72,6 +92,7 @@ export function onClickFilm(e) {
       } else {
         filmsWatchedArr.push(selectFilm);
       }
+
       localStorage.setItem('filmsWatched', JSON.stringify(filmsWatchedArr));
       monitorButtonStatusText();
       reloadLibraryPage();

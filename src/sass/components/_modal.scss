@@ -20,15 +20,20 @@
   }
 }
 
-@media screen and (max-width: 767px) {
-  .modal-card {
-    position: relative;
+.modal-cardCast {
+  z-index: 200;
+}
 
+@media screen and (max-width: 767px) {
+  .modal-card,
+  .modal-cardCast {
+    position: relative;
     background-color: $accentColor;
     width: 320px;
     margin-top: 350px;
   }
 }
+
 .body-scroll-disable {
   overflow: hidden;
 }
@@ -194,7 +199,8 @@
 }
 
 @media screen and (min-width: 768px) {
-  .modal-card {
+  .modal-card,
+  .modal-cardCast {
     background-color: #c19c82;
     width: 720px;
     margin-top: 0px;
