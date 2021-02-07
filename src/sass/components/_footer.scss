@@ -6,7 +6,6 @@
   margin: 0;
   padding: 0;
   background-color: #232323c0;
-  // border: solid brown 3px;
 }
 
 .footer-copyright {
@@ -34,33 +33,11 @@
   }
 }
 
-// .scroll-up {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   bottom: 30px;
-//   right: 10px;
-//   width: 50px;
-//   height: 50px;
-//   background-color: #77c1bb;
-//   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.55);
-//   border-radius: 50%;
-
-//   // @media (min-width: 768px) {
-//   //   display: none;
-//   // }
-
-//   // @media screen and (max-width: 1024px) {
-//   //   display: none;
-//   // }
-// }
-
 .material-icons {
   color: white;
 }
 
 .footer-text {
-  // margin-right: 15px;
   font-size: 20px;
   text-align: end;
   color: $textColor;
@@ -87,6 +64,5 @@
   &:hover,
   &:focus {
     color: rgb(173, 70, 10);
-    // box-shadow: #090d0e;
   }
 }

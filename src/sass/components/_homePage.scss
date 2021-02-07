@@ -1,5 +1,4 @@
 .main_section {
-  // background-image: url('../images/popcorn2.png');
   background-repeat: repeat;
   background-size: 100%;
 
@@ -93,8 +92,6 @@
   height: 60px;
   width: 60px;
   top: -15px;
-
-  // transform: skewX(10deg);
   background-color: $accentColor;
   border-radius: 10px;
   z-index: -2;
@@ -115,5 +112,4 @@
   font-weight: 500;
   font-family: 'Lemonada', cursive;
   color: #ffffff;
-
 }
