@@ -13,11 +13,12 @@
   font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 20px;
   font-weight: 700;
-  color: $accentColor;
+  color: inherit;
+  background-color: inherit;
   height: 40px;
   border-radius: 8px;
   outline: none;
-  border: 1px solid $accentColor;
+  border: 1px solid inherit;
   width: 98px;
   cursor: pointer;
   text-transform: uppercase;

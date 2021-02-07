@@ -20,15 +20,20 @@
   }
 }
 
-@media screen and (max-width: 767px) {
-  .modal-card {
-    position: relative;
+.modal-cardCast {
+  z-index: 200;
+}
 
+@media screen and (max-width: 767px) {
+  .modal-card,
+  .modal-cardCast {
+    position: relative;
     background-color: $accentColor;
     width: 320px;
     margin-top: 350px;
   }
 }
+
 .body-scroll-disable {
   overflow: hidden;
 }
@@ -46,14 +51,22 @@
   display: block;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 10px;
-  padding-left: 10px;
+  padding: 10px;
+  // padding-top: 10px;
+  // padding-left: 10px;
   width: 260px;
   height: 404px;
   border-radius: 10px;
+
   @media screen and (min-width: 320px) and (max-width: 767px) {
-    width: 280px;
-    height: 416px;
+    width: auto;
+    height: auto;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px){
+      width: 300px;
+      height: 450px;
+      padding: 30px 10px;
   }
 }
 .cardItem__wrapper {
@@ -194,30 +207,24 @@
 }
 
 @media screen and (min-width: 768px) {
-  .modal-card {
+  .modal-card,
+  .modal-cardCast {
     background-color: #c19c82;
     width: 720px;
     margin-top: 0px;
     display: flex;
   }
-  .cardItem__image {
-    display: block;
-    width: auto;
-    height: auto;
-    padding-top: 0px;
-    border-radius: 10px;
+
+  .cardItem__wrapper {
+    width: 323px;
+    // height: auto;
   }
 
   .cardItem {
     display: flex;
   }
 
-  .cardItem__image {
-    width: 295px;
-    padding: 20px;
-  }
-
-  .cardItem__name {
+    .cardItem__name {
     font-size: 25px;
     line-height: 35px;
   }
@@ -315,7 +322,7 @@
   margin-bottom: 6px;
 
   @media screen and (min-width: 768px) and (max-width: 1024px) {
-    width: 180px;
+    width: 160px;
     font-size: 14px;
   }
 
