@@ -6,6 +6,7 @@ import { onClickFilm } from './4filmDeteilsPage';
 
 refs.linkHomePage.classList.add('isActive');
 refs.libraryPage.classList.add('hidden');
+refs.libBtnBox.classList.add('hidden');
 
 function activeLibraryPage() {
   localStorage.setItem('curentPage', 'queuePage');
@@ -15,6 +16,7 @@ function activeLibraryPage() {
   refs.linkLibrary.classList.add('isActive');
   refs.linkHomePage.classList.remove('isActive');
   refs.queueBtnLib.classList.add('onClick');
+  refs.libBtnBox.classList.remove('hidden');
   onQueueBtnClick();
   refs.libraryFilmList.addEventListener('click', onClickFilm);
   refs.queueBtnLib.addEventListener('click', onQueueBtnClick);
@@ -33,6 +35,7 @@ function activeHomePage() {
   refs.libraryPage.classList.add('hidden');
   refs.linkHomePage.classList.add('isActive');
   refs.linkLibrary.classList.remove('isActive');
+  refs.libBtnBox.classList.add('hidden');
 }
 refs.linkHomePage.addEventListener('click', activeHomePage);
 refs.linkLibrary.addEventListener('click', activeLibraryPage);
@@ -52,7 +55,6 @@ const switchTheme = document.querySelector('.textBtnThemeToggle');
 switchTheme.addEventListener('click', changeTheme);
 
 function changeTheme() {
-  console.log(1);
   let localStorageCurentTheme = localStorage.getItem('curentTheme');
   if (localStorageCurentTheme == null) {
     localStorage.setItem('curentTheme', 'light');

@@ -25,11 +25,12 @@ export default {
   libBtnList: document.querySelector('.libraryPage_list'),
   searchFormWrap: document.querySelector('.home_page_search'),
   searchForm: document.querySelector('.search-form'),
-  sliderContainer : document.querySelector('.js-slider-container'),
-   modalCloseBtn : document.querySelector('[data-action="close-lightbox"]'),
-    modalBox : document.querySelector('.basicLightbox--iframe'),
-    searchDescription: document.querySelector('.search__description'),
-    sliderImg: document.querySelector('.js-slider-container'),
-    
-    filmItem : document.querySelector('.main_filmlist'),
+  sliderContainer: document.querySelector('.js-slider-container'),
+  modalCloseBtn: document.querySelector('[data-action="close-lightbox"]'),
+  modalBox: document.querySelector('.basicLightbox--iframe'),
+  searchDescription: document.querySelector('.search__description'),
+  sliderImg: document.querySelector('.js-slider-container'),
+
+  filmItem: document.querySelector('.main_filmlist'),
+  libBtnBox: document.querySelector('.libBtnBox'),
 };
