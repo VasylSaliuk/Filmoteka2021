@@ -48,7 +48,6 @@ const api = {
 
   resetPage() {
     this.pageNumber = 1;
-    console.log(this.newUrl);
   },
 
   setPage(newpageNumber) {
@@ -61,7 +60,6 @@ const api = {
 
   incrementPage() {
     this.pageNumber += 1;
-    console.log(this.newUrl);
   },
 
   decrementPage() {
@@ -121,9 +119,6 @@ const api = {
       .then(({ results }) => {
         return results;
       })
-      // .catch(err => {
-      //   refs.sliderContainer.innerHTML = `<img class="catch-error-pagination" src="${errorUrl}" />`;
-      // });
   },
 };
 
