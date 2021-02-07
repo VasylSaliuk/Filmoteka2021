@@ -147,7 +147,6 @@
                 <use href="./images/film-1.svg#film"></use>
               </svg>
               <span class="logo-name">Filmoteka</span>
-
             </a>
             <ul class="navigation-main">
               <li class="home-link item">
@@ -174,6 +173,12 @@
             <input id="homePage__search-input" type="text" class="input" name="query" placeholder="Enter movie name" />
             <p class="search__description"></p>
           </form>
+        </div>
+        <div class="libBtnBox">
+          <div class="library-button-wrap">
+            <button type="button" class="library-button js-watchedBtnLib">Watched</button>
+            <button type="button" class="library-button js-queueBtnLib">Queue</button>
+          </div>
         </div>
         <!-- inject:slider -->
         <div class="slider-wrapper">
@@ -226,10 +231,10 @@
       </section>
       <section id="detailsPage"></section>
       <section class="library_section js-library-section">
-        <div class="library-button-wrap">
+        <!-- <div class="library-button-wrap">
           <button type="button" class="library-button js-watchedBtnLib">Watched</button>
           <button type="button" class="library-button js-queueBtnLib">Queue</button>
-        </div>
+        </div> -->
         <div class="container library-wrap">
           <ul class="libraryPage_list js-library-filmlist"></ul>
         </div>
@@ -252,8 +257,8 @@
     <footer class="footer" id="footer">
       <div class="container">
         <div class="footer-copyright">
-          <p class="footer-text">Made by
-          <a class="js-team-modal hover-text" href=""> DreamTeam</a><span class="text"> ©2021</span>
+          <p class="footer-text">
+            Made by <a class="js-team-modal hover-text" href=""> DreamTeam</a><span class="text"> ©2021</span>
           </p>
           <!-- <a href="#" class="scroll-up"> -->
           <!-- <i class="material-icons material-icons-white scroll-up">keyboard_arrow_up</i> -->
@@ -271,8 +276,6 @@
       <svg class="up-btn__icon">
         <use href="./images/sprite.svg#up"></use>
       </svg>
-
     </div>
-
   </body>
 </html>

@@ -1,15 +1,24 @@
-.onClick {
-  background-color: #77c1bb;
-}
-
 .library-button-wrap {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 68px;
-  background-color: #f3f6f6;
+  align-items: ceil($number: 0);
+  min-height: 76px;
+
+  background-color: #232323c0;
   box-shadow: 0 5px 9px 1px rgba(0, 0, 0, 0.23);
 }
 .library-wrap {
   min-height: 100vh;
+  padding-top: 20px;
+}
+.library-button {
+  margin-right: 20px;
+  color: $accentColor;
+  background-color: transparent;
+  border-radius: 10px;
+  border: 1px solid $accentColor;
+}
+.onClick {
+  color: antiquewhite;
+  background-color: $accentColor;
 }
