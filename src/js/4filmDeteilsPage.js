@@ -30,7 +30,6 @@ export function onClickFilm(e) {
     }
     const btnCast = document.querySelector('.js-btnCast');
     btnCast.addEventListener('click', onClickFilm);
-
   })
 
   api.fetchMovieInfo(filmId).then(data => {
