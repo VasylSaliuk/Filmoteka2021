@@ -149,7 +149,7 @@
 }
 .cardItem___data {
   // margin-left: 5px;
-  color:#3c2a1e;
+  color: #3c2a1e;
   font-weight: 500;
   padding: 2px 2px;
 }
@@ -296,8 +296,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 180px;
-  font-size: 14px;
+  width: 150px;
+  font-size: 12px;
   font-weight: 500;
   font-family: 'Lemonada', cursive;
   color: #3c2a1e;
@@ -309,6 +309,16 @@
   border: 2px solid #efe5de;
   margin-right: 5px;
   margin-bottom: 6px;
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    width: 180px;
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 180px;
+    font-size: 16px;
+  }
 }
 
 .js-btnWatchedAdd:hover,
