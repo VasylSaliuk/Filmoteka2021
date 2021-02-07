@@ -10,6 +10,11 @@ refs.sliderImg.addEventListener('click', onClickFilm);
 refs.filmItem.addEventListener('click', onClickFilm);
 
 export function onClickFilm(e) {
+  // console.dir(e.target)
+  
+
+
+  if (e.target.nodeName !== 'IMG') return;
   const filmId = e.target.id;
 
   
