@@ -1,12 +1,12 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
-import vasylUrl from '../images/vasyl.jpg';
-import mariaUrl from '../images/maria.jpg';
-import romanUrl from '../images/roman.jpg';
-import vladymyrUrl from '../images/vladymyr.jpg';
-import katyaUrl from '../images/katya.png';
-import annaUrl from '../images/anna.jpg';
+import vasylUrl from '../images/vasyl1.jpg';
+import mariaUrl from '../images/maria1.jpg';
+import romanUrl from '../images/roman1.jpg';
+import vladymyrUrl from '../images/vladymyr1.jpg';
+import katyaUrl from '../images/katya1.jpg';
+import annaUrl from '../images/anna1.jpg';
 import linkedinUrl from '../images/linkedin.svg';
 
 const markup =`<div class="team-wrapper">
@@ -31,23 +31,23 @@ const markup =`<div class="team-wrapper">
     <p class="team-name">Roman</p>
     <p class="team-role">Developer</p>
     <a href="https://www.linkedin.com/in/roman-larionov-385ab692" target="_blank" class="team-git"><svg class="logo__icon" width="24" height="24">
-      <use href="${linkedinUrl}#linkedin"></use>
+    <use href="${linkedinUrl}#linkedin"></use>
     </svg></a>
     </div>
     <div class="team-card">
-    <img src="${katyaUrl}" alt="Katya" class="team-image">
-    <p class="team-name">Katya</p>
+    <img src="${vladymyrUrl}" alt="Volodymyr" class="team-image">
+    <p class="team-name">Volodymyr</p>
     <p class="team-role">Developer</p>
-    <a href="https://www.linkedin.com/in/" target="_blank" class="team-git"><svg class="logo__icon" width="24" height="24">
-      <use href="${linkedinUrl}#linkedin"></use>
+    <a href="https://github.com/volodymyr71" target="_blank" class="team-git"><svg class="logo__icon" width="24" height="24">
+    <use href="${linkedinUrl}#linkedin"></use>
     </svg></a>
     </div>
     <div class="team-card">
-    <img src="${vladymyrUrl}" alt="Vladymyr" class="team-image">
-    <p class="team-name">Vladymyr</p>
+    <img src="${katyaUrl}" alt="Kateryna" class="team-image">
+    <p class="team-name">Kateryna</p>
     <p class="team-role">Developer</p>
-    <a href="https://www.linkedin.com/in/" target="_blank" class="team-git"><svg class="logo__icon" width="24" height="24">
-      <use href="${linkedinUrl}#linkedin"></use>
+    <a href="https://www.linkedin.com/in/kateryna-kyrylenko-2a1426206" target="_blank" class="team-git"><svg class="logo__icon" width="24" height="24">
+    <use href="${linkedinUrl}#linkedin"></use>
     </svg></a>
     </div>
     <div class="team-card">
@@ -60,22 +60,23 @@ const markup =`<div class="team-wrapper">
     </div>
 </div>`;
 const container = document.querySelector('.js-team-modal');
-const markup2 = `<img src="${vasylUrl}"/>`;
 
 container.addEventListener('click', openModal);
+window.addEventListener('keydown', closeModalHandler);
 
 const modal = basicLightbox.create(markup);
 
 function openModal(e) {
   
+
+  e.preventDefault();
   modal.show();
-
-  window.addEventListener('keydown', closeModalHandler);
-
-  function closeModalHandler(e) {
-    if (e.code === 'Escape') {
-      modal.close();
-      window.removeEventListener('keydown', closeModalHandler);
-    }
-  }
 }
+
+function closeModalHandler(e) {
+  if (e.code === 'Escape') {
+    modal.close();
+    window.removeEventListener('keydown', closeModalHandler);
+  }
+  }
+

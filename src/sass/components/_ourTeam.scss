@@ -2,10 +2,14 @@
   overflow: scroll;
 }
 
+p {
+  margin: 0;
+}
+
 .team-wrapper {
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: center;
   margin: -20px;
 
   @media screen and (max-width: (768px - 1)) {
@@ -14,7 +18,7 @@
 
   width: 240px;
 
-  background-color: white;
+  background-color: #ccb2a0d5;
   border-radius: 15px;
 
   @media screen and (min-width: 768px) {
@@ -39,7 +43,7 @@
 
   margin: 20px;
 
-  width: calc((100% - 80px) / 3);
+  width: calc((100% - 80px) / 2);
 
   @media screen and (min-width: 768px) {
     width: calc((100% - 160px) / 2);
@@ -48,34 +52,35 @@
   @media screen and (min-width: 1024px) {
     margin: 30px;
 
-    width: calc((100% - 240px) / 2);
+    width: calc((100% - 240px) / 3);
   }
 }
-
+.logo__icon {
+  background-color: rgb(70, 70, 240);
+  padding: 3px;
+}
 .team-image {
   margin-bottom: 10px;
 
   width: 100%;
 
-  border-radius: 30%;
-  box-shadow: 5px 5px 11px -2px #000000;
+  border-radius: 50%;
+  box-shadow: 5px 5px 30px 12px rgb(43, 27, 3);
 }
 
 .team-name {
   margin-bottom: 5px;
-
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
+  color: rgb(43, 27, 3);
+  font-weight: 900;
+  font-size: 20px;
 }
 
 .team-role {
-  font-family: 'Roboto', sans-serif;
+  color: rgb(173, 70, 10);
 
   @media screen and (max-width: (768px - 1)) {
     font-size: 14px;
   }
-
-  color: #ff6b08;
 }
 
 .team-git {
@@ -100,10 +105,9 @@
     transform: scale(1.5);
   }
 }
-
 // footer
 
-// .team-modal {
+// .hover-text {
 //   text-decoration: underline;
 
 //   cursor: pointer;

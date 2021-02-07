@@ -20,10 +20,10 @@ export function nextBtnHandler() {
 }
 
 export function prevBtnHandler() {
-  window.scrollTo({
-    top: 0 ,
-    behavior: 'smooth',
-  });
+  // window.scrollTo({
+  //   top: 0 ,
+  //   behavior: 'smooth',
+  // });
   api.decrementPage();
   homePageRender();
   placeholder.spinner.show();
@@ -49,10 +49,10 @@ export function nextBtnHandlerSearch() {
 }
 
 export function prevBtnHandlerSearch() {
-  window.scrollTo({
-    top: 0 ,
-    behavior: 'smooth',
-  });
+  // window.scrollTo({
+  //   top: 0 ,
+  //   behavior: 'smooth',
+  // });
   api.decrementPage();
   api.fetchSearchMovies().then(renderFilm);
   placeholder.spinner.show();
