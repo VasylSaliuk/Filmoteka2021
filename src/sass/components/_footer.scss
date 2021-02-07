@@ -5,8 +5,7 @@
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-  background-color: cadetblue;
-
+  background-color: #232323c0;
   // border: solid brown 3px;
 }
 
@@ -64,13 +63,13 @@
   // margin-right: 15px;
   font-size: 20px;
   text-align: end;
-  color: rgba(15, 14, 15, 0.702);
+  color: $textColor;
   margin-top: 0px;
 }
 .text {
   font-size: 17px;
   text-align: end;
-  color: rgba(15, 14, 15, 0.702);
+  color: $textColor;
   margin-top: 0px;
   @media screen and (max-width: 768px) {
     display: flex;
@@ -81,12 +80,13 @@
 }
 .hover-text {
   margin-right: 7px;
-  color: #8cf0f0;
-  font-weight: 300;
+  color: #ec6f27;
+  font-weight: 700;
   font-size: 25px;
+
   &:hover,
   &:focus {
-    color: #105a61;
-    box-shadow: #090d0e;
+    color: rgb(173, 70, 10);
+    // box-shadow: #090d0e;
   }
 }

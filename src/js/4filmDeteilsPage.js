@@ -1,6 +1,7 @@
 import './1iniitalHomePage.js';
 import api from './1iniitalHomePage.js';
 import filmCard from '../templates/filmCard.hbs';
+// import filmCast from '../templates/filmCastCard.hbs';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import { reloadLibraryPage } from './5libraryPage';
@@ -10,13 +11,35 @@ refs.sliderImg.addEventListener('click', onClickFilm);
 refs.filmItem.addEventListener('click', onClickFilm);
 
 export function onClickFilm(e) {
- 
+  // console.dir(e.target)
+
+
+
+  if (e.target.nodeName !== 'IMG') return;
   const filmId = e.target.id;
 
-  console.log(api.fetchMovieInfo(filmId));
+  // api.fetchMovieCastInfo(filmId).then(data => {
+  //   // let selectFilm = data;
+  //   const cardCastTemplate = filmCast(data);
+  //   const modalCast = basicLightbox.create(cardCastTemplate);
+  //   const modal = basicLightbox.create(cardTemplate);
+  //   // modal.close();
+  //   modalCast.show();
+  //   window.addEventListener('keydown', closeModalHandler);
+  //   function closeModalHandler(e) {
+  //     if (e.code === 'Escape') {
+  //       modalCast.close();
+  //       // modal.show();
+  //       window.removeEventListener('keydown', closeModalHandler);
+  //     }
+  //   }
+  //   const btnCast = document.querySelector('.js-btnCast');
+  //   btnCast.addEventListener('click', onClickFilm);
+  // })
+
   api.fetchMovieInfo(filmId).then(data => {
     let selectFilm = data;
-    console.log(selectFilm);
+
     const cardTemplate = filmCard(data);
     const modal = basicLightbox.create(cardTemplate);
     modal.show();
@@ -27,14 +50,12 @@ export function onClickFilm(e) {
     function closeModalHandler(e) {
       if (e.code === 'Escape') {
         modal.close();
-
         window.removeEventListener('keydown', closeModalHandler);
       }
     }
 
     function onClickBtnClose(e) {
       modal.close();
-
       window.removeEventListener('keydown', closeModalHandler);
     }
 
@@ -43,11 +64,12 @@ export function onClickFilm(e) {
     monitorButtonStatusText();
     btnQueueAdd.addEventListener('click', controlQueue);
     btnWatchedAdd.addEventListener('click', controlWatched);
+
     function controlQueue() {
-      console.log('+');
       let filmsQueueArr = [];
       //   localStorage.setItem('filmsQueue', JSON.stringify(filmsQueueArr));
       let localStorageData = localStorage.getItem('filmsQueue');
+
       if (localStorageData !== null) {
         filmsQueueArr.push(...JSON.parse(localStorageData));
       }
@@ -56,15 +78,16 @@ export function onClickFilm(e) {
       } else {
         filmsQueueArr.push(selectFilm);
       }
+
       localStorage.setItem('filmsQueue', JSON.stringify(filmsQueueArr));
       monitorButtonStatusText();
       reloadLibraryPage();
     }
 
     function controlWatched() {
-      console.log('+');
       let filmsWatchedArr = [];
       let localStorageData = localStorage.getItem('filmsWatched');
+
       if (localStorageData !== null) {
         filmsWatchedArr.push(...JSON.parse(localStorageData));
       }
@@ -73,6 +96,7 @@ export function onClickFilm(e) {
       } else {
         filmsWatchedArr.push(selectFilm);
       }
+
       localStorage.setItem('filmsWatched', JSON.stringify(filmsWatchedArr));
       monitorButtonStatusText();
       reloadLibraryPage();
@@ -81,8 +105,17 @@ export function onClickFilm(e) {
     function monitorButtonStatusText() {
       let btnQueueText = document.querySelector('.details-span-queue');
       let btnWatchedText = document.querySelector('.details-span-watched');
+      // let btnCastText = document.querySelector('.details-span-cast');
+      // let btnReviewsText = document.querySelector('.details-span-reviews');
       let btnQueueSvg = document.querySelector('.details-icon-queue');
       let btnWatchedSvg = document.querySelector('.details-icon-watched');
+      // let btnCastSvg = document.querySelector('.details-icon-cast');
+      // let btnReviewsSvg = document.querySelector('.details-icon-reviews');
+
+      // btnCastSvg.textContent = 'groups';
+      // btnCastText.textContent = 'Cast and crew';
+      // btnReviewsSvg.textContent = 'auto_stories';
+      // btnReviewsText.textContent = 'Reviews';
 
       let filmsQueueArr = [];
       let localStorageData = localStorage.getItem('filmsQueue');
@@ -96,6 +129,7 @@ export function onClickFilm(e) {
         btnQueueSvg.textContent = 'add_to_queue';
         btnQueueText.textContent = 'Add to queue';
       }
+
       let filmsWatchedArr = [];
       localStorageData = localStorage.getItem('filmsWatched');
       if (localStorageData !== null) {
@@ -111,5 +145,3 @@ export function onClickFilm(e) {
     }
   });
 }
-
-

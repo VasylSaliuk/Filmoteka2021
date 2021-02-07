@@ -1,0 +1,115 @@
+.basicLightbox {
+  overflow: scroll;
+}
+
+p {
+  margin: 0;
+}
+
+.team-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -20px;
+
+  @media screen and (max-width: (768px - 1)) {
+    margin-top: 70px;
+  }
+
+  width: 240px;
+
+  background-color: #ccb2a0d5;
+  border-radius: 15px;
+
+  @media screen and (min-width: 768px) {
+    width: 600px;
+
+    border-radius: 25px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin: -30px;
+
+    width: 800px;
+  }
+}
+
+.team-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 20px;
+
+  width: calc((100% - 80px) / 2);
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 160px) / 2);
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin: 30px;
+
+    width: calc((100% - 240px) / 3);
+  }
+}
+.logo__icon {
+  background-color: rgb(70, 70, 240);
+  border-radius: 5px;
+  padding: 3px;
+}
+.team-image {
+  margin-bottom: 10px;
+
+  width: 100%;
+
+  border-radius: 50%;
+  box-shadow: 5px 5px 30px 12px rgb(43, 27, 3);
+}
+
+.team-name {
+  margin-bottom: 5px;
+  color: rgb(43, 27, 3);
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.team-role {
+  color: rgb(173, 70, 10);
+
+  @media screen and (max-width: (768px - 1)) {
+    font-size: 14px;
+  }
+}
+
+.team-git {
+  position: absolute;
+
+  top: 65px;
+  right: -10px;
+
+  @media screen and (min-width: 768px) {
+    top: 100px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    top: 120px;
+  }
+
+  transform: scale(1);
+  @include transition(transform);
+
+  &:hover,
+  &:focus {
+    transform: scale(1.5);
+  }
+}
+// footer
+
+// .hover-text {
+//   text-decoration: underline;
+
+//   cursor: pointer;
+// }

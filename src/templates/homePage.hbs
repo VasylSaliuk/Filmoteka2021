@@ -2,13 +2,15 @@
 <li class="filmlist__item" id="{{id}}">
 <div>
  <div class="filmlist__imgcontainer">
-  <img id="{{id}}" class="filmlist__img" width='100%' src="https://image.tmdb.org/t/p/w500{{poster_path}}"
-    alt="{{title}}" onerror="this.onerror=null;this.src='https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-';"> </div>
+  <button data-id='{{id}}' class="btn-youtube-slider slider-card">
+            <div class="overlay-btn-youtube-text" data-id='{{id}}'>
+                <h2 class="btn-youtube-text-slider" data-id='{{id}}'>Trailer</h2>
+            </div>
+        </button>
+    <img loading='lazy' id="{{id}}" class="filmlist__img" width='100%' src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" onerror="this.onerror=null;this.src='https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-';"> </div>
+
   <span class="filmlist__rate">{{vote_average}}</span>
   <h2  class="filmlist__title">{{title}}</h2>
-  <svg class="filmlist__icon" width="12" height="12">
-    <use href="./images/star-empty.svg"></use>
-  </svg>
   <p class="filmlist__cardtext">
     <span class="filmlist__date">{{release_date}}</span>
   </p>
