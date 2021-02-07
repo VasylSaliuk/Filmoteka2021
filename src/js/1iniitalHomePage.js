@@ -84,19 +84,19 @@ const api = {
       .then(data => data);
   },
 
-  fetchMovieCastInfo(id) {
-    const url = `${this.baseUrl}movie/${id}/credits?api_key=${this.key}`;
-    return fetch(url)
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        else {
-          return Promise.reject();
-        }
-      })
-      .then(data => data);
-  },
+  // fetchMovieCastInfo(id) {
+  //   const url = `${this.baseUrl}movie/${id}/credits?api_key=${this.key}`;
+  //   return fetch(url)
+  //     .then(response => {
+  //       if (response.ok) {
+  //         return response.json();
+  //       }
+  //       else {
+  //         return Promise.reject();
+  //       }
+  //     })
+  //     .then(data => data);
+  // },
 
   fetchSearchMovies() {
     const url = `${this.baseUrl}search/movie?api_key=${this.key}&language=en-US&page=${this.pageNumber}&query=${this.query}`;

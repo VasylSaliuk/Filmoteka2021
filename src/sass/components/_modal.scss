@@ -51,8 +51,9 @@
   display: block;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 10px;
-  padding-left: 10px;
+  padding: 10px;
+  // padding-top: 10px;
+  // padding-left: 10px;
   width: 260px;
   height: 404px;
   border-radius: 10px;
@@ -65,8 +66,7 @@
   @media screen and (min-width: 768px) and (max-width: 1023px){
       width: 300px;
       height: 450px;
-      padding: 20px;
-      padding-top: 50px;
+      padding: 30px 10px;
   }
 }
 .cardItem__wrapper {

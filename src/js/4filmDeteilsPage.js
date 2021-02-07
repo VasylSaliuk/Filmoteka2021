@@ -1,7 +1,7 @@
 import './1iniitalHomePage.js';
 import api from './1iniitalHomePage.js';
 import filmCard from '../templates/filmCard.hbs';
-import filmCast from '../templates/filmCastCard.hbs';
+// import filmCast from '../templates/filmCastCard.hbs';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import { reloadLibraryPage } from './5libraryPage';
@@ -105,17 +105,17 @@ export function onClickFilm(e) {
     function monitorButtonStatusText() {
       let btnQueueText = document.querySelector('.details-span-queue');
       let btnWatchedText = document.querySelector('.details-span-watched');
-      let btnCastText = document.querySelector('.details-span-cast');
-      let btnReviewsText = document.querySelector('.details-span-reviews');
+      // let btnCastText = document.querySelector('.details-span-cast');
+      // let btnReviewsText = document.querySelector('.details-span-reviews');
       let btnQueueSvg = document.querySelector('.details-icon-queue');
       let btnWatchedSvg = document.querySelector('.details-icon-watched');
-      let btnCastSvg = document.querySelector('.details-icon-cast');
-      let btnReviewsSvg = document.querySelector('.details-icon-reviews');
+      // let btnCastSvg = document.querySelector('.details-icon-cast');
+      // let btnReviewsSvg = document.querySelector('.details-icon-reviews');
 
-      btnCastSvg.textContent = 'groups';
-      btnCastText.textContent = 'Cast and crew';
-      btnReviewsSvg.textContent = 'auto_stories';
-      btnReviewsText.textContent = 'Reviews';
+      // btnCastSvg.textContent = 'groups';
+      // btnCastText.textContent = 'Cast and crew';
+      // btnReviewsSvg.textContent = 'auto_stories';
+      // btnReviewsText.textContent = 'Reviews';
 
       let filmsQueueArr = [];
       let localStorageData = localStorage.getItem('filmsQueue');
