@@ -67,6 +67,7 @@ container.addEventListener('click', openModal);
 const modal = basicLightbox.create(markup);
 
 function openModal(e) {
+  
   modal.show();
 
   window.addEventListener('keydown', closeModalHandler);
