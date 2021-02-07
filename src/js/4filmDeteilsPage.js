@@ -12,30 +12,30 @@ refs.filmItem.addEventListener('click', onClickFilm);
 
 export function onClickFilm(e) {
   // console.dir(e.target)
-  
+
 
 
   if (e.target.nodeName !== 'IMG') return;
   const filmId = e.target.id;
 
-  api.fetchMovieCastInfo(filmId).then(data => {
-    // let selectFilm = data;
-    const cardCastTemplate = filmCast(data);
-    const modalCast = basicLightbox.create(cardCastTemplate);
-    const modal = basicLightbox.create(cardTemplate);
-    // modal.close();
-    modalCast.show();
-    window.addEventListener('keydown', closeModalHandler);
-    function closeModalHandler(e) {
-      if (e.code === 'Escape') {
-        modalCast.close();
-        // modal.show();
-        window.removeEventListener('keydown', closeModalHandler);
-      }
-    }
-    const btnCast = document.querySelector('.js-btnCast');
-    btnCast.addEventListener('click', onClickFilm);
-  })
+  // api.fetchMovieCastInfo(filmId).then(data => {
+  //   // let selectFilm = data;
+  //   const cardCastTemplate = filmCast(data);
+  //   const modalCast = basicLightbox.create(cardCastTemplate);
+  //   const modal = basicLightbox.create(cardTemplate);
+  //   // modal.close();
+  //   modalCast.show();
+  //   window.addEventListener('keydown', closeModalHandler);
+  //   function closeModalHandler(e) {
+  //     if (e.code === 'Escape') {
+  //       modalCast.close();
+  //       // modal.show();
+  //       window.removeEventListener('keydown', closeModalHandler);
+  //     }
+  //   }
+  //   const btnCast = document.querySelector('.js-btnCast');
+  //   btnCast.addEventListener('click', onClickFilm);
+  // })
 
   api.fetchMovieInfo(filmId).then(data => {
     let selectFilm = data;
