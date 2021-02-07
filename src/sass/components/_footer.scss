@@ -83,9 +83,10 @@
   color: #ec6f27;
   font-weight: 700;
   font-size: 25px;
+
   &:hover,
   &:focus {
     color: rgb(173, 70, 10);
-    box-shadow: #090d0e;
+    // box-shadow: #090d0e;
   }
 }
