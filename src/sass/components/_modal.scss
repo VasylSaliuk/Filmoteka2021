@@ -28,7 +28,7 @@
   .modal-card,
   .modal-cardCast {
     position: relative;
-    background-color: $accentColor;
+    background-color: #f0d969e0;
     width: 320px;
     margin-top: 350px;
   }
@@ -209,7 +209,7 @@
 @media screen and (min-width: 768px) {
   .modal-card,
   .modal-cardCast {
-    background-color: #c19c82;
+    background-color: #f0d969e0;
     width: 720px;
     margin-top: 0px;
     display: flex;
@@ -232,7 +232,7 @@
 
 @media (min-width: 1024px) {
   .modal-card {
-    background-color: #c19c82;
+    background-color: #f0d969e0;
     width: 810px;
     margin-top: 0px;
     display: flex;
