@@ -10,7 +10,7 @@ refs.sliderImg.addEventListener('click', onClickFilm);
 refs.filmItem.addEventListener('click', onClickFilm);
 
 export function onClickFilm(e) {
-  console.dir(e.target)
+  // console.dir(e.target)
   
 
 
