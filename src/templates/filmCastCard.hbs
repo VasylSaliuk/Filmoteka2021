@@ -1,0 +1,50 @@
+<div class="modal-card" data-action="{{id}}">
+    <div class="cardItem__container">
+        <img class="cardItem__image" width="100%" src="https://image.tmdb.org/t/p/w500{{poster_path}}"
+            alt="{{title}}" />
+    </div>
+
+    <div class="cardItem__wrapper">
+        <h2 class="cardItem__name">{{title}}</h2>
+        <div class="vote-blok">
+            <p class="cadrItem__vote cardItem_text">
+                Vote / Votes</p>
+            <p class="blok-text">
+                <span class="cardItem__vote_average">{{vote_average}}</span>/<span
+                    class="cardItem__vote_count">{{vote_count}}</span>
+            </p>
+        </div>
+        <div class="vote-blok">
+            <p class="cardItem__popularity cardItem_text-p">
+                Popularity</p>
+            <p class="blok-text"><span class="cardItem___data">{{popularity}}</span>
+            </p>
+        </div>
+        <div class="vote-blok">
+            <p class="cardItem-Title cardItem_text">
+                Original Title</p>
+            <p class="blok-text"><span class="cardItem__title_data">{{original_title}}</span>
+            </p>
+        </div>
+        <div class="genres">
+            <p class="cardItem__genre cardItem_text">
+                Genre
+            </p>
+            <p class="cardItem__genreList">{{#each genres}}
+                <span class="cardItem__genre_data">{{this.name}}</span>
+                {{/each}}
+            </p>
+        </div>
+        <p class="cardItem__about">About</p>
+        <p class="cardItem__description">
+            {{overview}}
+        </p>
+    </div>
+    <div class="modal-close-btn">
+        <svg class="close" width="24" height="24">
+            <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                fill="#20bcc6"></path>
+        </svg>
+    </div>
+</div>
