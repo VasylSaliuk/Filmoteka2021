@@ -52,8 +52,6 @@
   margin-right: auto;
   margin-left: auto;
   padding: 10px;
-  // padding-top: 10px;
-  // padding-left: 10px;
   width: 260px;
   height: 404px;
   border-radius: 10px;
@@ -63,10 +61,10 @@
     height: auto;
   }
 
-  @media screen and (min-width: 768px) and (max-width: 1023px){
-      width: 300px;
-      height: 450px;
-      padding: 30px 10px;
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 300px;
+    height: 450px;
+    padding: 30px 10px;
   }
 }
 .cardItem__wrapper {
@@ -141,13 +139,10 @@
   display: inline-block;
   margin-left: 3px;
   margin-right: 3px;
-  // background-color: rgb(223, 20, 20);
   border-radius: 5px;
-  // color: rgb(140, 240, 240);
   font-weight: 500;
   text-align: center;
   line-height: 1.5;
-  // padding: 1px 9px 1px 10px;
 }
 .cardItem__vote_count {
   display: inline-block;
@@ -156,18 +151,15 @@
   font-weight: 500;
   background-color: #efe5de;
   border-radius: 5px;
-  // padding: 1px 4px 1px 4px;
   text-align: center;
   line-height: 1.5;
 }
 .cardItem___data {
-  // margin-left: 5px;
   color: #3c2a1e;
   font-weight: 500;
   padding: 2px 2px;
 }
 .cardItem__title_data {
-  // margin-left: px;
   text-transform: uppercase;
   color: #3c2a1e;
   font-weight: 500;
@@ -217,14 +209,13 @@
 
   .cardItem__wrapper {
     width: 323px;
-    // height: auto;
   }
 
   .cardItem {
     display: flex;
   }
 
-    .cardItem__name {
+  .cardItem__name {
     font-size: 25px;
     line-height: 35px;
   }
@@ -248,7 +239,6 @@
 
   .cardItem__wrapper {
     width: 423px;
-    // width: auto;
   }
 
   .cardItem__genreList {
@@ -268,22 +258,6 @@
   margin-top: 40px;
 }
 
-// .js-btnWatchedAdd {
-//   padding: 10px 20px;
-//   border-radius: 5px;
-//   border-color: rgb(15, 15, 15);
-//   @media screen and (min-width: 320px) and (max-width: 767px) {
-//     padding: 7px 15px;
-//   }
-// }
-
-// .js-btnQueueAdd {
-//   padding: 10px 20px;
-//   border-radius: 5px;
-//   @media screen and (min-width: 320px) and (max-width: 767px) {
-//     padding: 7px 15px;
-//   }
-// }
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
