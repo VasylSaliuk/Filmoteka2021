@@ -134,7 +134,8 @@ export function renderFilm(arr) {
   const markup = trendFilmTemplate(arr);
   filmList.innerHTML = markup;
   placeholder.spinner.close();
-  trailer.createTrailerLink(document.querySelectorAll('.btn-youtube-slider'));
+  trailer.createTrailerLink(document.querySelectorAll('.btn-youtube'));
+ 
 }
 
 export function homePageRender() {
